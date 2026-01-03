@@ -1,0 +1,170 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Hide Lovable floating heart */
+iframe[src*="lovable"],
+div[id*="lovable"],
+div[class*="lovable"],
+a[href*="lovable.dev"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+   
+
+/* ===================== GLASS EFFECT ===================== */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===================== GRID BACKGROUND ===================== */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ===================== NOISE OVERLAY ===================== */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ===================== TEXT GRADIENT ===================== */
+.text-gradient {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===================== SHADOW ===================== */
+.shadow-neon {
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.45);
+}
+
+/* ===================== FLOATING ANIMATIONS ===================== */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floatReverse {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(18px); }
+}
+
+/* ===================== ROTATION ===================== */
+.animate-rotate {
+  animation: rotate 14s linear infinite;
+}
+.animate-rotate-slow {
+  animation: rotate 26s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===================== ORBIT ===================== */
+.animate-orbit {
+  animation: orbit 12s linear infinite;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+/* ===================== MORPH ===================== */
+.animate-morph {
+  animation: morph 18s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ===================== FADE UP ===================== */
+.animate-fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* 🔒 Fix Framer Motion transform layout gaps */
+[data-framer-motion],
+.motion-container {
+  contain: layout paint;
+}
+
+/* Prevent transform-based scroll gaps */
+section {
+  overflow-anchor: none;
+}
+
+
+
+0
