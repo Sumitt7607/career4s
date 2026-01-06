@@ -28,6 +28,7 @@ import { CounselingSection } from "./components/CounselingSection";
 import  AdmissionProcess from "./AdmissionProcessabroad";
 import  DocumentsSection from "./pages/DocumentsSectionabroad";  
 import CounsellingSectionAbroad from "./pages/CounsellingSectionabroad";
+import ScrollToTop from "./pages/ScrollToTop";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -36,6 +37,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
