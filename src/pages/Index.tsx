@@ -9,6 +9,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import Services from "./Services";
 import { AdmissionTicker } from "./AdmissionTicker";
 import { useNavigate } from "react-router-dom";
+import WhatsApp from "@/components/WhatsApp";
 import { link } from "fs";
 // const navigate = useNavigate();
 
@@ -72,7 +73,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       {/* <FloatingNav /> */}
-  
+      <WhatsApp />  
       <AdmissionTicker />
 
       {/* Hero Section */}

@@ -16,7 +16,18 @@ import AbroadHome from "./pages/AbroadHome";
 import Universities from "./pages/Universities";
 import AdmissionOnline from "./pages/AdmissionOnline";
 import DomainColleges from "./pages/DomainCollegesOnline";
-
+import Offerings from "./pages/Offerings";
+import { TestimonialsCarousel } from "./components/TestimonialsCarousel";
+import { AdmissionProcess as AdmissionIn } from "./components/AdmissionProcess";
+import { ExamsSection } from "./components/ExamsSection";
+import ExamsSectionabroad from "./pages/ExamsSectionabroad";
+import VisaProcess from "./pages/VisaProcess";
+import Documents from "./pages/Documents";
+import { HeroBanner } from "./components/HeroBanner";
+import { CounselingSection } from "./components/CounselingSection";
+import  AdmissionProcess from "./AdmissionProcessabroad";
+import  DocumentsSection from "./pages/DocumentsSectionabroad";  
+import CounsellingSectionAbroad from "./pages/CounsellingSectionabroad";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -39,7 +50,20 @@ const App = () => (
           <Route path="/universities/:domain" element={<Universities />} />
     <Route path="/universities/:domain/:country" element={<Universities />} />
           <Route path="/admission-online" element={<AdmissionOnline />} />
+          <Route path="/offering" element={<Offerings />} />
+           <Route path='/doc' element={<DocumentsSection />} />
+            <Route path='/testimonials' element={<TestimonialsCarousel />} />
+            <Route path='/admission' element={<AdmissionIn />} />
+          <Route path="/documents" element={<Documents />} />
+          <Route path='/exams' element={<ExamsSection />} />
+          <Route path='/counseling' element={<CounselingSection />} />
+          <Route path='/manage' element={<HeroBanner />} />
+          <Route path='/admissionab' element={<AdmissionProcess />} />
+          <Route path='/exams' element={<ExamsSection />} /> 
+        <Route path='/exsec' element={<ExamsSectionabroad />} />
             <Route path="/:domain" element={<DomainColleges />} />
+            <Route path="/visa" element={<VisaProcess />} />
+           <Route path="/counsellingab" element={<CounsellingSectionAbroad />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

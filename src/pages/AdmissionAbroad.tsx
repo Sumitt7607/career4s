@@ -1,5 +1,6 @@
 import { useNavigate, NavLink, Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
+import  Career4SLogo  from "@/components/Career4SLogo";
 
 /* ===================== MAIN PAGE ===================== */
 export default function AdmissionAbroad() {
@@ -105,32 +106,106 @@ export default function AdmissionAbroad() {
 }
 
 /* ===================== NAVBAR ===================== */
+/* ===================== NAVBAR ===================== */
 const Navbar = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b">
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b shadow-sm">
     <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      
+      {/* LOGO */}
       <Link to="/" className="text-xl font-bold text-orange-600">
-        Career<span className="text-gray-800">4S</span>
+        <Career4SLogo />
       </Link>
 
-      <div className="hidden md:flex gap-8 font-medium">
-        {["Home", "About", "Universities", "Gallery", "Contact"].map((item) => (
+      {/* NAV LINKS (DESKTOP ONLY) */}
+      <div className="hidden md:flex items-center gap-8">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+          
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+          
+        </NavLink>
+
+        <NavLink
+          to="/offerings"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+    
+        </NavLink>
+
+        <NavLink
+          to="/know-more"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+      
+        </NavLink>
+
+        <NavLink
+          to="/why-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+          
+        </NavLink>
           <NavLink
-            key={item}
-            to="#"
-            className="text-gray-700 hover:text-orange-600 transition"
-          >
-            {item}
-          </NavLink>
-        ))}
+          to="/why-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+      
+        </NavLink>
+    <NavLink
+          to="/why-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+        
+        </NavLink>
+
+
       </div>
 
-      <button className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition">
-        Apply
-      </button>
+      {/* CTA BUTTON */}
+      <Link
+        to="/contact"
+        className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition"
+      >
+        Free Consultation
+      </Link>
     </div>
   </nav>
 );
-
 /* ===================== MOVING STRIP ===================== */
 const MovingStrip = () => (
   <div className="fixed top-16 left-0 right-0 z-40 bg-orange-500 text-white overflow-hidden">

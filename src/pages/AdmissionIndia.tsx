@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { Link,NavLink} from "react-router-dom";
 import DomainMoreSections from "./DomainMoreSections";
-
+import Career4SLogo from "@/components/Career4SLogo";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import WhatsApp from "@/components/WhatsApp";
 /* ===================== COLLEGE DATA ===================== */
 const COLLEGE_LIST: Record<string, string[]> = {
   Engineering: [
@@ -56,27 +58,46 @@ export default function AdmissionIndia() {
   const [activeField, setActiveField] = useState<string | null>(null);
 
   return (
+    
     <div className="min-h-screen bg-[#FFF9F5] text-gray-800">
-      <Navbar />
-      <MovingBanner />
 
+      {/* SHOW NAVBAR ONLY IN COLLEGE VIEW */}
+      {activeField && <Navbar />}
 
-      
+      {/* MOVING BANNER ALSO ONLY WHEN COLLEGE VIEW */}
+      {activeField && <MovingBanner />}
 
-      <main className="pt-28 pb-32 max-w-7xl mx-auto px-4">
+      <main className={`pb-32 max-w-7xl mx-auto px-4 ${activeField ? "pt-28" : "pt-16"}`}>
+ 
+        {/* BACK TO HOME */}
+         
 
-{/* BACK TO HOME */}
-<div className="pt-24 max-w-7xl mx-auto px-4">
-  <Link
-    to="/"
-    className="inline-flex items-center gap-2 text-orange-600 font-medium hover:underline"
-  >
-    ← Back to Home
-  </Link>
-</div>
+        {!activeField && (
+          <div className="pt-10 max-w-7xl mx-auto px-4">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-orange-600 font-medium hover:underline"
+            >
+              ← Back to Home
+            </Link>
+          </div>
+        )}
 
         {!activeField ? (
           <>
+          {/* LOGO FOR DOMAIN SELECTION */}
+         
+{/* LOGO FOR DOMAIN SELECTION */}
+{!activeField && (
+  <div className="absolute top-6 left-6 z-50">
+    <Career4SLogo />
+   
+  </div>
+)}
+
+
+            {/* DOMAIN SELECTION VIEW (NO NAVBAR HERE) */}
+           
             <SectionCard
               title="Engineering Admissions"
               description="End-to-end guidance for B.Tech, B.E and M.Tech admissions in top engineering colleges across India."
@@ -89,7 +110,6 @@ export default function AdmissionIndia() {
               ]}
               destinations={["IITs", "NITs", "State Colleges", "Private Universities"]}
               onExplore={() => setActiveField("Engineering")}
-              
             />
 
             <SectionCard
@@ -138,8 +158,12 @@ export default function AdmissionIndia() {
           <CollegeView field={activeField} onBack={() => setActiveField(null)} />
         )}
       </main>
+{activeField && (
+  <div className="animate-fade">
+    <MobileFloatingMenu />
+  </div>
+)}
 
-      <MobileFloatingMenu />
       <Footer />
       <AnimationStyles />
     </div>
@@ -153,65 +177,87 @@ const Navbar = () => (
       
       {/* LOGO */}
       <Link to="/" className="text-xl font-bold text-orange-600">
-        Career<span className="text-gray-800">4S</span>
+        <Career4SLogo />
       </Link>
 
       {/* NAV LINKS (DESKTOP ONLY) */}
       <div className="hidden md:flex items-center gap-8">
         <NavLink
-          to="/"
+          to="/testimonials"
           className={({ isActive }) =>
             isActive
               ? "text-orange-600 font-medium"
               : "text-gray-700 hover:text-orange-600 font-medium"
           }
         >
-          Home
+          Testimonials
         </NavLink>
 
         <NavLink
-          to="/about"
+          to="/admission"
           className={({ isActive }) =>
             isActive
               ? "text-orange-600 font-medium"
               : "text-gray-700 hover:text-orange-600 font-medium"
           }
         >
-          About
+          Admission
         </NavLink>
 
         <NavLink
-          to="/offerings"
+          to="/documents"
           className={({ isActive }) =>
             isActive
               ? "text-orange-600 font-medium"
               : "text-gray-700 hover:text-orange-600 font-medium"
           }
         >
-          Offerings
+          Documents
         </NavLink>
 
         <NavLink
-          to="/know-more"
+          to="/exams"
           className={({ isActive }) =>
             isActive
               ? "text-orange-600 font-medium"
               : "text-gray-700 hover:text-orange-600 font-medium"
           }
         >
-          Know More
+          Entrance Exams
         </NavLink>
 
         <NavLink
-          to="/why-us"
+          to="/contact"
           className={({ isActive }) =>
             isActive
               ? "text-orange-600 font-medium"
               : "text-gray-700 hover:text-orange-600 font-medium"
           }
         >
-          Why Us
+          Contact
         </NavLink>
+          <NavLink
+          to="/manage"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+          Management Quota
+        </NavLink>
+    <NavLink
+          to="/counseling"
+          className={({ isActive }) =>
+            isActive
+              ? "text-orange-600 font-medium"
+              : "text-gray-700 hover:text-orange-600 font-medium"
+          }
+        >
+          Counselling
+        </NavLink>
+
+
       </div>
 
       {/* CTA BUTTON */}
@@ -224,6 +270,17 @@ const Navbar = () => (
     </div>
   </nav>
 );
+
+
+
+// nav bar for admission india page
+
+
+
+
+
+
+
 /* ===================== MOVING BANNER ===================== */
 const MovingBanner = () => (
   <div className="fixed top-16 left-0 right-0 z-40 bg-orange-500 text-white overflow-hidden">
@@ -464,26 +521,70 @@ const MobileFloatingMenu = () => {
 
   return (
     <>
-      <div
-        className={`fixed bottom-28 right-4 z-50 flex flex-col gap-3 md:hidden transition-all ${
-          open
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 translate-x-10 pointer-events-none"
-        }`}
-      >
-        {["Home", "About", "Offerings", "know More","Why Us"].map((item) => (
-          <div
-            key={item}
-            className={`px-4 py-3 rounded-full shadow-lg ${
-              item === "Contact"
-                ? "bg-orange-500 text-white"
-                : "bg-white text-gray-700"
-            }`}
-          >
-            {item}
-          </div>
-        ))}
-      </div>
+    {/* MOBILE FLOATING MENU */}
+<div
+  className={`fixed bottom-28 right-4 z-50 flex flex-col gap-3 md:hidden transition-all duration-300 ${
+    open
+      ? "opacity-100 translate-x-0"
+      : "opacity-0 translate-x-10 pointer-events-none"
+  }`}
+>
+  <Link
+    to="/testimonials"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Testimonials
+  </Link>
+
+  <Link
+    to="/admission"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Admission
+  </Link>
+
+  <Link
+    to="/documents"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Documents
+  </Link>
+
+  <Link
+    to="/exams"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Entrance Exams
+  </Link>
+
+  <Link
+    to="/contact"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Contact
+  </Link>
+
+  <Link
+    to="/manage"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Management Quota
+  </Link>
+
+  <Link
+    to="/counseling"
+    onClick={() => setOpen(false)}
+    className="px-4 py-3 rounded-full shadow-lg bg-white text-gray-700 hover:bg-orange-500 hover:text-white transition-all text-sm font-medium"
+  >
+    Counselling
+  </Link>
+</div>
 
       <button
         onClick={() => setOpen(!open)}

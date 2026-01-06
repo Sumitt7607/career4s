@@ -23,7 +23,7 @@ const services = [
     "Interview preparation and mock sessions",
     "Document verification and submission",
   ],
-  colleges: ["IITs", "NITs", "IIMs", "AIIMS", "Top Private Universities"],
+  colleges: ["Engineering", "Medical", "Management", "post graduation" ],
 },
 
  {
@@ -39,7 +39,8 @@ const services = [
       "Visa application and interview prep",
       "Pre-departure briefing and support",
     ],
-    colleges: ["USA", "UK", "Canada", "Australia", "Germany", "New Zealand"],
+      colleges: ["Engineering", "Medical", "Management", "post graduation" ],
+
   },
 
 {
@@ -56,12 +57,8 @@ const services = [
     "Doubt-solving sessions and mentor support",
     "Flexible schedules with lifetime access to content",
   ],
-  colleges: [
-    "School Students (Class 8–12)",
-    "College Students",
-    "Working Professionals",
-    "Career Switchers",
-  ],
+  colleges: ["Engineering", "Medical", "Management", "post graduation" ],
+
 },
 
 {
@@ -77,13 +74,8 @@ const services = [
     "Online exams and flexible schedules",
     "Dedicated academic and exam support",
   ],
-  colleges: [
-    "IGNOU",
-    "DU SOL",
-    "NMIMS Global",
-    "Amity Online",
-    "Symbiosis Distance Learning",
-  ],
+  colleges: ["Engineering", "Medical", "Management", "post graduation" ],
+
 }
 
 ];
@@ -228,6 +220,12 @@ const Services = () => {
           title: "Execution",
           description:
             "Our experts walk with you till final success — applications, decisions, and beyond.",
+        },
+          {
+          step: "05",
+          title: "Strategy",
+          description:
+            "We design a clear, step-by-step roadmap aligned with your aspirations.",
         },
       ].map((item, index) => (
         <AnimatedSection

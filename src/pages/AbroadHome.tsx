@@ -3,6 +3,9 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import Career4SAbout from "./Career4SAbout";
+import { Link } from "react-router-dom";
+import Career4SLogo from "@/components/Career4SLogo";
+import WhatsApp from "@/components/WhatsApp";
 
 import {
   ArrowRight,
@@ -13,7 +16,6 @@ import {
   Rocket,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Universities from "./Universities";
 
 /* ===================== MAIN PAGE ===================== */
 export default function AbroadHome() {
@@ -23,7 +25,7 @@ export default function AbroadHome() {
   return (
     <div className="relative overflow-hidden bg-background text-foreground">
       <Navbar />
-      
+      <WhatsApp />
       {/* ================= HERO ================= */}
       <section
         id="home"
@@ -169,34 +171,49 @@ export default function AbroadHome() {
 
 /* ===================== NAVBAR ===================== */
 const Navbar = () => {
-
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-        <div className="text-xl font-bold text-primary">
-          Career<span className="text-foreground">4S</span>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        
+        {/* LOGO (LEFT) */}
+        <Link to="/" className="flex items-center">
+          <Career4SLogo />
+        </Link>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex gap-8 font-medium">
-          {["Home", "About", "Universities", "Gallery", "Contact"].map((item) => (
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-8 font-medium">
+          {[
+            { name: "Testimonials", to: "/testimonials" },
+            { name: "Admission", to: "/admissionab" },
+            { name: "Documents", to: "/doc" },
+            { name: "Entrance Exams", to: "/exsec" },
+            { name: "Contact", to: "/contact" },
+                { name: "Visa process", to: "/visa" },
+                    { name: "Counselling", to: "/counsellingab" },
+
+          ].map((item) => (
             <NavLink
-              key={item}
-              to="#"
-              className="text-muted-foreground hover:text-primary transition"
+              key={item.name}
+              to={item.to}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary font-semibold"
+                  : "text-muted-foreground hover:text-primary transition"
+              }
             >
-              {item}
+              {item.name}
             </NavLink>
           ))}
         </div>
 
+        {/* DESKTOP CTA */}
         <Button className="hidden md:block bg-primary text-primary-foreground hover:bg-primary/90">
           Free Consultation
         </Button>
 
-        {/* Mobile hamburger */}
+        {/* MOBILE TOGGLE */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-foreground"
@@ -205,22 +222,28 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden bg-white border-t">
-          <div className="flex flex-col gap-4 px-6 py-4 font-medium">
-            {["Home", "About", "Universities", "Gallery", "Contact"].map(
-              (item) => (
-                <NavLink
-                  key={item}
-                  to="#"
-                  onClick={() => setOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition"
-                >
-                  {item}
-                </NavLink>
-              )
-            )}
+          <div className="flex flex-col gap-4 px-6 py-6 font-medium">
+            {[
+                    { name: "Testimonials", to: "/testimonials" },
+            { name: "Admission", to: "/admissionab" },
+            { name: "Documents", to: "/doc" },
+            { name: "Entrance Exams", to: "/exsec" },
+            { name: "Contact", to: "/contact" },
+                { name: "visa process", to: "/visa" },
+                    { name: "Counselling", to: "/counsellingab" },
+            ].map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className="text-muted-foreground hover:text-primary transition"
+              >
+                {item.name}
+              </NavLink>
+            ))}
 
             <Button className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90">
               Free Consultation

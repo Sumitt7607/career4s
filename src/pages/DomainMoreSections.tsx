@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 /* ===================== SPACING PRESET ===================== */
 // const SECTION = "py-8 sm:py-12";
-
+import WhatsApp from "@/components/WhatsApp";
 
 /* ===================== PROPS ===================== */
 interface DomainMoreSectionsProps {
@@ -24,7 +24,8 @@ export default function DomainMoreSections({
       {/* <ScrollSpyNav /> */}
       {/* <StickyEnquiryForm /> */}
       <LeadPopup />
-      <WhatsAppCTA />
+      {/* <WhatsAppCTA /> */}
+       <WhatsApp />   
 
       <div className="mt-24 space-y-16">
         <Hero field={field} />
@@ -961,16 +962,16 @@ const LeadPopup = () => {
 
 
 /* ===================== WHATSAPP ===================== */
-const WhatsAppCTA = () => (
-  <a
-    href="https://wa.me/91XXXXXXXXXX"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="fixed bottom-6 left-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition z-50"
-  >
-    💬 WhatsApp
-  </a>
-);
+// const WhatsAppCTA = () => (
+//   <a
+//     href="https://wa.me/91XXXXXXXXXX"
+//     target="_blank"
+//     rel="noopener noreferrer"
+//     className="fixed bottom-6 left-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition z-50"
+//   >
+//     💬 WhatsApp
+//   </a>
+// );
 
 /* ===================== SCROLL SPY ===================== */
 const ScrollSpyNav = () => {

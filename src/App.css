@@ -5,6 +5,33 @@
   text-align: center;
 }
 
+
+
+/* Add this to global.css or index.css */
+iframe[src*="lovable"],
+div[id*="lovable"],
+a[href*="lovable.app"] {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -165,6 +192,45 @@ section {
   overflow-anchor: none;
 }
 
+/* REMOVE LOVABLE / EMBEDDED FLOATING ICON */
+iframe[src*="lovable"],
+iframe[title*="lovable"],
+div[id*="lovable"],
+div[class*="lovable"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 
 
-0
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(90deg, #f97316, #fb923c, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Saffron Button */
+.bg-gradient-saffron {
+  background: linear-gradient(135deg, #f97316, #f59e0b);
+}
+
+.shadow-saffron {
+  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.35);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}

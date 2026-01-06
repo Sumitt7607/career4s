@@ -6,6 +6,10 @@ import { Footer } from "@/components/Footer";
 import UniversityInsightsSection from "./UniversityInsightsSection";
 import { MapPin, Users, Trophy, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
+import Career4SLogo from "@/components/Career4SLogo";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import WhatsApp from "@/components/WhatsApp";
 
 /* ===================== TYPES ===================== */
 export interface University {
@@ -90,31 +94,91 @@ const UNIVERSITY_IMAGES: Record<string, string> = {
 };
 
 /* ===================== NAVBAR ===================== */
-const Navbar = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b">
-    <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <Link to="/" className="text-xl font-bold text-orange-600">
-        Career<span className="text-gray-800">4S</span>
-      </Link>
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
 
-      <div className="hidden md:flex gap-8 font-medium">
-        {["Home", "About", "Universities", "Gallery", "Contact"].map((item) => (
-          <NavLink
-            key={item}
-            to="#"
-            className="text-gray-700 hover:text-orange-600 transition"
-          >
-            {item}
-          </NavLink>
-        ))}
+  const links = [
+    { name: "Testimonials", to: "/testimonials" },
+    { name: "Admission", to: "/admissionab" },
+    { name: "Documents", to: "/doc" },
+    { name: "Entrance Exams", to: "/exsec" },
+    { name: "Contact", to: "/contact" },
+    { name: "Visa process", to: "/visa" },
+    { name: "Counselling", to: "/counsellingab" },
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        
+        {/* LOGO */}
+        <Link to="/" className="flex items-center">
+          <Career4SLogo />
+        </Link>
+
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.to}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-orange-600 font-medium"
+                  : "text-gray-700 hover:text-orange-600 font-medium"
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* DESKTOP CTA */}
+        <Link
+          to="/contact"
+          className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition"
+        >
+          Free Consultation
+        </Link>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-gray-800"
+        >
+          {open ? <X size={26} /> : <Menu size={26} />}
+        </button>
       </div>
 
-      <button className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition">
-        Apply
-      </button>
-    </div>
-  </nav>
-);
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden bg-white border-t shadow-lg">
+          <div className="flex flex-col gap-4 px-6 py-6">
+            {links.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className="text-gray-700 font-medium hover:text-orange-600"
+              >
+                {link.name}
+              </NavLink>
+            ))}
+
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 text-center bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600"
+            >
+              Free Consultation
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
 
 /* ===================== UNIVERSITY CARD (UNCHANGED) ===================== */
 const UniversityCard = ({
@@ -199,6 +263,7 @@ export default function Universities() {
 
   return (
     <>
+    <WhatsApp />
       <Navbar />
      
 

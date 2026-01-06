@@ -21,12 +21,13 @@ const AnimatedSection = ({
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const obs = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => entry.isIntersecting && setShow(true),
       { threshold: 0.15 }
     );
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -34,7 +35,7 @@ const AnimatedSection = ({
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={`transition-all duration-700 ease-out ${
-        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
     >
       {children}
@@ -89,9 +90,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-orange-600">
+        <Link to="/" className="text-xl font-extrabold text-orange-600">
           Career<span className="text-gray-800">4S</span>
         </Link>
 
@@ -113,9 +114,9 @@ const Navbar = () => {
 
         <Link
           to="/apply"
-          className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition"
+          className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
         >
-          Apply
+          Apply Now
         </Link>
       </div>
     </nav>
@@ -123,81 +124,88 @@ const Navbar = () => {
 };
 
 /* ================= MAIN PAGE ================= */
-const Index = () => {
+const AdmissionOnline = () => {
   return (
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-gray-50 pt-16">
+      <main className="pt-16 min-h-screen bg-gray-50 overflow-hidden">
         {/* ================= HERO ================= */}
-        <section className="relative overflow-hidden bg-white">
-          <div className="relative container mx-auto px-4 py-24 text-center">
+        <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-100">
+          {/* Floating blobs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-200/40 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-300/30 rounded-full blur-3xl animate-float" />
+
+          <div className="relative max-w-7xl mx-auto px-4 py-32 text-center">
             <AnimatedSection>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
                 Shape Your{" "}
-                <span className="text-orange-500">Future</span>
+                <span className="relative text-orange-500">
+                  Future
+                  <span className="absolute left-0 -bottom-2 w-full h-1 bg-orange-400 rounded-full" />
+                </span>
                 <br /> With Excellence
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+              <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12">
                 Discover top colleges across Engineering, Medical, Management,
                 and Post-Graduation programs.
               </p>
+
+              <Link
+                to="/apply"
+                className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-orange-600 transition shadow-lg hover:shadow-orange-400/40"
+              >
+                Start Your Journey
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </AnimatedSection>
           </div>
         </section>
 
         {/* ================= DOMAINS ================= */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-4">
             <AnimatedSection>
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Choose Your Path
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-gray-600">
                   Select your domain and explore top colleges
                 </p>
               </div>
             </AnimatedSection>
 
-            {/* HIGH VISIBILITY CARDS */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
               {domains.map((domain, i) => (
                 <AnimatedSection key={domain.id} delay={i * 120}>
                   <Link
                     to={domain.path}
-                    className="group block bg-white border border-gray-200
-                               rounded-2xl p-8
-                               shadow-sm
-                               transition-all duration-500
-                               hover:-translate-y-2 hover:shadow-xl"
+                    className="group relative block rounded-3xl p-[2px]
+                               bg-gradient-to-br from-orange-400/40 via-transparent to-orange-400/40
+                               transition-all duration-500 hover:-translate-y-3"
                   >
-                    {/* ICON */}
-                    <div className="w-14 h-14 rounded-xl bg-orange-50
-                                    flex items-center justify-center mb-6">
-                      <domain.icon className="w-7 h-7 text-orange-500" />
-                    </div>
+                    <div className="relative bg-white rounded-3xl p-8 h-full shadow-md group-hover:shadow-xl transition">
+                      <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <domain.icon className="w-8 h-8 text-orange-500" />
+                      </div>
 
-                    {/* TITLE */}
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {domain.title}
-                    </h3>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        {domain.title}
+                      </h3>
 
-                    {/* DESCRIPTION */}
-                    <p className="text-sm text-gray-600 mb-6 leading-relaxed">
-                      {domain.description}
-                    </p>
+                      <p className="text-sm text-gray-600 mb-8 leading-relaxed">
+                        {domain.description}
+                      </p>
 
-                    {/* FOOTER */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-orange-500">
-                        {domain.colleges} Colleges
-                      </span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
+                          🎓 {domain.colleges} Colleges
+                        </span>
 
-                      <ArrowRight className="w-5 h-5 text-orange-500
-                                             transition-transform duration-300
-                                             group-hover:translate-x-1" />
+                        <ArrowRight className="w-5 h-5 text-orange-500 transition-transform duration-300 group-hover:translate-x-2" />
+                      </div>
                     </div>
                   </Link>
                 </AnimatedSection>
@@ -205,11 +213,11 @@ const Index = () => {
             </div>
           </div>
         </section>
-      </div>
+      </main>
 
       <Footer />
     </>
   );
 };
 
-export default Index;
+export default AdmissionOnline;

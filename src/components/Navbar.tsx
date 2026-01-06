@@ -29,8 +29,8 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-10">
             <NavItem to="/">Home</NavItem>
             <NavItem to="/about">About</NavItem>
-            <NavItem to="/offerings">Offerings</NavItem>
-            <NavItem to="/know-more">Know More</NavItem>
+            <NavItem to="/offering">Our Service</NavItem>
+            <NavItem to="/testimonials">Testimonials</NavItem>
           </div>
 
           {/* DESKTOP CTA */}
