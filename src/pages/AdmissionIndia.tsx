@@ -523,7 +523,7 @@ const MobileFloatingMenu = () => {
     <>
     {/* MOBILE FLOATING MENU */}
 <div
-  className={`fixed bottom-28 right-4 z-50 flex flex-col gap-3 md:hidden transition-all duration-300 ${
+  className={`fixed bottom-28 left-4 z-50 flex flex-col gap-3 md:hidden transition-all duration-300 ${
     open
       ? "opacity-100 translate-x-0"
       : "opacity-0 translate-x-10 pointer-events-none"
@@ -585,13 +585,13 @@ const MobileFloatingMenu = () => {
     Counselling
   </Link>
 </div>
+<button
+  onClick={() => setOpen(!open)}
+  className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-orange-500 text-white text-3xl shadow-xl md:hidden"
+>
+  {open ? "×" : "+"}
+</button>
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-orange-500 text-white text-3xl shadow-xl md:hidden"
-      >
-        {open ? "×" : "+"}
-      </button>
     </>
   );
 };
