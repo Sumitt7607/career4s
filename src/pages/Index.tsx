@@ -36,6 +36,7 @@ const services = [
     icon: BookOpen,
     title: "Distance Education",
     description: "Comprehensive coaching for JEE, NEET, CAT, GRE, GMAT, and other exams.",
+    link:'/admission-distance',
   },
 ];
 
