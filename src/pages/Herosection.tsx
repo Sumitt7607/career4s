@@ -10,50 +10,52 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Navbar from "@/components/ui/NavbarOnline";
+
 
 /* ================= NAVBAR ================= */
-const Navbar = () => {
-  const navItems = [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Universities", path: "/universities" },
-    { label: "Gallery", path: "/gallery" },
-    { label: "Contact", path: "/contact" },
-  ];
+// const Navbar = () => {
+//   const navItems = [
+//     { label: "Home", path: "/" },
+//     { label: "About", path: "/about" },
+//     { label: "Universities", path: "/universities" },
+//     { label: "Gallery", path: "/gallery" },
+//     { label: "Contact", path: "/contact" },
+//   ];
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="text-xl font-extrabold text-orange-600">
-          Career<span className="text-gray-800">4S</span>
-        </Link>
+//   return (
+//     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
+//       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+//         <Link to="/" className="text-xl font-extrabold text-orange-600">
+//           Career<span className="text-gray-800">4S</span>
+//         </Link>
 
-        <div className="hidden md:flex gap-8 font-medium">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.label}
-              to={item.path}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-600 border-b-2 border-orange-600 pb-1"
-                  : "text-gray-700 hover:text-orange-600 transition"
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </div>
+//         <div className="hidden md:flex gap-8 font-medium">
+//           {navItems.map((item) => (
+//             <NavLink
+//               key={item.label}
+//               to={item.path}
+//               className={({ isActive }) =>
+//                 isActive
+//                   ? "text-orange-600 border-b-2 border-orange-600 pb-1"
+//                   : "text-gray-700 hover:text-orange-600 transition"
+//               }
+//             >
+//               {item.label}
+//             </NavLink>
+//           ))}
+//         </div>
 
-        <Link
-          to="/apply"
-          className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
-        >
-          Apply Now
-        </Link>
-      </div>
-    </nav>
-  );
-};
+//         <Link
+//           to="/apply"
+//           className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
+//         >
+//           Apply Now
+//         </Link>
+//       </div>
+//     </nav>
+//   );
+// };
 
 /* ================= FLOATING INFO ================= */
 const floatingItems = [
@@ -163,9 +165,9 @@ export const HeroSection = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white/40 text-white px-8 py-6 text-lg hover:bg-white/10"
+                  className="bg-orange-500 text-white px-8 py-6 text-lg hover:bg-white/10"
                 >
-                  <PlayCircle className="mr-2 w-5 h-5" />
+                <PlayCircle className="mr-2 w-5 h-5" />
                   Virtual Tour
                 </Button>
               </motion.div>

@@ -30,7 +30,10 @@ import  DocumentsSection from "./pages/DocumentsSectionabroad";
 import CounsellingSectionAbroad from "./pages/CounsellingSectionabroad";
 import ScrollToTop from "./pages/ScrollToTop";
 import AdmissionDIstance from "./pages/AdmissionDIstance";
+import ContentPage from "./pages/ContentPage";
 import CollegeListDist from "./pages/collegeListdist";
+import OnlineClassesPage from "./pages/OnlineClassesPage";
+import WhyOnlinePage from "./pages/WhyOnlinePage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -69,9 +72,10 @@ const App = () => (
             <Route path="/visa" element={<VisaProcess />} />
            <Route path="/counsellingab" element={<CounsellingSectionAbroad />} />
            <Route path="/admission-distance" element={<AdmissionDIstance />} />
-
+            <Route path="/content" element={<ContentPage />} />
           <Route path="/distance/:domain" element={<CollegeListDist />} />
-
+          <Route path="/online-classes" element={<OnlineClassesPage />} />
+          <Route path="/why-online" element={<WhyOnlinePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

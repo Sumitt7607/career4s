@@ -64,6 +64,7 @@ const services = [
 {
   icon: BookOpen,
   title: "Distance Education",
+  link: "/admission-distance",
   subtitle: "Learn Without Limits",
   description:
     "Flexible and recognized distance education programs designed for students and working professionals to earn degrees and certifications without attending regular classes.",
@@ -102,74 +103,105 @@ const Services = () => {
 
       {/* Services Detail */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="space-y-20">
-            {services.map((service, index) => (
-              <AnimatedSection
-                key={service.title}
-                animation={index % 2 === 0 ? "slide-left" : "slide-right"}
-              >
-                <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
-                      <service.icon className="w-4 h-4" />
-                      {service.subtitle}
+  <div className="container mx-auto px-4">
+    <div className="space-y-20">
+      {services.map((service, index) => (
+        <AnimatedSection
+          key={service.title}
+          animation={index % 2 === 0 ? "slide-left" : "slide-right"}
+        >
+          <div
+            className={`grid lg:grid-cols-2 gap-12 items-center ${
+              index % 2 === 1 ? "lg:flex-row-reverse" : ""
+            }`}
+          >
+            {/* LEFT CONTENT */}
+            <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
+                <service.icon className="w-4 h-4" />
+                {service.subtitle}
+              </div>
+
+              <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
+                {service.title}
+              </h2>
+
+              <p className="text-muted-foreground text-lg mb-6">
+                {service.description}
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button asChild className="gradient-primary">
+                <Link to={service.link}>
+                  Get Started
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* RIGHT CLICKABLE CARD */}
+            <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+              <Link to={service.link} className="block group">
+                <Card
+                  className="
+                    overflow-hidden
+                    cursor-pointer
+                    transition-all duration-300
+                    group-hover:-translate-y-2
+                    group-hover:shadow-2xl
+                    group-hover:border-primary/40
+                  "
+                >
+                  <CardHeader className="gradient-primary text-primary-foreground relative">
+                    <span className="absolute top-4 right-4 text-xs opacity-80 group-hover:opacity-100">
+                      View →
+                    </span>
+
+                    <div className="w-16 h-16 rounded-xl bg-background/20 flex items-center justify-center mb-4">
+                      <service.icon className="w-8 h-8" />
                     </div>
-                    <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
+
+                    <CardTitle className="text-2xl">
                       {service.title}
-                    </h2>
-                    <p className="text-muted-foreground text-lg mb-6">
-                      {service.description}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent className="p-6">
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {index === 0 || index === 2
+                        ? "Top Destinations:"
+                        : "Perfect For:"}
                     </p>
-                    <ul className="space-y-3 mb-8">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">{feature}</span>
-                        </li>
+
+                    <div className="flex flex-wrap gap-2">
+                      {service.colleges.map((college) => (
+                        <span
+                          key={college}
+                          className="px-3 py-1.5 rounded-full bg-muted text-sm font-medium"
+                        >
+                          {college}
+                        </span>
                       ))}
-                    </ul>
-                    <Button asChild className="gradient-primary">
-                      <Link to={service.link}>
-                        Get Started
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
-                      </Button>
-
-
-                  </div>
-
-                  <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                    <Card className="overflow-hidden">
-                      <CardHeader className="gradient-primary text-primary-foreground">
-                        <div className="w-16 h-16 rounded-xl bg-background/20 flex items-center justify-center mb-4">
-                          <service.icon className="w-8 h-8" />
-                        </div>
-                        <CardTitle className="text-2xl">{service.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-6">
-                        <p className="text-sm text-muted-foreground mb-4">
-                          {index === 0 || index === 2 ? "Top Destinations:" : "Perfect For:"}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {service.colleges.map((college) => (
-                            <span
-                              key={college}
-                              className="px-3 py-1.5 rounded-full bg-muted text-sm font-medium"
-                            >
-                              {college}
-                            </span>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Process Section */}
      <section className="relative py-24 overflow-hidden bg-muted/50">

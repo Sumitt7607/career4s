@@ -166,6 +166,79 @@ const collegesByDomain: CollegeMap = {
         "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
     },
   ],
+  medical: [
+    {
+      name: "IGNOU",
+      location: "New Delhi",
+      courses: ["B.Tech", "M.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
+    },
+    {
+      name: "Amity University Online",
+      location: "Noida",
+      courses: ["B.Tech", "M.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1562774053-701939374585",
+    },
+    {
+      name: "LPU Distance Education",
+      location: "Punjab",
+      courses: ["B.Tech", "M.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    },
+    {
+      name: "Sikkim Manipal University",
+      location: "Gangtok",
+      courses: ["B.Tech", "M.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+    },
+    {
+      name: "Jain University Online",
+      location: "Bangalore",
+      courses: ["B.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a",
+    },
+    {
+      name: "UPES Online",
+      location: "Dehradun",
+      courses: ["B.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b",
+    },
+    {
+      name: "Chandigarh University Online",
+      location: "Chandigarh",
+      courses: ["B.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1596495578065-6e0763fa1178",
+    },
+    {
+      name: "SRM Online",
+      location: "Chennai",
+      courses: ["B.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1580582932707-520aed937b7b",
+    },
+    {
+      name: "BITS Pilani Online",
+      location: "Pilani",
+      courses: ["M.Tech"],
+      image:
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    },
+  ],
+
+
+
+
+
+
+
+
 };
 
 /* ================= COMPONENT ================= */
