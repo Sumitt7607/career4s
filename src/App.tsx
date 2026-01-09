@@ -36,6 +36,10 @@ import OnlineClassesPage from "./pages/OnlineClassesPage";
 import WhyOnlinePage from "./pages/WhyOnlinePage";
 import OnlineAdmission from "./components/OnlineAdmission";
 import Programs from "./components/programs";
+import AdmissionProcessSection from "./pages/AdmissionProcessSection";
+import WhyDistanceEducationSection from "./pages/WhyDistanceEducationSection";
+import CoursesSection from "./pages/CoursesSection";
+import ProgramsSection from "./components/ProgramsSection";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -80,6 +84,10 @@ const App = () => (
           <Route path="/why-online" element={<WhyOnlinePage />} />
           <Route path="/online-admission" element={<OnlineAdmission />} />
           <Route path="/programs" element={<Programs />} />
+          <Route path="/courses-section" element={<CoursesSection />} />
+          <Route path="/admission-process" element={<AdmissionProcessSection />} />
+          <Route path="/why-distance-education" element={<WhyDistanceEducationSection />} />
+          <Route path="/programs-section" element={<ProgramsSection />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

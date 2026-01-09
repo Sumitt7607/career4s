@@ -12,92 +12,121 @@ const classes = [
   {
     icon: Radio,
     title: "Live Interactive Classes",
-    desc: "Real-time classes with expert faculty and instant interaction.",
+    desc: "Attend real-time classes with expert faculty and live interaction.",
   },
   {
     icon: PlayCircle,
     title: "Recorded Courses",
-    desc: "High-quality recorded lessons you can access anytime.",
+    desc: "Access high-quality recorded lectures anytime, anywhere.",
   },
   {
     icon: MessageSquare,
     title: "Doubt Clearing Sessions",
-    desc: "Regular doubt sessions to keep your learning on track.",
+    desc: "Regular doubt-solving sessions to strengthen concepts.",
   },
   {
     icon: Users,
     title: "One-to-One Mentoring",
-    desc: "Personal guidance tailored to your career goals.",
+    desc: "Personalized mentoring tailored to your career goals.",
   },
   {
     icon: Clock,
     title: "Exam Preparation Batches",
-    desc: "Structured batches with tests, analysis & mentoring.",
+    desc: "Structured batches with mock tests and performance analysis.",
   },
   {
     icon: Languages,
     title: "Language Training",
-    desc: "IELTS, TOEFL & spoken English with certified trainers.",
+    desc: "IELTS, TOEFL & spoken English training by certified experts.",
   },
 ];
 
 const OnlineClassesPage = () => {
   return (
-    <div className="relative overflow-hidden">
-      {/* HERO */}
-      <div className="bg-gradient-to-r from-primary/90 to-indigo-600 text-white py-24">
-        <div className="container mx-auto text-center px-4">
-          <motion.h1
+    <div className="relative overflow-hidden bg-white">
+      {/* ================= HERO ================= */}
+      <section className="py-24 border-b">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          
+          {/* LEFT */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-extrabold mb-4"
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            Online Classes
-          </motion.h1>
+            <span className="inline-block mb-4 px-4 py-1.5 text-sm font-semibold rounded-full bg-primary/10 text-primary">
+              Online Learning
+            </span>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="max-w-2xl mx-auto text-lg text-white/90"
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
+              Interactive <span className="text-primary">Online Classes</span>
+              <br />
+              Built for Modern Learners
+            </h1>
+
+            <p className="mt-6 text-lg text-gray-600 max-w-xl leading-relaxed">
+              Learn anytime, anywhere with expert instructors, live interaction,
+              recorded sessions, and personalized mentoring — all in one place.
+            </p>
+          </motion.div>
+
+          {/* RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative"
           >
-            Learn anytime, anywhere with industry experts and personalized
-            mentoring.
-          </motion.p>
+            <div className="absolute inset-0 rounded-3xl bg-primary/10 translate-x-4 translate-y-4 -z-10" />
+            <img
+              src="https://images.unsplash.com/photo-1584697964403-b5c1e45b1b67?auto=format&fit=crop&w=1200&q=80"
+              alt="Online Classes"
+              className="rounded-3xl shadow-xl"
+            />
+          </motion.div>
         </div>
-      </div>
+      </section>
 
-      {/* CONTENT */}
-      <div className="container mx-auto py-20 px-4">
-        <div className="grid md:grid-cols-3 gap-8">
-          {classes.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative p-8 rounded-2xl border bg-background hover:shadow-xl transition-all duration-300"
-            >
-              <div className="h-14 w-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition">
-                <c.icon className="h-7 w-7" />
-              </div>
+      {/* ================= FEATURES ================= */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.12 }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10"
+          >
+            {classes.map((c, i) => (
+              <motion.div
+                key={c.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                whileHover={{ y: -8 }}
+                className="group relative p-8 rounded-3xl border bg-white shadow-sm hover:shadow-xl transition-all"
+              >
+                {/* ICON */}
+                <div className="h-14 w-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition">
+                  <c.icon className="h-7 w-7" />
+                </div>
 
-              <h3 className="text-lg font-semibold mb-2">
-                {c.title}
-              </h3>
+                {/* TEXT */}
+                <h3 className="text-xl font-semibold tracking-tight mb-3 text-gray-900">
+                  {c.title}
+                </h3>
 
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {c.desc}
-              </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {c.desc}
+                </p>
 
-              {/* Hover Glow */}
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-primary/0 group-hover:ring-primary/20 transition" />
-            </motion.div>
-          ))}
+                {/* HOVER RING */}
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-primary/0 group-hover:ring-primary/20 transition" />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

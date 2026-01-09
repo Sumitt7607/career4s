@@ -8,6 +8,9 @@ import HeroSectioncoldis from "@/components/HeroSectioncoldis";
 import AboutSection from "@/components/AboutSectioncoldis";
 import CTASection from "@/components/CTASectioncoldis";
 import { Link, NavLink } from "react-router-dom";
+import MobileNavbar from "@/components/MobileNavbar";
+import WhatsApp from "@/components/WhatsApp";
+import Career4SLogo from "@/components/Career4SLogo";
 /* ================= TYPES ================= */
 
 interface College {
@@ -25,18 +28,18 @@ interface CollegeMap {
 /* ================= NAVBAR ================= */
 const Navbar = () => {
   const navItems = [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Universities", path: "/universities" },
-    { label: "Gallery", path: "/gallery" },
-    { label: "Contact", path: "/contact" },
+    { label: "Courses", path: "/courses-section" },
+    { label: "Admission Process", path: "/admission-process" },
+    //  { label: "", path: "/universities" },
+    { label: "Programs", path: "/programs-section" },
+    { label: "why distance", path: "/why-distance-education" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="text-xl font-extrabold text-orange-600">
-          Career<span className="text-gray-800">4S</span>
+          <Career4SLogo />
         </Link>
 
         <div className="hidden md:flex gap-8 font-medium">
@@ -53,7 +56,7 @@ const Navbar = () => {
               {item.label}
             </NavLink>
           ))}
-        </div>
+        </div> 
 
         <Link
           to="/apply"
@@ -166,6 +169,29 @@ const collegesByDomain: CollegeMap = {
         "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
     },
   ],
+
+
+
+  PostGraduation: [
+    {
+      name: "NMIMS Global",
+      location: "Mumbai",
+      courses: ["MBA", "BBA"],
+      image:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    },
+    {
+      name: "Symbiosis Distance Learning",
+      location: "Pune",
+      courses: ["MBA", "PGDM"],
+      image:
+        "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
+    },
+  ],
+
+
+
+
   medical: [
     {
       name: "IGNOU",
@@ -252,6 +278,8 @@ const CollegeListDist = () => {
   if (!colleges) {
     return (
       <>
+
+
         <div className="pt-32 text-center">
           <h2 className="text-2xl font-semibold">
             No colleges found for this domain
@@ -267,6 +295,8 @@ const CollegeListDist = () => {
   return (
     <>
       <Navbar />
+      <MobileNavbar />
+      <WhatsApp />
         <HeroSectioncoldis />   
       <section className="pt-32 pb-20 bg-muted/30">
         <div className="container">

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { Footer } from "@/components/Footer";
-import Navbar from "@/components/ui/NavbarOnline";
+
 import Career4SLogo from "@/components/Career4SLogo";
 
 /* ================= ANIMATED SECTION ================= */
@@ -81,56 +81,59 @@ const domains = [
   },
 ];
 
-/* ================= NAVBAR ================= */
-// const Navbar = () => {
-//   const navItems = [
-//     { label: "Home", path: "/" },
-//     { label: "About", path: "/about" },
-//     { label: "Universities", path: "/universities" },
-//     { label: "Gallery", path: "/gallery" },
-//     { label: "Contact", path: "/contact" },
-//   ];
+// /* ================= NAVBAR ================= */
 
-//   return (
-//     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
-//       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-//         <Link to="/" className="text-xl font-extrabold text-orange-600">
-//           Career<span className="text-gray-800">4S</span>
-//         </Link>
+const Navbar = () => {
+  const navItems = [
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Universities", path: "/universities" },
+    { label: "Gallery", path: "/gallery" },
+    { label: "Contact", path: "/contact" },
+  ];
 
-//         <div className="hidden md:flex gap-8 font-medium">
-//           {navItems.map((item) => (
-//             <NavLink
-//               key={item.label}
-//               to={item.path}
-//               className={({ isActive }) =>
-//                 isActive
-//                   ? "text-orange-600 border-b-2 border-orange-600 pb-1"
-//                   : "text-gray-700 hover:text-orange-600 transition"
-//               }
-//             >
-//               {item.label}
-//             </NavLink>
-//           ))}
-//         </div>
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <Link to="/" className="text-xl font-extrabold text-orange-600">
+          <Career4SLogo />
+             </Link>
+{/* 
+        <div className="hidden md:flex gap-8 font-medium">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-orange-600 border-b-2 border-orange-600 pb-1"
+                  : "text-gray-700 hover:text-orange-600 transition"
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </div> */}
 
-//         <Link
-//           to="/apply"
-//           className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
-//         >
-//           Apply Now
-//         </Link>
-//       </div>
-//     </nav>
-//   );
-// };
+        <Link
+          to="/apply"
+          className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
+        >
+          Apply Now
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
+
 
 /* ================= MAIN PAGE ================= */
 const AdmissionOnline = () => {
   return (
     <>
-      {/* <Navbar /> */}
-      <Career4SLogo />
+      <Navbar />
+      {/* <Career4SLogo /> */}
 
       <main className="pt-16 min-h-screen bg-gray-50 overflow-hidden">
         {/* ================= HERO ================= */}

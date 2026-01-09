@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer";
 import { NavLink } from "react-router-dom";
+import Career4SLogo from "@/components/Career4SLogo";
+import MobileNavbar from "@/components/MobileNavbar";
 import {
   ArrowRight,
   BookOpen,
@@ -35,7 +37,7 @@ const domains = [
   },
   {
     name: "Post Graduation",
-    path: "/distance /post-graduation",
+    path: "/distance/PostGraduation",
     icon: BookOpen,
     description: "MA, MSc, MCom & PG Degrees",
   },
@@ -61,9 +63,9 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="text-xl font-extrabold text-orange-600">
-          Career<span className="text-gray-800">4S</span>
-        </Link>
-
+          <Career4SLogo />
+             </Link>
+{/* 
         <div className="hidden md:flex gap-8 font-medium">
           {navItems.map((item) => (
             <NavLink
@@ -78,7 +80,7 @@ const Navbar = () => {
               {item.label}
             </NavLink>
           ))}
-        </div>
+        </div> */}
 
         <Link
           to="/apply"
