@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Career4SLogo from "../Career4SLogo";
+
 import {
   BookOpen,
   Settings,
@@ -15,15 +16,15 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Courses", href: "/content", icon: <BookOpen className="h-5 w-5" /> },
-  { label: "Services", href: "/services", icon: <Settings className="h-5 w-5" /> },
+  { label: "Admission Process", href: "/online-admission", icon: <Settings className="h-5 w-5" /> },
   {
     label: "Online Classes",
     href: "/online-classes",
     icon: <Monitor className="h-5 w-5" />,
   },
   {
-    label: "University",
-    href: "/universities",
+    label: "Programs",
+    href: "/Programs",
     icon: <GraduationCap className="h-5 w-5" />,
   },
   {

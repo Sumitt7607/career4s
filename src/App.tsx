@@ -34,6 +34,8 @@ import ContentPage from "./pages/ContentPage";
 import CollegeListDist from "./pages/collegeListdist";
 import OnlineClassesPage from "./pages/OnlineClassesPage";
 import WhyOnlinePage from "./pages/WhyOnlinePage";
+import OnlineAdmission from "./components/OnlineAdmission";
+import Programs from "./components/programs";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -76,6 +78,8 @@ const App = () => (
           <Route path="/distance/:domain" element={<CollegeListDist />} />
           <Route path="/online-classes" element={<OnlineClassesPage />} />
           <Route path="/why-online" element={<WhyOnlinePage />} />
+          <Route path="/online-admission" element={<OnlineAdmission />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
