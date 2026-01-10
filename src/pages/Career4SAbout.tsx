@@ -1,9 +1,80 @@
 import { CheckCircle, PenTool, Plane, Microscope, Building2 } from "lucide-react";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 /* ===================== MAIN PAGE ===================== */
 export default function Career4SAbout() {
   const { domain } = useParams();
+const [form, setForm] = useState({
+  name: "",
+  email: "",
+  country: "",
+  phone: "",
+  state: "",
+  city: "",
+});
+
+const [loading, setLoading] = useState(false);
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) => {
+  setForm({ ...form, [e.target.name]: e.target.value });
+};
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!form.name || !form.email || !form.phone) {
+    alert("Please fill Name, Email and Phone");
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        access_key: "62630d11-6b8f-4743-8d0f-9c3a3158b735",
+
+        name: form.name,
+        email: form.email,
+        phone: `+91 ${form.phone}`,
+        country: form.country,
+        state: form.state,
+        city: form.city,
+
+        source: "Career4S About Page",
+        domain: domain || "medical",
+      }),
+    });
+
+    const data = await res.json();
+    if (!data.success) throw new Error();
+
+    alert("Thank you! Our team will contact you within 24 hours.");
+
+    setForm({
+      name: "",
+      email: "",
+      country: "",
+      phone: "",
+      state: "",
+      city: "",
+    });
+  } catch {
+    alert("Submission failed. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+
+
+
 
   return (
     <div className="bg-white">
@@ -71,10 +142,31 @@ export default function Career4SAbout() {
               contact you within the next 24 hours.
             </p>
 
-            <form className="space-y-5">
-              <input className="input" placeholder="Name *" />
-              <input className="input" placeholder="E-mail *" />
-              <select className="input">
+           <form onSubmit={handleSubmit} className="space-y-5">
+<input
+  name="name"
+  value={form.name}
+  onChange={handleChange}
+  className="input"
+  placeholder="Name *"
+/>
+
+<input
+  name="email"
+  type="email"
+  value={form.email}
+  onChange={handleChange}
+  className="input"
+  placeholder="E-mail *"
+/>
+
+<select
+  name="country"
+  value={form.country}
+  onChange={handleChange}
+  className="input"
+>
+
                 <option>Select Your Country</option>
                 <option>India</option>
                 <option>USA</option>
@@ -85,20 +177,41 @@ export default function Career4SAbout() {
 
               <div className="flex gap-3">
                 <input value="+91" readOnly className="w-20 input bg-gray-100" />
-                <input className="flex-1 input" placeholder="Phone Number" />
+             <input
+  name="phone"
+  value={form.phone}
+  onChange={handleChange}
+  className="flex-1 input"
+  placeholder="Phone Number"
+/>
+
               </div>
 
-              <select className="input">
-                <option>Select Your State</option>
-              </select>
+      <input
+  name="state"
+  value={form.state}
+  onChange={handleChange}
+  className="input"
+  placeholder="State"
+/>
 
-              <select className="input">
-                <option>Select Your City</option>
-              </select>
+<input
+  name="city"
+  value={form.city}
+  onChange={handleChange}
+  className="input"
+  placeholder="City"
+/>
 
-              <button className="w-full bg-orange-500 hover:bg-orange-600 transition text-white font-semibold py-3 rounded-lg">
-                SUBMIT NOW
-              </button>
+
+           <button
+  type="submit"
+  disabled={loading}
+  className="w-full bg-orange-500 hover:bg-orange-600 transition text-white font-semibold py-3 rounded-lg"
+>
+  {loading ? "Submitting..." : "SUBMIT NOW"}
+</button>
+
             </form>
           </div>
 

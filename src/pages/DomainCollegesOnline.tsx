@@ -5,6 +5,8 @@ import { HeroSection } from "./Herosection";
 import { useEffect, useRef, useState } from "react";
 import { AboutSectiononline } from "./AboutSectiononline";
 import { WhyChooseUsSection } from "./WhyChooseUsSection";
+import { Button } from "@/components/ui/button";
+
 import { AdmissionsSectionProcess } from "./AdmissionsSectionProcess";
 import WhatsApp from "@/components/WhatsApp";
 /* ================= COLLEGE DATA ================= */
@@ -222,14 +224,17 @@ const DomainColleges = () => {
 
                     {/* ACTIONS */}
                     <div className="flex items-center justify-between">
-                      <Link
-                        to="/apply"
-                        className="inline-flex items-center gap-2 text-sm font-medium
-                                   bg-orange-500 text-white px-4 py-2 rounded-full
-                                   hover:bg-orange-600 transition"
-                      >
-                        Apply Now <GraduationCap className="w-4 h-4" />
-                      </Link>
+<Button
+  asChild
+  size="sm"
+  className="bg-orange-500 hover:bg-orange-600 text-white rounded-full"
+>
+  <Link to="/contact">
+    Apply Now
+    <GraduationCap className="w-4 h-4 ml-1" />
+  </Link>
+</Button>
+
 
                       <button
                         className="inline-flex items-center gap-1 text-orange-500

@@ -59,7 +59,7 @@ const Navbar = () => {
         </div> 
 
         <Link
-          to="/apply"
+          to="/contact"
           className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
         >
           Apply Now

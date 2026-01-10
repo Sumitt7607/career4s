@@ -143,7 +143,7 @@ export default function UniversityInsightsSection({ country }: Props) {
   const heroImage =
     COUNTRY_IMAGES[country.toLowerCase()] || COUNTRY_IMAGES.default;
 
-  const whatsappUrl = `https://wa.me/919999999999?text=Hi%20Career4S,%20I%20want%20guidance%20for%20studying%20in%20${country}`;
+  const whatsappUrl = `https://wa.me/919910992965text=Hi%20Career4S,%20I%20want%20guidance%20for%20studying%20in%20${country}`;
 
   const programs = [
     { icon: Code, title: "Computer Science", growth: "+35%" },
@@ -220,12 +220,12 @@ export default function UniversityInsightsSection({ country }: Props) {
               Universities, costs, careers & visa guidance — all in one place.
             </p>
             <div className="flex gap-4">
-              <Button className="glow-sm">
+              {/* <Button className="glow-sm">
                 Free Consultation <ChevronRight className="ml-2 w-4 h-4" />
               </Button>
               <Button variant="outline" className="glass">
                 <Play className="w-4 h-4 mr-2" /> Watch Stories
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
         </div>

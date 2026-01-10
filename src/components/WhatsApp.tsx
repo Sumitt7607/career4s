@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const WhatsApp = () => {
-  const phoneNumber = "919999999999"; // 🔁 replace with your WhatsApp number
+  const phoneNumber = "919910992965"; // 🔁 replace with your WhatsApp number
   const message = encodeURIComponent(
     "Hi Career4S, I’m interested in admission counselling. Please guide me."
   );

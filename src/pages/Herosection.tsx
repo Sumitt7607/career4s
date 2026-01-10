@@ -6,6 +6,7 @@ import {
   Users,
   BookOpen,
   Trophy,
+  GraduationCap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, NavLink } from "react-router-dom";
@@ -160,9 +161,17 @@ export const HeroSection = () => {
                 transition={{ delay: 0.6 }}
                 className="flex flex-wrap gap-4"
               >
-                <Button className="bg-orange-500 text-white px-8 py-6 text-lg hover:bg-orange-600">
-                  Apply Now <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Button
+  asChild
+  size="sm"
+  className="bg-orange-500 hover:bg-orange-600 text-white rounded-full"
+>
+  <Link to="/contact">
+    Apply Now
+    <GraduationCap className="w-4 h-4 ml-1" />
+  </Link>
+</Button>
+
                 <Button
                   variant="outline"
                   className="bg-orange-500 text-white px-8 py-6 text-lg hover:bg-white/10"

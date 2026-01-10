@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Career4SLogo from "../Career4SLogo";
 
 import {
@@ -96,9 +96,9 @@ const Navbar = () => {
 
             {/* CTA + Mobile Button */}
             <div className="flex items-center gap-3">
-              <Button className="hidden sm:flex gradient-saffron text-white font-bold px-6">
+              <Link to="/contact" className="hidden sm:flex gradient-saffron text-white font-bold px-6">
                 Apply Now
-              </Button>
+              </Link>
 
               {/* Mobile Toggle */}
               <button

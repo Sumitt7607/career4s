@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star, Users, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 
 const HeroSectioncoldis = () => {
   return (
@@ -52,13 +54,16 @@ const HeroSectioncoldis = () => {
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg hover:scale-[1.03] transition-transform group"
-              >
-                Book Free Consultation
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+       <Button
+  asChild
+  size="lg"
+  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg hover:scale-[1.03] transition-transform group"
+>
+  <Link to="/contact">
+    Book Free Consultation
+    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+  </Link>
+</Button> 
 
               <Button
                 size="lg"

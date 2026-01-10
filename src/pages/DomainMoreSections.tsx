@@ -847,6 +847,8 @@ const StickyEnquiryForm = () => (
 
 /* ===================== POPUP ===================== */
 /* ===================== LEAD POPUP ===================== */
+
+
 const LeadPopup = () => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
@@ -869,15 +871,57 @@ const LeadPopup = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    if (!form.name || !form.phone) {
-      alert("Please fill required details");
-      return;
+const handleSubmit = async () => {
+  if (!form.name || !form.phone) {
+    alert("Please fill required details");
+    return;
+  }
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        access_key:"62630d11-6b8f-4743-8d0f-9c3a3158b735",
+
+        // Lead data
+        name: form.name,
+        phone: form.phone,
+        course: form.course,
+        interest: form.interest,
+
+        // Metadata (VERY useful for CRM)
+        source: "Popup Lead Form",
+        page: window.location.pathname,
+
+        // Optional webhook for CRM
+        // webhook: "https://hooks.zapier.com/hooks/catch/xxxxx/yyyyy",
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
     }
 
-    console.log("Lead Data:", form); // later send to backend
+    alert("Thank you! Our expert will contact you shortly.");
     setShow(false);
-  };
+
+    // Reset form
+    setForm({
+      name: "",
+      phone: "",
+      course: "",
+      interest: "",
+    });
+  } catch (error) {
+    alert("Submission failed. Please try again.");
+  }
+};
+
 
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4">

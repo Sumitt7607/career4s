@@ -55,17 +55,35 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     }));
   };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "62630d11-6b8f-4743-8d0f-9c3a3158b735",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      }),
+    });
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
 
     toast({
       title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
+      description: "Our team will contact you within 24 hours.",
     });
 
     setFormData({
@@ -75,8 +93,17 @@ const Contact = () => {
       subject: "",
       message: "",
     });
+  } catch (error: any) {
+    toast({
+      title: "Submission Failed",
+      description: error.message || "Something went wrong",
+      variant: "destructive",
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -273,9 +300,19 @@ const Contact = () => {
                     <p className="opacity-90 mb-4">
                       Check out our frequently asked questions or book a free consultation call.
                     </p>
-                    <Button variant="secondary" className="w-full">
-                      Book Free Call
-                    </Button>
+                    <Button
+  variant="secondary"
+  className="w-full"
+  onClick={() =>
+    window.open(
+      "https://wa.me/917607696315?text=Hi%20I%20want%20to%20book%20a%20free%20consultation",
+      "_blank"
+    )
+  }
+>
+  Book Free Call
+</Button>
+
                   </CardContent>
                 </Card>
               </div>
@@ -290,3 +327,11 @@ const Contact = () => {
 };
 
 export default Contact;
+// 62630d11-6b8f-4743-8d0f-9c3a3158b735
+
+
+
+
+
+// https://web3forms.com/   
+// sir jo mail  denge wo mail se  

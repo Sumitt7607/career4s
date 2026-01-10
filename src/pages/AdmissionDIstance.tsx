@@ -83,7 +83,7 @@ const Navbar = () => {
         </div> */}
 
         <Link
-          to="/apply"
+          to="/contact"
           className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow"
         >
           Apply Now
@@ -185,10 +185,10 @@ const AdmissionDistance = () => {
       </div>
     </motion.div>
 
-    <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-base">
+    {/* <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-base">
       Apply for Admission
       <ArrowRight className="ml-2 h-4 w-4" />
-    </Button>
+    </Button> */}
   </div>
 </section>
 

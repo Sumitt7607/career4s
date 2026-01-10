@@ -209,9 +209,9 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP CTA */}
-        <Button className="hidden md:block bg-primary text-primary-foreground hover:bg-primary/90">
+        <Link to='/contact' className="hidden md:block bg-primary text-primary-foreground hover:bg-primary/90">
           Free Consultation
-        </Button>
+        </Link >
 
         {/* MOBILE TOGGLE */}
         <button
@@ -245,9 +245,9 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-            <Button className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90">
+            <Link to='/contact' className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90">
               Free Consultation
-            </Button>
+            </Link>
           </div>
         </div>
       )}
