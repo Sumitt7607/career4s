@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+
+
 import { 
   Calculator, TrendingUp, Building2, BarChart3, 
   ArrowRight, Search, ChevronDown, Sparkles
@@ -57,6 +59,55 @@ export function ToolsSection() {
   const [rank, setRank] = useState<number[]>([100]);
   const [showResults, setShowResults] = useState(false);
 
+// ❌ DELETE FROM HERE
+const [rankExam, setRankExam] = useState("jee-main");
+const [expectedScore, setExpectedScore] = useState("");
+const [expectedPercentile, setExpectedPercentile] = useState("");
+const [rankResult, setRankResult] = useState<null | {
+  best: number;
+  avg: number;
+  safe: number;
+}>(null);
+
+
+const calculateRank = () => {
+  let maxScore = 300;
+  let totalCandidates = 1000000;
+
+  if (rankExam === "neet") {
+    maxScore = 720;
+    totalCandidates = 2000000;
+  }
+  if (rankExam === "cat") {
+    maxScore = 198;
+    totalCandidates = 300000;
+  }
+
+  let baseRank = totalCandidates;
+
+  if (expectedScore) {
+    const score = Number(expectedScore);
+    baseRank = Math.max(
+      1,
+      Math.round(totalCandidates * (1 - score / maxScore))
+    );
+  } else if (expectedPercentile) {
+    const percentile = Number(expectedPercentile);
+    baseRank = Math.round(
+      totalCandidates * (1 - percentile / 100)
+    );
+  }
+
+  setRankResult({
+    best: Math.round(baseRank * 0.8),
+    avg: baseRank,
+    safe: Math.round(baseRank * 1.25),
+  });
+};
+
+
+
+
   return (
     <>
     
@@ -107,159 +158,8 @@ export function ToolsSection() {
           ))}
         </div>
 
-        {/* College Predictor Tool */}
-        {selectedTool === "predictor" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-card rounded-2xl border border-border shadow-xl overflow-hidden"
-          >
-            <div className="p-6 md:p-8 bg-gradient-to-r from-blue-500 to-indigo-500">
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="w-8 h-8 text-white" />
-                <h3 className="text-2xl font-bold text-white">College Predictor</h3>
-              </div>
-              <p className="text-white/80">Enter your rank and preferences to find matching colleges</p>
-            </div>
-
-            <div className="p-6 md:p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Exam</label>
-                  <Select defaultValue="jee-main">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select exam" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="jee-main">JEE Main</SelectItem>
-                      <SelectItem value="jee-adv">JEE Advanced</SelectItem>
-                      <SelectItem value="neet">NEET</SelectItem>
-                      <SelectItem value="cuet">CUET</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Category</label>
-                  <Select defaultValue="general">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="general">General</SelectItem>
-                      <SelectItem value="obc">OBC-NCL</SelectItem>
-                      <SelectItem value="sc">SC</SelectItem>
-                      <SelectItem value="st">ST</SelectItem>
-                      <SelectItem value="ews">EWS</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Branch Preference</label>
-                  <Select defaultValue="cs">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select branch" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="cs">Computer Science</SelectItem>
-                      <SelectItem value="ee">Electrical Engineering</SelectItem>
-                      <SelectItem value="me">Mechanical Engineering</SelectItem>
-                      <SelectItem value="ce">Civil Engineering</SelectItem>
-                      <SelectItem value="ec">Electronics & Comm.</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Home State</label>
-                  <Select defaultValue="delhi">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select state" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="delhi">Delhi</SelectItem>
-                      <SelectItem value="maharashtra">Maharashtra</SelectItem>
-                      <SelectItem value="karnataka">Karnataka</SelectItem>
-                      <SelectItem value="tamil-nadu">Tamil Nadu</SelectItem>
-                      <SelectItem value="up">Uttar Pradesh</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <div className="flex items-center justify-between mb-4">
-                  <label className="text-sm font-medium">Your Expected Rank</label>
-                  <span className="text-2xl font-bold text-primary">{rank[0].toLocaleString()}</span>
-                </div>
-                <Slider
-                  value={rank}
-                  onValueChange={setRank}
-                  min={1}
-                  max={100000}
-                  step={1}
-                  className="py-4"
-                />
-                <div className="flex justify-between text-sm text-muted-foreground">
-                  <span>1</span>
-                  <span>50,000</span>
-                  <span>1,00,000</span>
-                </div>
-              </div>
-
-              <Button 
-                className="w-full gradient-saffron text-primary-foreground py-6 text-lg"
-                onClick={() => setShowResults(true)}
-              >
-                <Search className="w-5 h-5 mr-2" /> Predict Colleges
-              </Button>
-
-              {/* Results */}
-              {showResults && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-8 pt-8 border-t border-border"
-                >
-                  <h4 className="text-xl font-bold mb-6">Predicted Colleges for Rank {rank[0].toLocaleString()}</h4>
-                  <div className="space-y-4">
-                    {sampleColleges.map((college, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.1 }}
-                        className="flex items-center justify-between p-4 bg-secondary/50 rounded-xl hover:bg-secondary transition-colors"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                            college.chance >= 90 ? 'bg-green-100 text-green-india' :
-                            college.chance >= 70 ? 'bg-yellow-100 text-yellow-600' :
-                            'bg-red-100 text-red-500'
-                          }`}>
-                            <span className="font-bold">{college.chance}%</span>
-                          </div>
-                          <div>
-                            <h5 className="font-semibold">{college.name}</h5>
-                            <p className="text-sm text-muted-foreground">{college.branch}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm text-muted-foreground">Closing Rank</p>
-                          <p className="font-bold text-primary">{college.closingRank.toLocaleString()}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <Button variant="outline" className="w-full mt-6">
-                    View All 50+ Matching Colleges <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </motion.div>
-              )}
-            </div>
-          </motion.div>
-        )}
+      
+  
 
         {/* Rank Calculator Tool */}
         {selectedTool === "rank" && (
@@ -278,49 +178,79 @@ export function ToolsSection() {
 
             <div className="p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Exam</label>
-                  <Select defaultValue="jee-main">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select exam" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="jee-main">JEE Main</SelectItem>
-                      <SelectItem value="neet">NEET</SelectItem>
-                      <SelectItem value="cat">CAT</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+  <div className="space-y-2">
+  <label className="text-sm font-medium">Exam</label>
+
+  <Select value={rankExam} onValueChange={setRankExam}>
+    <SelectTrigger>
+      <SelectValue placeholder="Select exam" />
+    </SelectTrigger>
+
+    <SelectContent>
+      <SelectItem value="jee-main">JEE Main</SelectItem>
+      <SelectItem value="neet">NEET</SelectItem>
+      <SelectItem value="cat">CAT</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Expected Score</label>
-                  <Input type="number" placeholder="Enter your score (0-300)" />
+                  <Input
+  type="number"
+  value={expectedScore}
+  onChange={(e) => setExpectedScore(e.target.value)}
+  placeholder="Enter your score"
+/>
+
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Expected Percentile</label>
-                  <Input type="number" placeholder="Enter percentile (0-100)" />
+                 <Input
+  type="number"
+  value={expectedPercentile}
+  onChange={(e) => setExpectedPercentile(e.target.value)}
+  placeholder="Enter percentile (0-100)"
+/>
+
                 </div>
               </div>
 
-              <Button className="w-full gradient-saffron text-primary-foreground py-6 text-lg">
-                <Calculator className="w-5 h-5 mr-2" /> Calculate Rank
-              </Button>
+    <Button
+  className="w-full gradient-saffron text-primary-foreground py-6 text-lg"
+  onClick={calculateRank}
+>
+  <Calculator className="w-5 h-5 mr-2" /> Calculate Rank
+</Button>
+{rankResult && (
+  <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="text-center p-6 bg-secondary/50 rounded-xl">
+      <p className="text-sm text-muted-foreground mb-2">Expected Rank (Best)</p>
+      <p className="text-3xl font-bold text-green-india">
+        {rankResult.best.toLocaleString()}
+      </p>
+    </div>
 
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center p-6 bg-secondary/50 rounded-xl">
-                  <p className="text-sm text-muted-foreground mb-2">Expected Rank (Best)</p>
-                  <p className="text-3xl font-bold text-green-india">2,500</p>
-                </div>
-                <div className="text-center p-6 bg-secondary/50 rounded-xl">
-                  <p className="text-sm text-muted-foreground mb-2">Expected Rank (Avg)</p>
-                  <p className="text-3xl font-bold text-primary">3,200</p>
-                </div>
-                <div className="text-center p-6 bg-secondary/50 rounded-xl">
-                  <p className="text-sm text-muted-foreground mb-2">Expected Rank (Safe)</p>
-                  <p className="text-3xl font-bold text-orange-500">4,000</p>
-                </div>
-              </div>
+    <div className="text-center p-6 bg-secondary/50 rounded-xl">
+      <p className="text-sm text-muted-foreground mb-2">Expected Rank (Avg)</p>
+      <p className="text-3xl font-bold text-primary">
+        {rankResult.avg.toLocaleString()}
+      </p>
+    </div>
+
+    <div className="text-center p-6 bg-secondary/50 rounded-xl">
+      <p className="text-sm text-muted-foreground mb-2">Expected Rank (Safe)</p>
+      <p className="text-3xl font-bold text-orange-500">
+        {rankResult.safe.toLocaleString()}
+      </p>
+    </div>
+  </div>
+)}
+
+
+
             </div>
           </motion.div>
         )}

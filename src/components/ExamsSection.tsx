@@ -290,7 +290,64 @@ export function ExamsSection() {
   const [selectedExam, setSelectedExam] = useState<string | null>("jee");
   const [expandedExam, setExpandedExam] = useState<string | null>(null);
 
+const [marks, setMarks] = useState("");
+  const [rankResult, setRankResult] = useState<null | {
+    best: number;
+    avg: number;
+    safe: number;
+  }>(null);
+
+
   const activeExam = exams.find(e => e.id === selectedExam);
+  const calculatePercentile = (rank: number, totalCandidates: number) => {
+  if (!totalCandidates || !rank) return "0%";
+  return ((1 - rank / totalCandidates) * 100).toFixed(2) + "%";
+};
+
+ const calculateRank = () => {
+    if (!activeExam || marks === "") return;
+
+    const score = Number(marks);
+    if (isNaN(score)) return;
+
+    let maxScore = 300;
+    let totalCandidates = 1000000;
+
+    switch (activeExam.id) {
+      case "neet":
+        maxScore = 720;
+        totalCandidates = 2000000;
+        break;
+      case "cat":
+        maxScore = 198;
+        totalCandidates = 300000;
+        break;
+      case "gate":
+        maxScore = 100;
+        totalCandidates = 900000;
+        break;
+      case "clat":
+        maxScore = 120;
+        totalCandidates = 70000;
+        break;
+      case "cuet":
+        maxScore = 800;
+        totalCandidates = 1500000;
+        break;
+    }
+
+    const baseRank = Math.max(
+      1,
+      Math.round(totalCandidates * (1 - score / maxScore))
+    );
+
+    setRankResult({
+      best: Math.round(baseRank * 0.8),
+      avg: baseRank,
+      safe: Math.round(baseRank * 1.25),
+    });
+  };
+
 
   return (
     <>
@@ -529,6 +586,12 @@ export function ExamsSection() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+{/* Rank Calculator */}
+
+
+
+
+
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3 mt-8 pt-6 border-t border-border">
