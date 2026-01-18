@@ -1,32 +1,31 @@
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 
 const WhatsApp = () => {
-  const phoneNumber = "919910992965"; // 🔁 replace with your WhatsApp number
+  const phoneNumber = "919910992965";
   const message = encodeURIComponent(
     "Hi Career4S, I’m interested in admission counselling. Please guide me."
   );
 
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
-
   return (
     <motion.a
-      href={whatsappLink}
+      href={`https://wa.me/${phoneNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      whileHover={{ scale: 1.1 }}
+      className="fixed bottom-6 right-6 z-50"
+      animate={{ y: [0, -12, 0] }}   // jumping effect
+      transition={{
+        duration: 1,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full 
-                 bg-gradient-to-br from-green-500 to-green-600 shadow-2xl"
     >
-      {/* Ping animation */}
-      <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75 animate-ping" />
-
-      {/* Icon */}
-      <MessageCircle className="relative w-8 h-8 text-white" />
+      <img
+        src="/whtasppicon.jpg"
+        alt="WhatsApp"
+        className="w-20 h-20 object-contain"
+      />
     </motion.a>
   );
 };

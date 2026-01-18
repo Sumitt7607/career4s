@@ -129,10 +129,10 @@ const Index = () => {
   {/* Student Images */}
   <div className="flex -space-x-3">
     {[
-       "https://i.pravatar.cc/150?img=12",
-      "https://i.pravatar.cc/150?img=47",
-      "https://i.pravatar.cc/150?img=56",
-      "https://i.pravatar.cc/150?img=64",
+       "/1stboy.jpg",
+      "/2ndboy.jpg",
+      "public/3rd student.avif",
+      "public/4thboy.avif",
     ].map((img, index) => (
       <img
         key={index}
