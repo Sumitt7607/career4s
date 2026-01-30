@@ -35,11 +35,13 @@ const DATA = {
     ireland: ["Trinity College Dublin (TCD)","University College Dublin (UCD)","University College Cork (UCC)","National University of Ireland, Galway (NUIG)","University of Limerick (UL)","Dublin City University (DCU)","Maynooth University","Royal College of Surgeons in Ireland (RCSI)"]
   },
   medical: {
-    uk: ["King’s College London", "University of Edinburgh"],
-    philippines: ["AMA School of Medicine"],
-    russia: ["Moscow State Medical University"],
-    georgia: ["Tbilisi State Medical University"],
-    kazakhstan: ["Kazakh National Medical University"],
+    china:["Peking University Health Science Center (PUHSC) – Beijing","Fudan University – Shanghai Medical College – Shanghai","Shanghai Jiao Tong University School of Medicine – Shanghai","Zhejiang University School of Medicine – Hangzhou","China Medical University (CMU) – Liaoning","Nanjing Medical University (NMU) – Nanjing"],
+    // uk: ["King’s College London", "University of Edinburgh"],
+    // philippines: ["AMA School of Medicine"],
+    russia: ["Moscow State Medical University","Kazan State Medical University – Kazan","Russian National Research Medical University (Pirogov NRMU) – Moscow","First St. Petersburg State Medical University (Pavlov University) – St. Petersburg","Siberian State Medical University – Tomsk","Voronezh State Medical University – Voronezh","Kursk State Medical University – Kursk"],
+    georgia: ["Tbilisi State Medical University (TSMU) – Tbilisi","Ivane Javakhishvili Tbilisi State University – Tbilisi","David Tvildiani Medical University (DTMU) – Tbilisi","Georgian National University (SEU) – Tbilisi","Batumi Shota Rustaveli State University – Batumi","European University – Tbilisi","Geomedi Medical University – Tbilisi"],
+    kazakhstan: ["Asfendiyarov Kazakh National Medical University – Almaty","Kazakh National Medical University (KazNMU) – Almaty","Astana Medical University – Nur-Sultan (Astana)","Semey State Medical University – Semey","Karaganda State Medical University – Karaganda","South Kazakhstan Medical Academy – Shymkent"],
+    Nepal:["Institute of Medicine (IOM), Maharajgunj, Kathmandu","B.P. Koirala Institute of Health Sciences (BPKIHS), Dharan","Kathmandu Medical College (KMC)","Manipal College of Medical Sciences (MCOMS), Pokhara","Kathmandu University School of Medical Sciences (KUSMS), Dhulikhel","KIST Medical College, Lalitpur"]
   },
   management: {
     usa: ["Stanford Graduate School of Business — Stanford University", "The Wharton School, University of Pennsylvania (MBA)","Harvard Business School — Harvard University","MIT Sloan School of Management — Massachusetts Institute of Technology","Columbia Business School — Columbia University","Chicago Booth School of Business — University of Chicago","Ross School of Business — University of Michigan",],
@@ -52,13 +54,14 @@ const DATA = {
     canada: ["University of Toronto", "McGill University","University of British Columbia (UBC)","McMaster University","University of Alberta","University of Waterloo","Western University","Queen’s University","University of Calgary","University of Ottawa"],
     germany: ["Technical University of Munich (TUM)","Ludwig-Maximilians University Munich (LMU)","Heidelberg University","RWTH Aachen University","Free University of Berlin (Freie Universität Berlin)","Humboldt University of Berlin","University of Stuttgart","Karlsruhe Institute of Technology (KIT)","University of Bonn","Technical University of Berlin"],
     australia: ["University of Melbourne","Australian National University (ANU)","University of Sydney","University of New South Wales (UNSW)","Monash University","University of Queensland (UQ)"],
-    netherlands: ["University of Amsterdam"],
-    sweden: ["Lund University"],
+    netherlands: ["University of Amsterdam","Delft University of Technology (TU Delft)","Erasmus University Rotterdam","Monash University","Leiden University"],
+
   },
 };
 
 /* ===================== FLAG IMAGES ===================== */
 const FLAG_IMAGES: Record<string, string> = {
+  china:"https://cdn3.iconfinder.com/data/icons/flags-of-countries-3/128/China-1024.png",
   canada: "https://flagcdn.com/w80/ca.png",
   uk: "https://flagcdn.com/w80/gb.png",
   usa: "https://flagcdn.com/w80/us.png",
@@ -73,6 +76,7 @@ const FLAG_IMAGES: Record<string, string> = {
   singapore: "https://flagcdn.com/w80/sg.png",
   netherlands: "https://flagcdn.com/w80/nl.png",
   sweden: "https://flagcdn.com/w80/se.png",
+  Nepal:"https://png.pngtree.com/png-clipart/20230621/original/pngtree-nepal-flag-png-image_9194173.png"
 };
 
 /* ===================== UNIVERSITY IMAGES ===================== */
@@ -171,7 +175,19 @@ const UNIVERSITY_IMAGES: Record<string, string> = {
 "University of Bonn":"/bonnn.webp",
 "Technical University of Berlin":"/tubee.webp",
 "University of Melbourne":"/mel.webp",
-
+"University of Sydney":"/Sydney.avif",
+"University of New South Wales (UNSW)":"/unswau.jpg",
+"University of Queensland (UQ)":"/uqland.webp",
+"University of Amsterdam":"/amestar.png",
+"Delft University of Technology (TU Delft)":"/tudel.webp",
+"Erasmus University Rotterdam":"/eras.jpg",
+"Leiden University":"/leiden.webp",
+"Peking University Health Science Center (PUHSC) – Beijing":"/puhsc.webp",
+"Fudan University – Shanghai Medical College – Shanghai":"/fudan.jpg",
+"Shanghai Jiao Tong University School of Medicine – Shanghai":"/shanghai.webp",
+"Zhejiang University School of Medicine – Hangzhou":"/zum.png",
+"China Medical University (CMU) – Liaoning":"/cmuuuuu.webp",
+"Nanjing Medical University (NMU) – Nanjing":"/nmuuu.webp"
 };
 
 /* ===================== NAVBAR ===================== */

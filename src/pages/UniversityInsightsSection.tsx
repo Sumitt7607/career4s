@@ -44,6 +44,7 @@ const COUNTRY_IMAGES: Record<string, string> = {
   ireland:"/ireland.webp",
   france:"https://media.istockphoto.com/id/508093315/photo/college-students-in-a-classroom.jpg?s=1024x1024&w=is&k=20&c=teodtFRDebunlf27QtGHwn1jrHAax97ne72c5XaQwg0=",
   germany: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
+  netherlands:"/netherlands.webp",
   default: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
 };
 

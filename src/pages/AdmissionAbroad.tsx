@@ -48,7 +48,7 @@ export default function AdmissionAbroad() {
             title="Medical Admissions"
             subtitle="Global Medical Pathways"
             description="Access international medical education with modern clinical exposure and globally accepted degrees."
-            image="https://images.unsplash.com/photo-1580281658629-1d5c9a5f97f5?auto=format&fit=crop&w=800&q=80"
+            image="/medical.webp"
             stats={["WHO Listed Colleges", "Clinical Exposure", "Global Practice"]}
             points={[
               "Eligibility & licensing guidance",
@@ -225,7 +225,7 @@ const MovingStrip = () => (
 /* ===================== DOMAIN CARD ===================== */
 const AbroadDomainCard = ({
   title,
-  subtitle,
+  
   description,
   image,
   stats,
@@ -254,7 +254,7 @@ const AbroadDomainCard = ({
     >
       <img src={image} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/40 flex items-end justify-center p-6">
-        <h3 className="text-white font-semibold text-center">{subtitle}</h3>
+        {/* <h3 className="text-white font-semibold text-center">{subtitle}</h3> */}
       </div>
     </div>
 
