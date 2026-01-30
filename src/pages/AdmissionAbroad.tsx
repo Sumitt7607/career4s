@@ -31,7 +31,7 @@ export default function AdmissionAbroad() {
             title="Engineering Admissions"
             subtitle="Study Engineering Abroad"
             description="Pursue globally recognised engineering programs with advanced infrastructure, research exposure and high employability."
-            image="https://images.unsplash.com/photo-1581091012184-5c7c1b38a1c1?auto=format&fit=crop&w=800&q=80"
+            image="/enginerring.jpg"
             stats={["1200+ Universities", "Top STEM Careers", "High ROI"]}
             points={[
               "Branch & country mapping",

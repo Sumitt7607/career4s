@@ -15,25 +15,25 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 98765 43210", "+91 98765 43211"],
-    action: "tel:+919876543210",
+    details: ["+91 9650831008"],
+    action: "tel:+919650831008",
   },
-  {
-    icon: Mail,
-    title: "Email",
-    details: ["info@career4s.com", "admissions@career4s.com"],
-    action: "mailto:info@career4s.com",
-  },
+  // {
+  //   icon: Mail,
+  //   title: "Email",
+  //   details: ["info@career4s.com", "admissions@career4s.com"],
+  //   action: "mailto:info@career4s.com",
+  // },
   {
     icon: MapPin,
     title: "Office",
-    details: ["123 Education Street", "Knowledge City, India - 400001"],
+    details: ["   Delhi Branch  Jasola apollo Dlf Tower A - office no-119", "   Faridabad Branch  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)"],
     action: "#map",
   },
   {
     icon: Clock,
     title: "Hours",
-    details: ["Mon - Sat: 9:00 AM - 7:00 PM", "Sunday: By Appointment"],
+    details: ["Mon - Sat: 10:00 AM - 6:00 PM", "Sunday: By Appointment"],
     action: null,
   },
 ];

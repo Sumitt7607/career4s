@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-
+const quickLinks = [
+  { label: "About Us", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Success Stories", path: "#" },
+  { label: "Blog", path: "#" },
+  { label: "Contact", path: "/contact" },
+];
 export const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
@@ -20,37 +26,37 @@ export const Footer = () => {
               Empowering students to achieve their academic and career dreams through expert guidance and personalized counseling.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.facebook.com/career4s/about/ " className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://x.com/Career4sdotcom?t=2M8_XpQURjNLOuZjqiAp2Q&s=09" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.linkedin.com/company/career4s-private-limited/" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/career4s?igsh=MTZvdXAxd2MybHlkaQ==" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {["About Us", "Services", "Success Stories", "Blog", "Contact"].map((link) => (
-                <li key={link}>
-                  <Link
-                    to={'#'}
-                    className="text-background/70 hover:text-primary transition-colors"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+   <div>
+  <h3 className="font-display font-semibold text-lg mb-6">Quick Links</h3>
+  <ul className="space-y-3">
+    {quickLinks.map((link) => (
+      <li key={link.path}>
+        <Link
+          to={link.path}
+          className="text-background/70 hover:text-primary transition-colors"
+        >
+          {link.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* Services */}
           <div>
@@ -73,20 +79,27 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-background/70">
-                  123 Education Street, Knowledge City, India - 400001
+                Delhi Branch  Jasola apollo Dlf Tower A - office no-119
+            
+
+                </span>
+                  <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <span className="text-background/70">
+                Faridabad Branch  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)
+                
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a href="tel:+919876543210" className="text-background/70 hover:text-primary transition-colors">
-                  +91 98765 43210
+                  +91 9650831008
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                {/* <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a href="mailto:info@career4s.com" className="text-background/70 hover:text-primary transition-colors">
                   info@career4s.com
-                </a>
+                </a> */}
               </li>
             </ul>
           </div>

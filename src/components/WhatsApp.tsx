@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const WhatsApp = () => {
-  const phoneNumber = "919910992965";
+  const phoneNumber = "919650831008";
   const message = encodeURIComponent(
     "Hi Career4S, I’m interested in admission counselling. Please guide me."
   );

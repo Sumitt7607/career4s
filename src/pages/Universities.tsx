@@ -17,9 +17,9 @@ export interface University {
   country: string;
   logo: string;
   ranking: number;
-  studentsCount: string;
-  acceptanceRate: string;
-  tuitionRange: string;
+  // studentsCount: string;
+  // acceptanceRate: string;
+  // tuitionRange: string;
   programs: string[];
   featured?: boolean;
 }
@@ -27,12 +27,12 @@ export interface University {
 /* ===================== DATA ===================== */
 const DATA = {
   engineering: {
-    canada: ["University of Toronto", "UBC", "McGill"],
-    uk: ["Oxford", "Cambridge", "Imperial College London"],
-    usa: ["MIT", "Stanford University", "Caltech"],
-    australia: ["University of Melbourne", "Monash University"],
-    germany: ["TU Munich", "RWTH Aachen"],
-    ireland: ["Trinity College Dublin"],
+    canada: ["University of Toronto", "University of Waterloo", "University of British Columbia (UBC)","McGill University","University of Alberta","University of Calgary"],
+    uk: ["University of Oxford", "University of Cambridge", "Imperial College London","University College London (UCL)","University of Manchester","University of Edinburgh","University of Sheffield","University of Bristol"],
+    usa: ["Massachusetts Institute of Technology (MIT)", "Stanford University", "University of California, Berkeley (UC Berkeley)","California Institute of Technology (Caltech)","Carnegie Mellon University","Georgia Institute of Technology (Georgia Tech)","University of Illinois at Urbana-Champaign (UIUC)","University of Michigan, Ann Arbor","Purdue University College of Engineering","University of Texas at Austin (UT Austin)","University of California, Los Angeles (UCLA)","University of Wisconsin–Madison"],
+    australia: ["University of New South Wales (UNSW Sydney)", "The University of Melbourne","The University of Sydney","Monash University","The University of Queensland (UQ)","Australian National University (ANU)","University of Technology Sydney (UTS)","University of Adelaide","RMIT University","Queensland University of Technology (QUT)"],
+    germany: ["Technical University of Munich (TUM)", "RWTH Aachen University","Karlsruhe Institute of Technology (KIT)","Technical University of Berlin (TU Berlin)","Dresden University of Technology (TU Dresden)","University of Stuttgart","Technical University of Darmstadt","Humboldt University of Berlin","Ludwig Maximilian University of Munich (LMU Munich)","Friedrich-Alexander University Erlangen-Nuremberg"],
+    ireland: ["Trinity College Dublin (TCD)","University College Dublin (UCD)","University College Cork (UCC)","National University of Ireland, Galway (NUIG)","University of Limerick (UL)","Dublin City University (DCU)","Maynooth University","Royal College of Surgeons in Ireland (RCSI)"]
   },
   medical: {
     uk: ["King’s College London", "University of Edinburgh"],
@@ -42,16 +42,16 @@ const DATA = {
     kazakhstan: ["Kazakh National Medical University"],
   },
   management: {
-    usa: ["Harvard Business School", "Stanford GSB"],
-    uk: ["London Business School", "Oxford Saïd"],
-    canada: ["Rotman School of Management"],
-    france: ["INSEAD"],
-    singapore: ["NUS Business School"],
+    usa: ["Stanford Graduate School of Business — Stanford University", "The Wharton School, University of Pennsylvania (MBA)","Harvard Business School — Harvard University","MIT Sloan School of Management — Massachusetts Institute of Technology","Columbia Business School — Columbia University","Chicago Booth School of Business — University of Chicago","Ross School of Business — University of Michigan",],
+    uk: ["London Business School", "University of Oxford – Saïd Business School","University of Cambridge – Judge Business School","London School of Economics (LSE)","Imperial College Business School","Warwick Business School","University of Manchester – Alliance Business School","University of Bath – School of Management","Durham University Business School"],
+    canada: ["Rotman School of Management","Ivey Business School","Desautels Faculty of Management","Smith School of Business","Schulich School of Business","Sauder School of Business"],
+    france: ["INSEAD","HEC Paris","ESSEC Business School","ESCP Business School","EDHEC Business School"],
+    // singapore: ["NUS Business School"],
   },
   "post-graduation": {
-    canada: ["University of Toronto", "UBC"],
-    germany: ["TU Munich"],
-    australia: ["University of Sydney"],
+    canada: ["University of Toronto", "McGill University","University of British Columbia (UBC)","McMaster University","University of Alberta","University of Waterloo","Western University","Queen’s University","University of Calgary","University of Ottawa"],
+    germany: ["Technical University of Munich (TUM)","Ludwig-Maximilians University Munich (LMU)","Heidelberg University","RWTH Aachen University","Free University of Berlin (Freie Universität Berlin)","Humboldt University of Berlin","University of Stuttgart","Karlsruhe Institute of Technology (KIT)","University of Bonn","Technical University of Berlin"],
+    australia: ["University of Melbourne","Australian National University (ANU)","University of Sydney","University of New South Wales (UNSW)","Monash University","University of Queensland (UQ)"],
     netherlands: ["University of Amsterdam"],
     sweden: ["Lund University"],
   },
@@ -78,19 +78,100 @@ const FLAG_IMAGES: Record<string, string> = {
 /* ===================== UNIVERSITY IMAGES ===================== */
 const UNIVERSITY_IMAGES: Record<string, string> = {
   "University of Toronto":
-    "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
-  UBC: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238",
-  McGill: "https://images.unsplash.com/photo-1588072432836-e10032774350",
-  Oxford: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba",
-  Cambridge: "https://images.unsplash.com/photo-1590012314607-cda9d9c5a47b",
-  "Imperial College London":
-    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-  MIT: "https://images.unsplash.com/photo-1562774053-701939374585",
-  "Stanford University":
-    "https://images.unsplash.com/photo-1580537659466-0a9bfa916a54",
-  Caltech: "https://images.unsplash.com/photo-1581091870627-3e0cdfbb679c",
-  default:
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    "/uot.webp",
+ "University of Waterloo": "/uw0.webp",
+  "University of British Columbia (UBC)": "/ubc.webp",
+"McGill University": "/mc.webp",
+  "University of Alberta": "/al.webp",
+  "University of Calgary":
+    "/cal.webp",
+    "University of Oxford":"/oxf.jpg",
+    "University of Cambridge":"/cam.jpg",
+    "Imperial College London":"/imp.jpg",
+    "University College London (UCL)":"/ucl.jpg",
+    "University of Manchester":"/uom.jpg",
+    "University of Edinburgh":"/uoe.jpg",
+    "University of Sheffield":"/uos.png",
+    "University of Bristol":"/uob.jpeg",
+"Massachusetts Institute of Technology (MIT)":"/mit.webp",
+"Stanford University":"/su.jpg",
+"University of California, Berkeley (UC Berkeley)":"/uoc.jpg",
+"California Institute of Technology (Caltech)":"/cit.jpg",
+"Carnegie Mellon University":"/cmu.webp",
+"Georgia Institute of Technology (Georgia Tech)":"/git.jpg",
+"University of Illinois at Urbana-Champaign (UIUC)":"/uiuc.jpg",
+"University of Michigan, Ann Arbor":"/uomuk.jpg",
+"Purdue University College of Engineering":"/pucoe.jpg",
+"University of Texas at Austin (UT Austin)":"/uota.webp",
+"University of California, Los Angeles (UCLA)":"/uocl.jpg",
+"University of Wisconsin–Madison":"/uow.webp",
+"University of New South Wales (UNSW Sydney)":"/unsw.jpg",
+"The University of Melbourne":"/uomau.webp",
+"The University of Sydney":"/uomsy.jpg",
+"Monash University":"/monash.jpg",
+"The University of Queensland (UQ)":"/uoq.webp",
+"Australian National University (ANU)":"/anu.jpg",
+"University of Technology Sydney (UTS)":"/uts.webp",
+"University of Adelaide":"/uoal.webp",
+"RMIT University":"/rmit.webp",
+"Queensland University of Technology (QUT)":"/qut.jpg",
+"Technical University of Munich (TUM)":"/munich.webp",
+"RWTH Aachen University":"/RWTH Aachen University.jpg",
+"Karlsruhe Institute of Technology (KIT)":"/kait.jpg",
+"Technical University of Berlin (TU Berlin)":"/tub.webp",
+"Dresden University of Technology (TU Dresden)":"/tud.webp",
+"University of Stuttgart":"/uostu.jpg",
+"Technical University of Darmstadt":"/uostg.webp",
+"Humboldt University of Berlin":"/uob.jpg",
+"Ludwig Maximilian University of Munich (LMU Munich)":"/lmuuu.jpg",
+"Friedrich-Alexander University Erlangen-Nuremberg":"/fau.jpg",
+"Trinity College Dublin (TCD)":"/tcd.webp",
+"University College Dublin (UCD)":"/uccd.webp",
+"University College Cork (UCC)":"/ucc.webp",
+"National University of Ireland, Galway (NUIG)":"/nuig.webp",
+"University of Limerick (UL)":"/uolm.webp",
+"Dublin City University (DCU)":"/dcu.jpg",
+"Maynooth University":"/myu.jpg",
+"Royal College of Surgeons in Ireland (RCSI)":"/rcsi.webp",
+"Stanford Graduate School of Business — Stanford University":"/su.jpg",
+"MIT Sloan School of Management — Massachusetts Institute of Technology" :"/mit.webp",
+"The Wharton School, University of Pennsylvania (MBA)":"/wharton.jpg",
+"Harvard Business School — Harvard University":"/hbs.jpg",
+"Columbia Business School — Columbia University":"/columbia univer.jpg",
+"Chicago Booth School of Business — University of Chicago":"/chicago.webp",
+"Ross School of Business — University of Michigan":"/mich.webp",
+"Yale School of Management — Yale University":"/yale.webp",
+"London Business School":"/Lbs.jpeg",
+"University of Oxford – Saïd Business School":"/said.webp",
+"University of Cambridge – Judge Business School":"/jbs.jpg",
+"London School of Economics (LSE)":"/lse.webp",
+"Imperial College Business School":"/icbs.webp",
+"Warwick Business School":"/wbs.avif",
+"University of Manchester – Alliance Business School":"/ambs.jpg",
+"University of Bath – School of Management":"/uobs.jpg",
+"Durham University Business School":"/dubs.jpg",
+"Rotman School of Management":"/rotman.webp",
+"Ivey Business School":"/ribs.webp",
+"Desautels Faculty of Management":"/fdfm.webp",
+"Smith School of Business":"/smbs.webp",
+"Schulich School of Business":"/ssbs.webp",
+"Sauder School of Business":"/sbs.webp",
+"INSEAD":"/insead.jpg",
+"HEC Paris":"/Hec.webp",
+"ESSEC Business School":"/essec.webp",
+"ESCP Business School":"/escp.jpg",
+"EDHEC Business School":"/edhec.jpeg",
+"McMaster University":"/mcmaster.jpg",
+"Western University":"/westu.webp",
+"Queen’s University":"/queenuniv.png",
+"University of Ottawa":"/ottatwa.webp",
+"Ludwig-Maximilians University Munich (LMU)":"/lmum.jpg", 
+"Heidelberg University":"/heidelberg.webp",
+"Free University of Berlin (Freie Universität Berlin)":"/fub.jpg",
+"University of Bonn":"/bonnn.webp",
+"Technical University of Berlin":"/tubee.webp",
+"University of Melbourne":"/mel.webp",
+
 };
 
 /* ===================== NAVBAR ===================== */
@@ -193,7 +274,9 @@ const UniversityCard = ({
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4, delay: index * 0.05 }}
     whileHover={{ y: -6 }}
-    className="group bg-white rounded-xl border border-orange-100 overflow-hidden cursor-pointer hover:border-orange-400 hover:shadow-xl transition-all"
+className="group bg-white rounded-xl border border-orange-100 overflow-hidden cursor-pointer hover:border-orange-400 hover:shadow-xl transition-all p-1"
+
+
   >
     {university.featured && (
       <div className="absolute top-2 left-2 z-10">
@@ -202,20 +285,26 @@ const UniversityCard = ({
     )}
 
     <div className="absolute top-2 right-2 z-10">
-      <Badge variant="secondary" className="text-xs font-bold">
-        #{university.ranking}
-      </Badge>
+      {/* <Badge variant="secondary" className="text-xs font-bold">
+        {university.ranking}
+      </Badge> */}
     </div>
 
-    <div className="h-28 bg-gradient-to-br from-orange-200 to-orange-50 relative">
-      <img
-        src={university.logo}
-        alt={university.name}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-16 h-16 rounded-full border-4 border-white shadow-md object-cover"
-      />
-    </div>
+<div className="h-32 bg-gradient-to-br from-orange-200 to-orange-50 relative">
 
-    <div className="pt-10 p-4">
+
+<img
+  src={university.logo}
+  alt={university.name}
+  className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 
+             w-40 h-40 rounded-full border-4 border-white shadow-2xl object-cover"
+/>
+
+
+    </div>
+<div className="pt-24 p-4">
+
+
       <h3 className="font-bold text-sm mb-1 group-hover:text-orange-600">
         {university.name}
       </h3>
@@ -226,24 +315,32 @@ const UniversityCard = ({
       </div>
 
       <div className="grid grid-cols-2 gap-2 text-xs mb-3">
-        <div className="flex items-center gap-1">
+        {/* <div className="flex items-center gap-1">
           <Users className="w-3 h-3 text-orange-500" />
           {university.studentsCount}
-        </div>
-        <div className="flex items-center gap-1">
+        </div> */}
+        {/* <div className="flex items-center gap-1">
           <Trophy className="w-3 h-3 text-orange-500" />
           {university.acceptanceRate}
-        </div>
+        </div> */}
       </div>
 
-      <div className="flex items-center gap-1 text-xs font-medium mb-3">
+      {/* <div className="flex items-center gap-1 text-xs font-medium mb-3">
         <DollarSign className="w-3 h-3 text-orange-500" />
         {university.tuitionRange}
-      </div>
+      </div> */}
 
-      <Button className="w-full h-8 text-xs bg-orange-500 hover:bg-orange-600 text-white">
-        View Details
-      </Button>
+  <Button
+  className="w-full h-8 text-xs bg-orange-500 hover:bg-orange-600 text-white"
+  onClick={() => {
+    const phoneNumber = "919650831008"; // replace with your WhatsApp number (country code + number)
+    const message = encodeURIComponent("Hi, I want to apply for admission.");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  }}
+>
+  Apply Now
+</Button>
+
     </div>
   </motion.div>
 );
@@ -376,11 +473,11 @@ export default function Universities() {
                         UNIVERSITY_IMAGES[name] ||
                         UNIVERSITY_IMAGES.default,
                       ranking: 10 + index,
-                      studentsCount: "20k+",
-                      acceptanceRate: "15%",
-                      tuitionRange: "$20k – $50k",
+                      // studentsCount: "20k+",
+                      // acceptanceRate: "25%",
+                      // tuitionRange: "$20k – $50k",
                       programs: ["Engineering", "Management", "Medical"],
-                      featured: index === 0,
+                    
                     }}
                   />
                 ))}

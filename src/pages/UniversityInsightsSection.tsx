@@ -37,10 +37,12 @@ interface Props {
 
 /* ===================== IMAGES ===================== */
 const COUNTRY_IMAGES: Record<string, string> = {
-  canada: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce",
+  canada: "/canda.webp",
   usa: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
-  uk: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-  australia: "https://images.unsplash.com/photo-1506973035872-a4f23ef87b4b",
+  uk: "https://images.unsplash.com/photo-1464021025634-49b81a77a858?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  australia: "/australia.webp",
+  ireland:"/ireland.webp",
+  france:"https://media.istockphoto.com/id/508093315/photo/college-students-in-a-classroom.jpg?s=1024x1024&w=is&k=20&c=teodtFRDebunlf27QtGHwn1jrHAax97ne72c5XaQwg0=",
   germany: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
   default: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
 };
@@ -200,12 +202,22 @@ export default function UniversityInsightsSection({ country }: Props) {
     <section className="bg-background overflow-hidden">
       {/* ================= HERO ================= */}
       <div ref={heroRef} className="relative h-[560px] sm:h-[520px] overflow-hidden">
-        <motion.div style={{ y: yImage }} className="absolute inset-0 scale-110">
-          <img src={heroImage} alt={country} className="w-full h-full object-cover" />
+        <motion.div style={{ y: yImage }}className="absolute inset-0 scale-[1.03]">
+     <img
+  src={heroImage}
+  alt={country}
+  className="w-full h-full object-cover"
+  style={{
+    transform: "translateZ(0)",
+    backfaceVisibility: "hidden",
+  }}
+/>
+
         </motion.div>
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background"
+          className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background
+"
         />
         <div className="absolute inset-0 flex items-end p-8 lg:p-16">
           <motion.div variants={fadeUp} initial="hidden" animate="show">

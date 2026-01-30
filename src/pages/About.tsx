@@ -59,86 +59,10 @@ const About = () => {
             <h1 className="font-display text-4xl lg:text-5xl font-bold mb-6">
               About <span className="text-gradient">Career 4S</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
-              For over 12 years, we've been the trusted partner for thousands of students, guiding them towards their academic and career aspirations with personalized counseling and expert support.
-            </p>
+       
           </AnimatedSection>
         </div>
       </section>
-
-      {/* Our Story */}
-  <section className="relative py-24 overflow-hidden">
-  {/* Floating background glows */}
-  <div className="absolute -top-32 -left-32 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse" />
-  <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-orange-300/10 rounded-full blur-3xl animate-pulse delay-1000" />
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-      {/* LEFT – STORY */}
-      <AnimatedSection animation="slide-left">
-        <div className="space-y-6">
-          <h2 className="font-display text-3xl lg:text-4xl font-bold">
-            Our <span className="text-gradient">Story</span>
-          </h2>
-
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p className="hover:text-foreground transition-colors">
-              Career 4S was founded in 2012 with a simple mission: to help every
-              student find their true calling and achieve their educational
-              dreams. What began as a small counseling center has grown into one
-              of India’s most trusted education consulting firms.
-            </p>
-
-            <p className="hover:text-foreground transition-colors">
-              The name <strong className="text-foreground">“4S”</strong> stands
-              for <strong>Select, Strategize, Succeed, and Sustain</strong> —
-              four pillars that guide students at every stage of their journey.
-            </p>
-
-            <p className="hover:text-foreground transition-colors">
-              Today, with <strong className="text-foreground">50+ expert counselors</strong> and
-              partnerships with <strong className="text-foreground">500+ institutions</strong>,
-              we continue transforming lives through education.
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* RIGHT – STATS CARD */}
-      <AnimatedSection animation="slide-right" delay={200}>
-        <div className="relative group">
-          {/* Glow */}
-          <div className="absolute inset-0 rounded-3xl bg-orange-400/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-          <div className="relative bg-white border border-orange-300/40 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { value: "2012", label: "Founded" },
-                { value: "15,000+", label: "Students Helped" },
-                { value: "500+", label: "Partner Colleges" },
-                { value: "98%", label: "Success Rate" },
-              ].map((item, i) => (
-                <div
-                  key={item.label}
-                  className="text-center p-5 rounded-2xl bg-orange-50/60 hover:bg-orange-100/60 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <p className="text-4xl font-bold text-orange-600">
-                    {item.value}
-                  </p>
-                  <p className="text-sm text-muted-foreground tracking-wide">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-    </div>
-  </div>
-</section>
 
 
 

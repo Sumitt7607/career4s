@@ -30,7 +30,7 @@ export const Navbar = () => {
             <NavItem to="/">Home</NavItem>
             <NavItem to="/about">About</NavItem>
             <NavItem to="/offering">Our Service</NavItem>
-            <NavItem to="/testimonials">Testimonials</NavItem>
+            {/* <NavItem to="/testimonials">Testimonials</NavItem> */}
           </div>
 
           {/* DESKTOP CTA */}
@@ -63,12 +63,12 @@ export const Navbar = () => {
               <MobileItem to="/about" onClick={() => setOpen(false)}>
                 About
               </MobileItem>
-              <MobileItem to="/offerings" onClick={() => setOpen(false)}>
-                Offerings
+              <MobileItem to="/offering" onClick={() => setOpen(false)}>
+                Our services
               </MobileItem>
-              <MobileItem to="/know-more" onClick={() => setOpen(false)}>
+              {/* <MobileItem to="/know-more" onClick={() => setOpen(false)}>
                 Know More
-              </MobileItem>
+              </MobileItem> */}
 
               <Button
                 asChild

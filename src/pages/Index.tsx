@@ -41,10 +41,10 @@ const services = [
 ];
 
 const stats = [
-  { value: "15,000+", label: "Students Guided" },
+  { value: "5000+", label: "Students Guided" },
   { value: "500+", label: "Partner Colleges" },
-  { value: "98%", label: "Success Rate" },
-  { value: "12+", label: "Years Experience" },
+  { value: "5+", label: "Branches " },
+  { value: "30+", label: "Expert counselors" },
 ];
 
 const testimonials = [
@@ -131,8 +131,8 @@ const Index = () => {
     {[
        "/1stboy.jpg",
       "/2ndboy.jpg",
-      "public/3rd student.avif",
-      "public/4thboy.avif",
+      "/3rd student.avif",
+      "/4thboy.avif",
     ].map((img, index) => (
       <img
         key={index}

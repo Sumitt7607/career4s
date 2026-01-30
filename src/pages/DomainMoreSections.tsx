@@ -45,16 +45,24 @@ export default function DomainMoreSections({
 /* ===================== HERO ===================== */
 const Hero = ({ field }: { field: string }) => {
   const imgRef = useRef<HTMLImageElement | null>(null);
-  useParallax(imgRef, 0.25);
+  useParallax(imgRef, 0.00);
 
   return (
     <section id="hero" className="relative h-[80vh] overflow-hidden rounded-3xl">
-      <img
-        ref={imgRef}
-        src={HERO_IMAGES[field] ?? HERO_IMAGES.default}
-        alt={field}
-        className="absolute inset-0 w-full h-full object-cover scale-110"
-      />
+   <img
+  ref={imgRef}
+  src={HERO_IMAGES[field] ?? HERO_IMAGES.default}
+  alt={field}
+  className="
+    absolute inset-0 
+    w-full h-full 
+    object-contain md:object-cover 
+    object-top
+    scale-105
+    transition-transform duration-300
+  "
+/>
+
       <div className="absolute inset-0 bg-black/65" />
 
       <div className="relative z-10 h-full flex items-center justify-center text-center px-6 animate-fade-up">
@@ -200,7 +208,7 @@ const Offerings = () => {
       {/* Top Ribbon */}
       <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10">
         <span className="inline-block bg-orange-500 text-white px-6 sm:px-10 py-2 font-bold text-lg sm:text-2xl rounded-md">
-          Our Innovative Offerings
+          Our Admission Services
         </span>
       </div>
 
@@ -208,30 +216,40 @@ const Offerings = () => {
         {/* LEFT CONTENT */}
         <div className="order-2 lg:order-1">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            <span className="text-orange-600">Career4S</span>
+            <span className="text-orange-600">Career4S</span> Admission Guidance
           </h2>
 
           <p className="text-gray-700 leading-relaxed mb-8 max-w-lg">
-            Career4S is an exclusive career guidance platform providing
-            innovative counselling solutions to help students secure the
-            right admissions with confidence and clarity.
+            Career4S is a trusted admission counseling platform helping students
+            secure seats in <b>Medical, Engineering, Management</b> and
+            <b> Post-Graduation</b> programs across top colleges in India and
+            abroad with complete transparency and expert support.
           </p>
 
           <div className="space-y-6 max-w-lg">
             <ValuePoint>
-              End-to-end admission guidance for students seeking higher
-              education in <b>India and Abroad</b>.
+              End-to-end admission assistance for
+              <b> MBBS, BDS, B.Tech, MBA, MCA</b> and other
+              <b> UG & PG</b> programs.
             </ValuePoint>
 
             <ValuePoint>
-              Complete support from <b>career counselling</b> and
-              <b> course selection</b> to <b>college shortlisting</b>,
-              applications, and visa guidance.
+              Personalized guidance for
+              <b> NEET, JEE, CAT, MAT, CMAT</b> and university-based admissions
+              with smart <b>college shortlisting</b>.
             </ValuePoint>
 
             <ValuePoint>
-              Ethical, transparent, and <b>future-ready decisions</b>
-              guided by experienced career advisors.
+              Complete support from
+              <b> counseling & documentation</b> to
+              <b> application processing</b>, fee negotiation, and
+              <b> seat confirmation</b>.
+            </ValuePoint>
+
+            <ValuePoint>
+              Ethical, transparent, and
+              <b> future-focused decisions</b> guided by experienced
+              admission consultants.
             </ValuePoint>
           </div>
         </div>
@@ -252,11 +270,11 @@ const Offerings = () => {
           >
             <div className="absolute inset-0 flex items-center justify-center animate-counter-spin">
               <div className="space-y-4 sm:space-y-6 bg-white/95 px-6 sm:px-8 py-6 sm:py-8 rounded-3xl shadow-xl">
-                <Stat value="23,00,000+" label="NEET UG Aspirants" />
-                <Stat value="2,28,500+" label="NEET PG Aspirants" />
-                <Stat value="1,17,500+" label="MBBS Seats" />
-                <Stat value="30,700+" label="MD Seats" />
-                <Stat value="15,700+" label="MS Seats" />
+                <Stat value="1000+" label="Medical Admissions" />
+                <Stat value="2000+" label="Engineering Admissions" />
+                <Stat value="1000+" label="Management Admissions" />
+                <Stat value="1000+" label="PG Admissions" />
+                <Stat value="500+" label="Partner Colleges" />
               </div>
             </div>
           </div>
@@ -324,18 +342,18 @@ const Stat = ({
 const Achievements = () => {
   const stats = [
     {
-      value: 700000,
+      value: 5000,
       label: "Students Positively Impacted",
       icon: "student",
     },
     {
-      value: 450000,
-      label: "One-to-One Counselling Sessions",
+      value: 5,
+      label: "Branches",
       icon: "chat",
       highlight: true,
     },
     {
-      value: 3000,
+      value: 1000,
       label: "Seminars & Webinars",
       icon: "seminar",
     },
@@ -1050,19 +1068,16 @@ const ScrollSpyNav = () => {
 };
 
 /* ===================== PARALLAX ===================== */
-function useParallax(
-  ref: React.RefObject<HTMLElement>,
-  speed: number
-) {
+function useParallax(ref: React.RefObject<HTMLElement>, speed: number) {
   useEffect(() => {
     const handler = () => {
       if (ref.current) {
-        ref.current.style.transform = `translateY(${
-          window.scrollY * speed
-        }px)`;
+        const y = Math.min(window.scrollY * speed, 60); // 👈 LIMIT movement
+        ref.current.style.transform = `translate3d(0, ${y}px, 0)`;
       }
     };
-    window.addEventListener("scroll", handler);
+
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, [ref, speed]);
 }
@@ -1070,9 +1085,9 @@ function useParallax(
 /* ===================== DATA ===================== */
 const HERO_IMAGES: Record<string, string> = {
   Engineering:
-    "https://images.unsplash.com/photo-1581092334370-33227c12f1ce?auto=format&fit=crop&w=1600",
+    "/engind.jpg",
   Medical:
-    "https://images.unsplash.com/photo-1580281657521-6b6f1c95fda7?auto=format&fit=crop&w=1600",
+    "/medicaltop.webp",
   Management:
     "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600",
   "Post Graduation":
@@ -1082,7 +1097,7 @@ const HERO_IMAGES: Record<string, string> = {
 };
 
 const FAQS: FAQItem[] = [
-  { q: "Is counselling free?", a: "Yes, first session is free." },
+  { q: "Is counselling free?", a: "No,2-3 session is free." },
   { q: "Are colleges verified?", a: "Only approved institutions." },
   { q: "Do you help after admission?", a: "Yes, complete support." },
 ];

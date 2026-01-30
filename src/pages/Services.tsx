@@ -223,7 +223,8 @@ const Services = () => {
     </AnimatedSection>
 
     {/* Timeline */}
-    <div className="relative grid md:grid-cols-4 gap-10">
+<div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
 
       {/* Animated Timeline Line */}
       <div className="hidden md:block absolute top-20 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />

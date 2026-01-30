@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
+import { Footer } from "@/components/Footer";
 interface Reason {
   title: string;
   description: string;
@@ -41,6 +41,7 @@ const reasons: Reason[] = [
 
 const WhyDistanceEducationSection = () => {
   return (
+    <>
     <section
       id="why-distance"
       className="relative py-32 bg-white overflow-hidden"
@@ -115,6 +116,8 @@ const WhyDistanceEducationSection = () => {
         </div>
       </div>
     </section>
+    <Footer/>
+    </>
   );
 };
 

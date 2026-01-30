@@ -21,16 +21,19 @@ export const AdmissionTicker = () => {
         }}
       >
         <span style={{ margin: "0 40px" }}>
-          🎓 Admissions Open 2026 – India & Abroad
+          🎓 Admission India
         </span>
         <span style={{ margin: "0 40px" }}>
-          🎓 Admissions Open 2026 – India & Abroad
+          🎓 Admission Abroad
         </span>
         <span style={{ margin: "0 40px" }}>
-          🎓 Admissions Open 2026 – India & Abroad
+          🎓 Admission Online
         </span>
         <span style={{ margin: "0 40px" }}>
-          🎓 Admissions Open 2026 – India & Abroad
+          🎓 Admissions Distance
+        </span>
+          <span style={{ margin: "0 40px" }}>
+         ☎️ +91 9650831008
         </span>
       </div>
 
