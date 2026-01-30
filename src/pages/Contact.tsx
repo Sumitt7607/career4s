@@ -27,7 +27,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Office",
-    details: ["   Delhi Branch  Jasola apollo Dlf Tower A - office no-119", "   Faridabad Branch  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)"],
+    details: ["Delhi Branch: 119, first floor Dlf Tower - A Jasola Delhi", "   Faridabad Branch :  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)"],
     action: "#map",
   },
   {
@@ -305,7 +305,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   className="w-full"
   onClick={() =>
     window.open(
-      "https://wa.me/917607696315?text=Hi%20I%20want%20to%20book%20a%20free%20consultation",
+      "https://wa.me/919650831008?text=Hi%20I%20want%20to%20book%20a%20free%20consultation",
       "_blank"
     )
   }

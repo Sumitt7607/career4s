@@ -79,13 +79,13 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-background/70">
-                Delhi Branch  Jasola apollo Dlf Tower A - office no-119
+                Delhi Branch: 119, first floor Dlf Tower - A Jasola Delhi
             
 
                 </span>
                   <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-background/70">
-                Faridabad Branch  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)
+                Faridabad Branch:  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)
                 
                 </span>
               </li>
