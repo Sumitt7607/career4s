@@ -174,7 +174,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <Input
                         id="name"
                         name="name"
-                        placeholder="John Doe"
+                        // placeholder="John Doe"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -186,7 +186,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="john@example.com"
+                        // placeholder="john@example.com"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -201,7 +201,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        // placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={handleChange}
                         required
@@ -253,7 +253,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             {/* Map & Additional Info */}
             <AnimatedSection animation="slide-right" delay={200}>
               <div className="space-y-8">
-                {/* Map Placeholder */}
+{/*            
                 <div
   id="map"
   className="aspect-video rounded-2xl overflow-hidden border border-border"
@@ -266,7 +266,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     referrerPolicy="no-referrer-when-downgrade"
     src="https://www.google.com/maps?q=Greater+Noida+Uttar+Pradesh+India&output=embed"
   />
-</div>
+</div> */}
 
                 {/* Quick Info */}
                 <Card>

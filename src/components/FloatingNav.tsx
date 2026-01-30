@@ -6,8 +6,8 @@ const navItems = [
   { name: "Home", path: "/", icon: Home },
   { name: "Services", path: "/services", icon: Briefcase },
   { name: "About", path: "/about", icon: Users },
-  { name: "Stories", path: "/success-stories", icon: Trophy },
-  { name: "Blog", path: "/blog", icon: BookOpen },
+  // { name: "Stories", path: "/success-stories", icon: Trophy },
+  // { name: "Blog", path: "/blog", icon: BookOpen },
   { name: "Contact", path: "/contact", icon: Mail },
 ];
 
