@@ -230,37 +230,38 @@ const Services = () => {
       <div className="hidden md:block absolute top-20 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />
 
       {[
-        {
-          step: "01",
-          title: "Consultation",
-          description:
-            "We start with a free, no-pressure conversation to understand your goals and challenges.",
-        },
-        {
-          step: "02",
-          title: "Assessment",
-          description:
-            "Your profile, interests, and strengths are analyzed using expert frameworks.",
-        },
-        {
-          step: "03",
-          title: "Strategy",
-          description:
-            "We design a clear, step-by-step roadmap aligned with your aspirations.",
-        },
-        {
-          step: "04",
-          title: "Execution",
-          description:
-            "Our experts walk with you till final success — applications, decisions, and beyond.",
-        },
-          {
-          step: "05",
-          title: "Strategy",
-          description:
-            "We design a clear, step-by-step roadmap aligned with your aspirations.",
-        },
-      ].map((item, index) => (
+  {
+    step: "01",
+    title: " Counseling",
+    description:
+      "Begin with a , personalized counseling session to understand your academic background, goals, and career aspirations.",
+  },
+  {
+    step: "02",
+    title: "Profile Evaluation",
+    description:
+      "Our experts evaluate your academic profile, interests, and strengths to identify the best-fit courses and universities.",
+  },
+  {
+    step: "03",
+    title: "University & Course Shortlisting",
+    description:
+      "We create a strategic shortlist of universities and programs aligned with your profile, budget, and future goals.",
+  },
+  {
+    step: "04",
+    title: "Application & Documentation",
+    description:
+      "Complete guidance for applications, SOPs, LORs, and document verification to ensure error-free submissions.",
+  },
+  {
+    step: "05",
+    title: "Admission & Beyond",
+    description:
+      "From offer letters to final enrollment, visa support, and post-admission guidance—we stay with you till success.",
+  },
+]
+.map((item, index) => (
         <AnimatedSection
           key={item.step}
           animation="slide-up"

@@ -14,8 +14,36 @@ const notices = [
     description: "last date for submission of Online Application for Common University Entrance Test [CUET (UG)]",
     pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260130182928.pdf",
   },
-  {
+    {
     id: 2,
+    title: "Release of Admit Cards of JEE(Main)-2026 Session-1",
+    date: "January 17, 2026",
+    category: "Tender",
+    priority: "important" as const,
+    description: "JEE (Main)-2026 Session-1(January 2026) scheduled to appear on 21, 22, 23 and 24 January 2026- Reg. ",
+    pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260117164926.pdf",
+  },
+    {
+    id: 5,
+    title: " Advisory and Instructions for the Candidates for JEE 2026",
+    date: "January 18, 2026",
+    category: "Urgent",
+    priority: "urgent" as const,
+    description: "Advisory and Instructions for the Candidates of Joint Entrance Examination (Main) - 2026 Session 1 (January 2026) - Reg.  ",
+    pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260120102259.pdf    ",
+  },
+  
+  {
+    id: 3,
+    title: "	 Advisory for completion of application process[CUET (PG)] ",
+    date: "January 16, 2026",
+    category: "Meeting",
+    priority: "normal" as const,
+    description: "The registration portal for Cuet 2026 examination shall be closing on 20 january 2026(up to 11:50 PM)",
+    pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260116183516.pdf",
+  },
+  {
+    id: 4,
     title: " Conduct of Practical Examination ",
     date: "January 01, 2026",
     category: "Announcement",
@@ -23,33 +51,8 @@ const notices = [
     description: "Internal Assessment dates for Classes X & XII - 2025-26",
     pdfUrl: "https://www.cbse.gov.in/cbsenew/documents/Reminder_Practical_01012026.pdf",
   },
-//   {
-//     id: 3,
-//     title: "Tender for Office Equipment Procurement",
-//     date: "January 25, 2026",
-//     category: "Tender",
-//     priority: "urgent" as const,
-//     description: "Sealed tenders are invited for supply of office equipment including computers, printers, and furniture. Last date: Feb 15, 2026.",
-//     pdfUrl: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-//   },
-//   {
-//     id: 4,
-//     title: "Staff Meeting Notice - February 2026",
-//     date: "January 24, 2026",
-//     category: "Meeting",
-//     priority: "normal" as const,
-//     description: "Monthly staff meeting scheduled for February 5th, 2026 at 10:00 AM in the main conference hall.",
-//     pdfUrl: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-//   },
-//   {
-//     id: 5,
-//     title: "Important: Updated Service Guidelines",
-//     date: "January 23, 2026",
-//     category: "Urgent",
-//     priority: "urgent" as const,
-//     description: "New service guidelines effective from February 1st, 2026. All staff must comply with the updated protocols.",
-//     pdfUrl: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-//   },
+
+
 //   {
 //     id: 6,
 //     title: "Training Program on Digital Literacy",

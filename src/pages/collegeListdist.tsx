@@ -371,9 +371,17 @@ const CollegeListDist = () => {
                     {college.courses.join(", ")}
                   </p>
 
-                  <Button className="bg-orange-600 hover:bg-orange-700 text-white w-full">
-                    Apply Now
-                  </Button>
+                <a
+  href="https://wa.me/919650831008?text=Hello%20I%20want%20to%20apply%20for%20admission"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full"
+>
+  <Button className="bg-orange-600 hover:bg-orange-700 text-white w-full">
+    Apply Now
+  </Button>
+</a>
+
                 </div>
               </div>
             ))}

@@ -185,10 +185,6 @@ const AdmissionDistance = () => {
       </div>
     </motion.div>
 
-    {/* <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-base">
-      Apply for Admission
-      <ArrowRight className="ml-2 h-4 w-4" />
-    </Button> */}
   </div>
 </section>
 
