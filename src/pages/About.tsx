@@ -11,13 +11,29 @@ const team = [
     role: "Founder & CEO",
     bio: "10+ years in education consulting with expertise in international admissions.",
   },
+    {
+    name: "Shilpa Manchanda",
+    role: "Admission Head",
+    // bio: "10+ years in education consulting with expertise in international admissions.",
+  },
+    {
+    name: "Dr Banke Bihari",
+    role: "Marketing Head",
+    // bio: "10+ years in education consulting with expertise in international admissions.",
+  },
+   {
+    name: "Ajit Nayak",
+    role: "Operation Head",
+    // bio: "10+ years in education consulting with expertise in international admissions.",
+  },
+
   {
     name: "Sumit Kushwaha",
-    role: "Developer",
+    role: "It Department Head",
     // bio: "Former admissions officer at IIM with deep understanding of B-school applications.",
   },
   {
-    name: "Ayush",
+    name: "Ayush Mahto",
     role: "Digital Marketing Head",
     // bio: "Helped 2000+ students get admitted to universities in 15+ countries.",
   },
@@ -194,7 +210,8 @@ const About = () => {
     </AnimatedSection>
 
     {/* ================= TEAM GRID ================= */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
       {team.map((member, index) => (
         <AnimatedSection
           key={member.name}

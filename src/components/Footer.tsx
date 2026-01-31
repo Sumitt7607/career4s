@@ -14,13 +14,11 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-          <div className="flex items-center mb-6">
-  <img
-    src="/image.png"
-    alt="Career4S Logo"
-    className="h-14 lg:h-16 w-auto object-contain"
-  />
-</div>
+<img
+  src="/image.png"
+  alt="Career4S Logo"
+  className="h-20 lg:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+/>
 
             <p className="text-background/70 mb-6 leading-relaxed">
               Empowering students to achieve their academic and career dreams through expert guidance and personalized counseling.
