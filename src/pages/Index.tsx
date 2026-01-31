@@ -129,9 +129,10 @@ const Index = () => {
                         <service.icon className="w-8 h-8 text-primary mb-3" />
                         
                         <h3 className="font-semibold text-sm">{service.title}</h3>
-                    <p className="text-xs text-right">
-  click to explore more
+ <p className="text-xs text-right text-blue-600">
+  explore More
 </p>
+
 
                       </div>
                       
