@@ -14,6 +14,15 @@ const notices = [
     description: "last date for submission of Online Application for Common University Entrance Test [CUET (UG)]",
     pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260130182928.pdf",
   },
+     {
+    id: 5,
+    title: " Advisory and Instructions for the Candidates for JEE 2026",
+    date: "January 18, 2026",
+    category: "Urgent",
+    priority: "urgent" as const,
+    description: "Advisory and Instructions for the Candidates of Joint Entrance Examination (Main) - 2026 Session 1 (January 2026) - Reg.  ",
+    pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260120102259.pdf    ",
+  },
     {
     id: 2,
     title: "Release of Admit Cards of JEE(Main)-2026 Session-1",
@@ -23,15 +32,7 @@ const notices = [
     description: "JEE (Main)-2026 Session-1(January 2026) scheduled to appear on 21, 22, 23 and 24 January 2026- Reg. ",
     pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260117164926.pdf",
   },
-    {
-    id: 5,
-    title: " Advisory and Instructions for the Candidates for JEE 2026",
-    date: "January 18, 2026",
-    category: "Urgent",
-    priority: "urgent" as const,
-    description: "Advisory and Instructions for the Candidates of Joint Entrance Examination (Main) - 2026 Session 1 (January 2026) - Reg.  ",
-    pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260120102259.pdf    ",
-  },
+ 
   
   {
     id: 3,
