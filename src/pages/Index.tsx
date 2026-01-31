@@ -18,14 +18,14 @@ import NoticeBoard from "./NoticeBoard";
 const services = [
   {
     icon: GraduationCap,
-    title: "Admissions India",
+    title: "Admission India",
     description: "Expert guidance for admissions to top universities in India and abroad.",
     link: "/admission-india",
     
   },
   {
     icon: Briefcase,
-    title: "Admissions Abroad ",
+    title: "Admission Abroad ",
     description: "Personalized career mapping based on your skills, interests, and aspirations.",
     link: "/admission-abroad",
   },
