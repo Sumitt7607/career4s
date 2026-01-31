@@ -33,7 +33,7 @@ export const AdmissionTicker = () => {
           🎓 Admissions Distance
         </span>
           <span style={{ margin: "0 40px" }}>
-         ☎️ +91 9650831008
+        Connect with Us On ☎️ +91 9650831008
         </span>
       </div>
 
