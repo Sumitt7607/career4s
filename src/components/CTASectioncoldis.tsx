@@ -50,22 +50,22 @@ const CTASection = () => {
           {/* ================= CONTACT INFO ================= */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-white">
             <a
-              href="tel:+911234567890"
+              href="tel:+919650831008"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
               <Phone className="w-5 h-5" />
-              <span>+91 123 456 7890</span>
+              <span>+91 9650831008</span>
             </a>
 
-            <span className="hidden sm:block opacity-70">|</span>
+            <span className="hidden sm:block opacity-70"></span>
 
-            <a
+            {/* <a
               href="mailto:info@admissiondestiny.com"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
               <Mail className="w-5 h-5" />
               <span>info@admissiondestiny.com</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

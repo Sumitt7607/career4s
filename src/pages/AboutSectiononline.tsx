@@ -24,7 +24,7 @@ const affiliations = [
   { name: "AICTE Institutions", logo: "🎓" },
   { name: "Global Universities", logo: "🌍" },
   { name: "Government Recognized", logo: "📜" },
-  { name: "Trusted Since 1999", logo: "✅" },
+  // { name: "Trusted Since 1999", logo: "✅" },
 ];
 
 /* ================= VARIANTS (TYPE SAFE) ================= */
@@ -81,7 +81,7 @@ export const AboutSectiononline = () => {
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden shadow-elevated h-48">
                   <img
-                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+                    src="/couns.jpg"
                     alt="Student Counseling"
                     className="w-full h-full object-cover"
                   />
@@ -122,7 +122,7 @@ export const AboutSectiononline = () => {
               animate={isVisible ? "visible" : "hidden"}
               className="absolute -bottom-6 -right-6 bg-gradient-saffron text-primary-foreground p-6 rounded-2xl shadow-saffron"
             >
-              <div className="text-4xl font-extrabold">25+</div>
+              <div className="text-4xl font-extrabold">5+</div>
               <div className="text-sm opacity-90">
                 Years of Trusted Guidance
               </div>
@@ -239,12 +239,12 @@ export const AboutSectiononline = () => {
             </div>
 
             {/* CTA */}
-            <Button
+            {/* <Button
               size="lg"
               className="bg-gradient-saffron text-primary-foreground shadow-saffron hover:opacity-90"
             >
               Get Free Career Counseling
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </div>

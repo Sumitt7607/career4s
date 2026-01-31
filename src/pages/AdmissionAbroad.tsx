@@ -28,7 +28,7 @@ export default function AdmissionAbroad() {
 
           <AbroadDomainCard
             delay={0}
-            title="Engineering Admissions"
+            title="Engineering Abroad"
             subtitle="Study Engineering Abroad"
             description="Pursue globally recognised engineering programs with advanced infrastructure, research exposure and high employability."
             image="/enginerring.jpg"
@@ -45,7 +45,7 @@ export default function AdmissionAbroad() {
 
           <AbroadDomainCard
             delay={0.15}
-            title="Medical Admissions"
+            title="Medical Abroad"
             subtitle="Global Medical Pathways"
             description="Access international medical education with modern clinical exposure and globally accepted degrees."
             image="/medical.webp"
@@ -63,7 +63,7 @@ export default function AdmissionAbroad() {
 
           <AbroadDomainCard
             delay={0.3}
-            title="Management Admissions"
+            title="Management Abroad"
             subtitle="Build Global Leadership"
             description="Study management at world-renowned business schools with strong corporate networks."
             image="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80"
@@ -80,7 +80,7 @@ export default function AdmissionAbroad() {
 
           <AbroadDomainCard
             delay={0.45}
-            title="Post Graduation"
+            title="Post Graduation Abroad"
             subtitle="Advance Your Career"
             description="Specialised master’s and research programs aligned with future global career opportunities."
             image="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80"

@@ -40,7 +40,7 @@ const DATA = {
     // philippines: ["AMA School of Medicine"],
     russia: ["Moscow State Medical University","Kazan State Medical University – Kazan","Russian National Research Medical University (Pirogov NRMU) – Moscow","First St. Petersburg State Medical University (Pavlov University) – St. Petersburg","Siberian State Medical University – Tomsk","Voronezh State Medical University – Voronezh","Kursk State Medical University – Kursk"],
     georgia: ["Tbilisi State Medical University (TSMU) – Tbilisi","Ivane Javakhishvili Tbilisi State University – Tbilisi","David Tvildiani Medical University (DTMU) – Tbilisi","Georgian National University (SEU) – Tbilisi","Batumi Shota Rustaveli State University – Batumi","European University – Tbilisi","Geomedi Medical University – Tbilisi"],
-    kazakhstan: ["Asfendiyarov Kazakh National Medical University – Almaty","Kazakh National Medical University (KazNMU) – Almaty","Astana Medical University – Nur-Sultan (Astana)","Semey State Medical University – Semey","Karaganda State Medical University – Karaganda","South Kazakhstan Medical Academy – Shymkent"],
+    kazakhstan: ["Kazakh National Medical University (KazNMU) – Almaty","Astana Medical University – Nur-Sultan (Astana)","Semey State Medical University – Semey","Karaganda State Medical University – Karaganda","South Kazakhstan Medical Academy – Shymkent"],
     Nepal:["Institute of Medicine (IOM), Maharajgunj, Kathmandu","B.P. Koirala Institute of Health Sciences (BPKIHS), Dharan","Kathmandu Medical College (KMC)","Manipal College of Medical Sciences (MCOMS), Pokhara","Kathmandu University School of Medical Sciences (KUSMS), Dhulikhel","KIST Medical College, Lalitpur"]
   },
   management: {
@@ -187,7 +187,32 @@ const UNIVERSITY_IMAGES: Record<string, string> = {
 "Shanghai Jiao Tong University School of Medicine – Shanghai":"/shanghai.webp",
 "Zhejiang University School of Medicine – Hangzhou":"/zum.png",
 "China Medical University (CMU) – Liaoning":"/cmuuuuu.webp",
-"Nanjing Medical University (NMU) – Nanjing":"/nmuuu.webp"
+"Nanjing Medical University (NMU) – Nanjing":"/nmuuu.webp",
+"Moscow State Medical University":"/fmsm.jpeg",
+"Kazan State Medical University – Kazan":"/ksmu.webp",
+"Russian National Research Medical University (Pirogov NRMU) – Moscow":"/prnrmu.jpg",
+"First St. Petersburg State Medical University (Pavlov University) – St. Petersburg":"/pfsmu.webp",
+"Siberian State Medical University – Tomsk":"/ssmu.jpg",
+"Voronezh State Medical University – Voronezh":"/vsmu.jpeg",
+"Kursk State Medical University – Kursk":"/kusmu.jpeg",
+"Tbilisi State Medical University (TSMU) – Tbilisi":"/tsmu.webp",
+"Ivane Javakhishvili Tbilisi State University – Tbilisi":"/jtsu.jpg",
+"David Tvildiani Medical University (DTMU) – Tbilisi":"/dtmu.webp",
+"Georgian National University (SEU) – Tbilisi":"/seu.webp",
+"Batumi Shota Rustaveli State University – Batumi":"/batumi.png",
+"European University – Tbilisi":"/eurou.jpeg",
+"Geomedi Medical University – Tbilisi":"/tsmuuuuu.webp",
+"Kazakh National Medical University (KazNMU) – Almaty":"/kzmu.webp",
+"Astana Medical University – Nur-Sultan (Astana)":"/asmu.webp",
+"Semey State Medical University – Semey":"/ssmuuuu.webp",
+"Karaganda State Medical University – Karaganda":"/ksmuuuu.jpg",
+"South Kazakhstan Medical Academy – Shymkent":"/skma.jpg",
+"Institute of Medicine (IOM), Maharajgunj, Kathmandu":"/iomu.jpg",
+"B.P. Koirala Institute of Health Sciences (BPKIHS), Dharan":"/bpkihs.jpg",
+"Kathmandu Medical College (KMC)":"/kmc.webp",
+"Manipal College of Medical Sciences (MCOMS), Pokhara":"/mcoms.jpg",
+"Kathmandu University School of Medical Sciences (KUSMS), Dhulikhel":"/kusmka.jpg",
+"KIST Medical College, Lalitpur":"/kistmcl.webp"
 };
 
 /* ===================== NAVBAR ===================== */

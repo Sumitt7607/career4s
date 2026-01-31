@@ -87,177 +87,213 @@ const Navbar = () => {
 
 
 const collegesByDomain: CollegeMap = {
-  engineering: [
-    {
-      name: "IGNOU",
-      location: "New Delhi",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
-    },
-    {
-      name: "Amity University Online",
-      location: "Noida",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1562774053-701939374585",
-    },
-    {
-      name: "LPU Distance Education",
-      location: "Punjab",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-    },
-    {
-      name: "Sikkim Manipal University",
-      location: "Gangtok",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-    },
-    {
-      name: "Jain University Online",
-      location: "Bangalore",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a",
-    },
-    {
-      name: "UPES Online",
-      location: "Dehradun",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b",
-    },
-    {
-      name: "Chandigarh University Online",
-      location: "Chandigarh",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1596495578065-6e0763fa1178",
-    },
-    {
-      name: "SRM Online",
-      location: "Chennai",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1580582932707-520aed937b7b",
-    },
-    {
-      name: "BITS Pilani Online",
-      location: "Pilani",
-      courses: ["M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
-    },
-  ],
+engineering: [
+  {
+    name: "BITS Pilani ",
+    location: "Pilani",
+    courses: ["M.Tech"],
+    image:
+      "https://th.bing.com/th/id/R.76c963abcda7035b2dd7d3f5708daa5c?rik=T8HE4hOjOZezsA&riu=http%3a%2f%2fgreenspacealliance.com%2fwp-content%2fuploads%2f2015%2f08%2fBITS-Pilani1.jpg&ehk=UXktyDowRsleB%2fRs%2brn2ameUB0SOm65ahNgociqZPhI%3d&risl=&pid=ImgRaw&r=0",
+  },
+  {
+    name: "Amity University ",
+    location: "Noida",
+    courses: ["M.Tech"],
+    image:
+      "https://askusedu.com/blogdashboard/wp-content/uploads/2024/02/Amity-University-300x154.webp",
+  },
+  {
+    name: "Jain University",
+    location: "Bangalore",
+    courses: ["M.Tech"],
+    image:
+      "/jain.webp",
+  },
+  {
+    name: "Sikkim Manipal University ",
+    location: "Gangtok",
+    courses: ["M.Tech"],
+    image:
+      "/maniopal.webp",
+  },
+  {
+    name: "Lovely Professional University ",
+    location: "Punjab",
+    courses: ["M.Tech"],
+    image:
+      "https://www.indianuniversities.net/assets/uploadFiles/study/IMG_20220302_1619411.png",
+  },
+  {
+    name: "UPES ",
+    location: "Dehradun",
+    courses: ["M.Tech"],
+    image:
+      "https://img.jagranjosh.com/images/2022/December/27122022/University-of-Petroleum-and-Energy-Studies-UPES-Dehradun-Campus-View-2.jpg",
+  },
+],
 
-  management: [
-    {
-      name: "NMIMS Global",
-      location: "Mumbai",
-      courses: ["MBA", "BBA"],
-      image:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-    },
-    {
-      name: "Symbiosis Distance Learning",
-      location: "Pune",
-      courses: ["MBA", "PGDM"],
-      image:
-        "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
-    },
-  ],
-
-
-
-  PostGraduation: [
-    {
-      name: "NMIMS Global",
-      location: "Mumbai",
-      courses: ["MBA", "BBA"],
-      image:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-    },
-    {
-      name: "Symbiosis Distance Learning",
-      location: "Pune",
-      courses: ["MBA", "PGDM"],
-      image:
-        "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
-    },
-  ],
+management: [
+  {
+    name: "NMIMS Global",
+    location: "Mumbai",
+    courses: ["MBA", "BBA"],
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.WukAD0V_yeccV1YK3gIoyAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+  {
+    name: "Symbiosis Distance Learning",
+    location: "Pune",
+    courses: ["MBA", "PGDM"],
+    image:
+      "https://education.indianexpress.com/storage/images/8e28d188caa5ebd24ff4.jpg",
+  },
+  {
+    name: "IGNOU",
+    location: "New Delhi",
+    courses: ["MBA", "BBA", "PGDM"],
+    image:
+      "https://digitallearning.eletsonline.com/wp-content/uploads/2021/07/IGNOU-extends-admission.jpg",
+  },
+  {
+    name: "Amity University Online",
+    location: "Noida",
+    courses: ["MBA", "BBA"],
+    image:
+      "/amitty univeristy.webp",
+  },
+  {
+    name: "IMT Centre for Distance Learning",
+    location: "Ghaziabad",
+    courses: ["PGDM", "Executive MBA"],
+    image:
+      "https://www.dialeducation.com/assets/images/gallery/gallery_1573794017.jpg",
+  },
+  {
+    name: "LPU Distance Education",
+    location: "Punjab",
+    courses: ["MBA", "BBA"],
+    image:
+      "https://cache.careers360.mobi/media/article_images/2019/11/16/LPU_Law.jpg",
+  },
+  {
+    name: "Annamalai University Distance Education",
+    location: "Tamil Nadu",
+    courses: ["MBA", "PGDM"],
+    image:
+      "https://tse1.mm.bing.net/th/id/OIP.KITcltqT1isjXRsw_XQ3VgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+],  
 
 
 
+PostGraduation: [
+  {
+    name: "NMIMS Global",
+    location: "Mumbai",
+    courses: ["MBA", "PGDM"],
+    image:
+    "https://tse3.mm.bing.net/th/id/OIP.WukAD0V_yeccV1YK3gIoyAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+  {
+    name: "Symbiosis Distance Learning",
+    location: "Pune",
+    courses: ["MBA", "PGDM"],
+    image:
+    "https://education.indianexpress.com/storage/images/8e28d188caa5ebd24ff4.jpg",
+  },
+  {
+    name: "IGNOU",
+    location: "New Delhi",
+    courses: ["MBA", "MA", "MCom", "MCA"],
+    image:
+          "https://digitallearning.eletsonline.com/wp-content/uploads/2021/07/IGNOU-extends-admission.jpg",
+  },
+  {
+    name: "Amity University O",
+    location: "Noida",
+    courses: ["MBA", "MCA", "MA"],
+    image:
+      "/amitty univeristy.webp",
+  },
+  {
+    name: "IMT Centre for Distance Learning",
+    location: "Ghaziabad",
+    courses: ["PGDM", "Executive MBA"],
+    image:
+        "https://www.dialeducation.com/assets/images/gallery/gallery_1573794017.jpg",
+  },
+  {
+    name: "LPU Distance Education",
+    location: "Punjab",
+    courses: ["MBA", "MCom", "MCA"],
+    image:
+      "https://cache.careers360.mobi/media/article_images/2019/11/16/LPU_Law.jpg",
+  },
+  {
+    name: "Annamalai University Distance Education",
+    location: "Tamil Nadu",
+    courses: ["MBA", "MCom", "MA"],
+    image:
+      "https://tse1.mm.bing.net/th/id/OIP.KITcltqT1isjXRsw_XQ3VgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+],
 
-  medical: [
-    {
-      name: "IGNOU",
-      location: "New Delhi",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
-    },
-    {
-      name: "Amity University Online",
-      location: "Noida",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1562774053-701939374585",
-    },
-    {
-      name: "LPU Distance Education",
-      location: "Punjab",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-    },
-    {
-      name: "Sikkim Manipal University",
-      location: "Gangtok",
-      courses: ["B.Tech", "M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-    },
-    {
-      name: "Jain University Online",
-      location: "Bangalore",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a",
-    },
-    {
-      name: "UPES Online",
-      location: "Dehradun",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b",
-    },
-    {
-      name: "Chandigarh University Online",
-      location: "Chandigarh",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1596495578065-6e0763fa1178",
-    },
-    {
-      name: "SRM Online",
-      location: "Chennai",
-      courses: ["B.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1580582932707-520aed937b7b",
-    },
-    {
-      name: "BITS Pilani Online",
-      location: "Pilani",
-      courses: ["M.Tech"],
-      image:
-        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
-    },
-  ],
 
+medical: [
+  {
+    name: "IGNOU",
+    location: "New Delhi",
+    courses: [
+      "PG Diploma in Hospital & Health Management",
+      "PG Diploma in Public Health",
+      "MSc Dietetics & Food Service Management"
+    ],
+    image:
+   "https://digitallearning.eletsonline.com/wp-content/uploads/2021/07/IGNOU-extends-admission.jpg",
+  },
+  {
+    name: "Annamalai University Distance Education",
+    location: "Tamil Nadu",
+    courses: [
+      "MBA Hospital Management",
+      "MSc Psychology",
+      "PG Diploma in Medical Lab Technology"
+    ],
+    image:
+      "https://tse1.mm.bing.net/th/id/OIP.KITcltqT1isjXRsw_XQ3VgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+  {
+    name: "Tamil Nadu Open University",
+    location: "Chennai",
+    courses: [
+      "BSc Medical Laboratory Technology",
+      "MSc Psychology",
+      "PG Diploma in Health Sciences"
+    ],
+    image:
+      "https://img.studyclap.com/img/institute/university/original/5340/tnou-chennai-525df8c190.jpg",
+  },
+  {
+    name: "University of Madras – Institute of Distance Education",
+    location: "Chennai",
+    courses: [
+      "MSc Clinical Psychology",
+      "PG Diploma in Health Sciences"
+    ],
+    image:
+     "https://distanceeducationschool.com/wp-content/uploads/2022/05/UNIVERSITY-OF-MADRAS.jpg"
+  },
+  {
+    name: "Karnataka State Open University",
+    location: "Mysuru",
+    courses: [
+      "MSc Psychology",
+      "PG Diploma in Health Care Management"
+    ],
+    image:
+     "https://tse4.mm.bing.net/th/id/OIP.LiRrA5QN2zrER5dTzNEjQgHaE4?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+]
 
 
 

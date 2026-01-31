@@ -46,6 +46,11 @@ const COUNTRY_IMAGES: Record<string, string> = {
   germany: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
   netherlands:"/netherlands.webp",
   default: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+  china:"/china.jpg",
+  russia:'/Russia.jpg',
+  georgia:"/Gemini_Generated_Image_1im1j51im1j51im1.png",
+  kazakhstan:"/Gemini_Generated_Image_tpw7gvtpw7gvtpw7.png",
+  nepal:"/Gemini_Generated_Image_79d92r79d92r79d9.png"
 };
 
 const AnimatedNumber = ({ value }: { value: number }) => {
@@ -253,10 +258,10 @@ export default function UniversityInsightsSection({ country }: Props) {
         className="-mt-16 px-4 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-6 relative z-10"
       >
         {[
-          { label: "Universities", value: 100, s: "+" },
-          { label: "Visa Success", value: 95, s: "%" },
-          { label: "Students Placed", value: 5000, s: "+" },
-          { label: "Countries", value: 25, s: "+" },
+          { label: "Universities", value: 25, s: "+" },
+          { label: "Succes Rate", value: 95, s: "%" },
+          { label: "Students Counseled", value: 1000, s: "+" },
+          { label: "Countries", value: 15, s: "+" },
         ].map((s) => (
           <motion.div
             key={s.label}

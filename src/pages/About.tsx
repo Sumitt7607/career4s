@@ -9,23 +9,23 @@ const team = [
   {
     name: "Vipul Kaushik",
     role: "Founder & CEO",
-    bio: "20+ years in education consulting with expertise in international admissions.",
+    bio: "10+ years in education consulting with expertise in international admissions.",
   },
   {
-    name: "someone",
-    role: "Head of Counseling",
-    bio: "Former admissions officer at IIM with deep understanding of B-school applications.",
+    name: "Sumit Kushwaha",
+    role: "Developer",
+    // bio: "Former admissions officer at IIM with deep understanding of B-school applications.",
   },
   {
-    name: "someone",
-    role: "Study Abroad Director",
-    bio: "Helped 2000+ students get admitted to universities in 15+ countries.",
+    name: "Ayush",
+    role: "Digital Marketing Head",
+    // bio: "Helped 2000+ students get admitted to universities in 15+ countries.",
   },
-  {
-    name: "someone",
-    role: "Career Assessment Lead",
-    bio: "Certified career counselor with expertise in psychometric evaluations.",
-  },
+  // {
+  //   name: "someone",
+  //   role: "Career Assessment Lead",
+  //   bio: "Certified career counselor with expertise in psychometric evaluations.",
+  // },
 ];
 
 const values = [

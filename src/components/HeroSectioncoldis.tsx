@@ -48,7 +48,7 @@ const HeroSectioncoldis = () => {
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
               Get expert guidance for admissions in top Indian & global universities.
-              Trusted by <span className="font-semibold text-foreground">10,000+</span>{" "}
+              Trusted by <span className="font-semibold text-foreground">1000+</span>{" "}
               students worldwide.
             </p>
 
@@ -78,7 +78,7 @@ const HeroSectioncoldis = () => {
             {/* Stats */}
             <div className="flex flex-wrap gap-10 pt-8 border-t">
               {[
-                { icon: Users, value: "10,000+", label: "Students Placed" },
+                { icon: Users, value: "1000+", label: "Students Helped" },
                 { icon: Award, value: "98%", label: "Success Rate" },
                 { icon: Star, value: "4.9/5", label: "Client Rating", fill: true },
               ].map((stat, i) => {
@@ -119,7 +119,7 @@ const HeroSectioncoldis = () => {
   {/* Image Wrapper */}
   <div className="relative h-[520px] w-[420px] rounded-3xl overflow-hidden shadow-2xl">
 <img
-  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+  src="https://images.unsplash.com/photo-1758611971587-ddc6656822d9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   alt="Happy graduates celebrating"
   className="h-full w-full object-cover"
 />

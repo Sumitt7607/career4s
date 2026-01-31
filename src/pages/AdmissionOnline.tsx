@@ -158,13 +158,13 @@ const AdmissionOnline = () => {
                 and Post-Graduation programs.
               </p>
 
-              <Link
+              {/* <Link
                 to="/apply"
                 className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-orange-600 transition shadow-lg hover:shadow-orange-400/40"
               >
                 Start Your Journey
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </Link> */}
             </AnimatedSection>
           </div>
         </section>

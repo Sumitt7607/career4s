@@ -20,9 +20,9 @@ const values = [
 ];
 
 const achievements = [
-  "10+ Years of Experience",
+  // "+ Years of Experience",
   "50+ Partner Universities",
-  "98% Visa Success Rate",
+  "98% Success Rate",
   "24/7 Support Available",
 ];
 
@@ -94,10 +94,10 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <Button className="gradient-saffron text-primary-foreground hover:opacity-90 group">
+            {/* <Button className="gradient-saffron text-primary-foreground hover:opacity-90 group">
               Learn More About Us
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

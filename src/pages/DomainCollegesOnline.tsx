@@ -16,120 +16,122 @@ const COLLEGES: Record<
 > = {
   engineering: [
     {
-      name: "IIT Delhi",
+      name: "Manipal University Online",
       image:
-        "https://images.unsplash.com/photo-1581091870627-3b6c1b0a9b2e?auto=format&fit=crop&w=800&q=80",
+        "/maniopal.webp",
     },
     {
-      name: "IIT Bombay",
+      name: "Jain University",
       image:
-        "https://images.unsplash.com/photo-1596495578060-6e0763fa8f5d?auto=format&fit=crop&w=800&q=80",
+        "/jain.webp",
     },
     {
-      name: "NIT Trichy",
+      name: "Mangalayatan University",
       image:
-        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+        "/managal.webp",
     },
     {
-      name: "BITS Pilani",
+      name: "Kalinga University",
       image:
-        "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80",
+        "/kalinga.webp",
     },
     {
-      name: "DTU Delhi",
+      name: "PCCOE Pune",
       image:
-        "https://images.unsplash.com/photo-1592066575517-58df903152f2?auto=format&fit=crop&w=800&q=80",
+        "/pccoe.jpg",
     },
     {
-      name: "NSUT Delhi",
+      name: "Amity University Online",
       image:
-        "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=800&q=80",
+        "/amitty univeristy.webp",
     },
   ],
 
   medical: [
     {
-      name: "AIIMS Delhi",
+      name: " Symbiosis School of Open & Distance Learning",
       image:
-        "https://images.unsplash.com/photo-1582719478175-2d8f8d1a1c3f?auto=format&fit=crop&w=800&q=80",
+        "/symbossis.webp",
     },
     {
-      name: "CMC Vellore",
+      name: "Jawaharlal Institute of Postgraduate Medical Education & Research (JIPMER)",
       image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+        "/jiop.webp",
     },
     {
-      name: "KGMU Lucknow",
+      name: "King George’s Medical University (KGMU), Lucknow",
       image:
-        "https://images.unsplash.com/photo-1600959907703-125ba1374a12?auto=format&fit=crop&w=800&q=80",
+        "/kgmuluck.avif",
     },
     {
-      name: "AFMC Pune",
+      name: "Christian Medical College (CMC), Vellore",
       image:
-        "https://images.unsplash.com/photo-1587502536263-9298c4e47dbd?auto=format&fit=crop&w=800&q=80",
+        "/cmcv.webp",
     },
     {
-      name: "IMS BHU",
+      name: "St John’s National Academy of Health Sciences, Bangalore",
       image:
-        "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+        "/stjh.jpg",
     },
   ],
 
-  management: [
-    {
-      name: "IIM Ahmedabad",
-      image:
-        "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "IIM Bangalore",
-      image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "IIM Calcutta",
-      image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "XLRI Jamshedpur",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "FMS Delhi",
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-    },
-  ],
+management: [
+  {
+    name: "XLRI Jamshedpur",
+    image:
+      "https://timespro.com/_next/image?url=https:%2F%2Ftimesproweb-static-backend-prod.s3.ap-south-1.amazonaws.com%2FXLRI_Jamshedpur_banner_de272950b4.webp&w=3840&q=75",
+  },
+  {
+    name: "SP Jain Institute of Management & Research (SPJIMR)",
+    image:
+      "https://www.searchurcollege.com/exam/admin/search/gallery/college/col_226.jpg",
+  },
+  {
+    name: "NMIMS University",
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.WukAD0V_yeccV1YK3gIoyAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+  {
+    name: "Symbiosis Institute of Business Management (SIBM)",
+    image:
+      "https://education.indianexpress.com/storage/images/8e28d188caa5ebd24ff4.jpg",
+  },
+  {
+    name: "MDI Gurgaon",
+    image:
+      "https://gyaanarth.com/wp-content/uploads/2021/07/mdi-gurgaon-4.jpg",
+  },
+],
 
-  postgraduation: [
-    {
-      name: "Delhi University",
-      image:
-        "https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "JNU",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "TISS Mumbai",
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "Jamia Millia Islamia",
-      image:
-        "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      name: "University of Hyderabad",
-      image:
-        "https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=80",
-    },
-  ],
+
+postgraduation: [
+  {
+    name: "Amity University",
+    image:
+      "https://askusedu.com/blogdashboard/wp-content/uploads/2024/02/Amity-University-300x154.webp",
+  },
+  {
+    name: "Manipal Academy of Higher Education",
+    image:
+      "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    name: "Symbiosis International University",
+    image:
+      "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    name: "VIT University",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.72LN14E2M6bnupqvwEGH0AHaEA?rs=1&pid=ImgDetMain&o=7&rm=3",
+  },
+  {
+    name: "UPES Dehradun",
+    image:
+      "https://img.jagranjosh.com/images/2022/December/27122022/University-of-Petroleum-and-Energy-Studies-UPES-Dehradun-Campus-View-2.jpg",
+  },
+],
+
 };
 
 /* ================= ANIMATION WRAPPER ================= */
@@ -229,19 +231,24 @@ const DomainColleges = () => {
   size="sm"
   className="bg-orange-500 hover:bg-orange-600 text-white rounded-full"
 >
-  <Link to="/contact">
-    Apply Now
-    <GraduationCap className="w-4 h-4 ml-1" />
-  </Link>
+<a
+  href="https://wa.me/919650831008?text=Hello%20I%20want%20to%20apply"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm hover:bg-orange-600 transition shadow inline-block"
+>
+  Apply Now
+</a>
+
 </Button>
 
 
-                      <button
+                      {/* <button
                         className="inline-flex items-center gap-1 text-orange-500
                                    font-medium text-sm hover:gap-2 transition-all"
                       >
                         View Details <ArrowRight className="w-4 h-4" />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>

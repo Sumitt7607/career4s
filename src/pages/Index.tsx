@@ -7,10 +7,12 @@ import { FloatingNav } from "@/components/FloatingNav";
 import { Footer } from "@/components/Footer";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import Services from "./Services";
+import NoticeCard from "./NoticeCard";
 import { AdmissionTicker } from "./AdmissionTicker";
 import { useNavigate } from "react-router-dom";
 import WhatsApp from "@/components/WhatsApp";
 import { link } from "fs";
+import NoticeBoard from "./NoticeBoard";
 // const navigate = useNavigate();
 
 const services = [
@@ -19,6 +21,7 @@ const services = [
     title: "Admissions India",
     description: "Expert guidance for admissions to top universities in India and abroad.",
     link: "/admission-india",
+    
   },
   {
     icon: Briefcase,
@@ -114,18 +117,28 @@ const Index = () => {
                 <div className="absolute inset-0 gradient-primary rounded-3xl blur-3xl opacity-20 animate-float"></div>
                 <div className="relative bg-card rounded-3xl p-8 shadow-2xl border border-border">
                   <div className="grid grid-cols-2 gap-4">
+                    
                     {services.map((service, index) => (
+                      
                       <div
+                      
                         key={service.title}
                          onClick={() => service.link && navigate(service.link)} //
                         className="p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors"
-                      >
+                      > 
                         <service.icon className="w-8 h-8 text-primary mb-3" />
+                        
                         <h3 className="font-semibold text-sm">{service.title}</h3>
+                    <p className="text-xs text-right">
+  click to explore more
+</p>
+
                       </div>
+                      
                     ))}
                   </div>
               <div className="mt-6 flex items-center gap-4 p-4 rounded-xl bg-primary/10">
+
   {/* Student Images */}
   <div className="flex -space-x-3">
     {[
@@ -194,178 +207,17 @@ const Index = () => {
   </div>
 </section>
 
+<NoticeBoard/>
 
       <Services />      
-
-
       
-{/*       
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="slide-up" className="text-center mb-16">
-            <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-              Our <span className="text-gradient">Services</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Comprehensive guidance for every step of your educational journey
-            </p>
-          </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <AnimatedSection key={service.title} animation="slide-up" delay={index * 100}>
-                <Card className="group hover:shadow-xl transition-all duration-300 border-border hover:border-primary/50 h-full">
-                  <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <service.icon className="w-7 h-7 text-primary-foreground" />
-                    </div>
-                    <h3 className="font-display font-semibold text-xl mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <Link
-                      to="/services"
-                      className="inline-flex items-center text-primary font-medium hover:gap-2 transition-all"
-                    >
-                      Learn More <ArrowRight className="ml-1 w-4 h-4" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>  */}
+{/* <NoticeCard/> */}
+      
 
-      {/* Why Choose Us */}
-      {/* <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <AnimatedSection animation="slide-left">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold mb-6">
-                Why Choose <span className="text-gradient">Career 4S?</span>
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                With over 12 years of experience, we've helped thousands of students achieve their dreams. Here's what sets us apart:
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Personalized guidance tailored to your goals",
-                  "Expert counselors with industry experience",
-                  "Strong network with 500+ partner institutions",
-                  "End-to-end support from selection to admission",
-                  "Proven track record with 98% success rate",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </AnimatedSection>
 
-            <AnimatedSection animation="slide-right" delay={200}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <Card className="p-6 gradient-primary text-primary-foreground">
-                    <Users className="w-10 h-10 mb-4" />
-                    <p className="text-3xl font-bold">50+</p>
-                    <p className="text-sm opacity-90">Expert Counselors</p>
-                  </Card>
-                  <Card className="p-6">
-                    <Award className="w-10 h-10 text-primary mb-4" />
-                    <p className="text-3xl font-bold text-foreground">15+</p>
-                    <p className="text-sm text-muted-foreground">Industry Awards</p>
-                  </Card>
-                </div>
-                <div className="space-y-4 mt-8">
-                  <Card className="p-6">
-                    <Globe className="w-10 h-10 text-primary mb-4" />
-                    <p className="text-3xl font-bold text-foreground">25+</p>
-                    <p className="text-sm text-muted-foreground">Countries Covered</p>
-                  </Card>
-                  <Card className="p-6 bg-foreground text-background">
-                    <GraduationCap className="w-10 h-10 mb-4" />
-                    <p className="text-3xl font-bold">1000+</p>
-                    <p className="text-sm opacity-80">Scholarships Secured</p>
-                  </Card>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section> */}
 
-      {/* Testimonials */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="slide-up" className="text-center mb-16">
-            <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-              Student <span className="text-gradient">Success Stories</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Hear from students who achieved their dreams with our guidance
-            </p>
-          </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={testimonial.name} animation="slide-up" delay={index * 100}>
-                <Card className="h-full">
-                  <CardContent className="p-6">
-                    <div className="flex gap-1 mb-4">
-                      {Array.from({ length: testimonial.rating }).map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-foreground mb-6 italic">"{testimonial.content}"</p>
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center font-semibold text-primary">
-                        {testimonial.name.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection animation="fade" delay={400} className="text-center mt-12">
-            <Button asChild variant="outline" size="lg">
-              <Link to="/success-stories">
-                View All Success Stories
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-          </AnimatedSection>
-        </div>
-      </section> */}
-
-      {/* CTA Section */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="scale">
-            <div className="gradient-primary rounded-3xl p-8 lg:p-16 text-center text-primary-foreground">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-                Ready to Start Your Journey?
-              </h2>
-              <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-                Book a free consultation with our expert counselors and take the first step towards your dream career.
-              </p>
-              <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                <Link to="/contact">
-                  Book Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section> */}
-
-      {/* <Footer /> */}
     </div>
   );
 };

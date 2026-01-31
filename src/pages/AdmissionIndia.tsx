@@ -14,6 +14,14 @@ type College = {
 const COLLEGE_LIST: Record<string, College[]> = {
 
   Engineering: [
+       {
+      name: "IPU , Delhi",
+      image: "https://d13loartjoc1yn.cloudfront.net/upload/institute/images/large/170110014313_ipu.webp",
+    },
+    //    {
+    //   name: "Jac Delhi",
+    //   image: "/bits.jpg",
+    // },
     {
       name: "BITS Pilani",
       image: "/bits.jpg",
@@ -42,10 +50,10 @@ const COLLEGE_LIST: Record<string, College[]> = {
       name: "Thapar Patiala",
       image: "/thapar.webp",
     },
-    {
-      name: "Kalinga University",
-      image: "/kalinga.webp",
-    },
+    // {
+    //   name: "Kalinga University",
+    //   image: "/kalinga.webp",
+    // },
      {
       name: "PICT, Pune",
       image: "/pict.jpg",
