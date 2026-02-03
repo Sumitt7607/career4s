@@ -423,7 +423,7 @@ const Navbar = () => (
 const MovingBanner = () => (
   <div className="fixed top-16 left-0 right-0 z-40 bg-orange-500 text-white overflow-hidden">
     <div className="marquee py-2 text-sm md:text-base font-medium">
-      Admissions Open 2025 • Engineering • Medical • Management • PG • Apply Now
+      Admissions Open 2026 • Engineering • Medical • Management • PG • Apply Now
     </div>
   </div>
 );
