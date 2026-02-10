@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Bell, ChevronDown } from "lucide-react";
 import NoticeCard from "./NoticeCard";
 
-/* ================= TYPES ================= */
 export type Notice = {
   id: number;
   title: string;
@@ -13,7 +12,7 @@ export type Notice = {
   pdfUrl: string;
 };
 
-/* ================= DATA ================= */
+
 const notices: Notice[] = [
     {
     id: 1,
