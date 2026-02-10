@@ -14,6 +14,7 @@ const newsItems = [
     trending: true,
     image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&h=250&fit=crop",
   },
+  
   {
     id: 2,
     title: "NEET UG 2026: Expected Changes in Exam Pattern",
@@ -58,6 +59,18 @@ const newsItems = [
     time: "3 days ago",
     trending: false,
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+  },
+  {
+    id: 7,
+    title: "GATE 2026: New Syllabus Introduced for Computer Science",
+    excerpt: "IIT Kharagpur announces updated GATE 2026 syllabus for Computer Science, including new topics on AI and Machine Learning.",
+    category: "GATE",
+    time: "4 days ago",
+    trending: false,
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=250&fit=crop",
+
+
+    
   },
 ];
 
