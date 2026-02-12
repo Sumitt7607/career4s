@@ -74,7 +74,7 @@ const Hero = ({ field }: { field: string }) => {
             Trusted guidance • Verified colleges • Real results
           </p>
           <button className="mt-8 px-10 py-4 rounded-full bg-orange-500 hover:bg-orange-600 transition">
-            Get Free Consultation
+          Get free consultation 
           </button>
         </div>
       </div>

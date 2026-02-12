@@ -36,7 +36,7 @@ const notices: Notice[] = [
     id: 3,
     title: "JEE 2026 Advisory",
     date: "January 18, 2026",
-    category: "Urgent",
+    category: "circular",
     priority: "urgent",
     description: "Important instructions for JEE 2026.",
     pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260120102259.pdf",
@@ -47,7 +47,7 @@ const notices: Notice[] = [
     date: "January 17, 2026",
     category: "Notice",
     priority: "important",
-    description: "Admit cards available for download.",
+    description: "Admit cards for JEE 2026 are available",
     pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260117164926.pdf",
   },
   {
