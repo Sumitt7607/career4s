@@ -14,6 +14,16 @@ export type Notice = {
 
 
 const notices: Notice[] = [
+      {
+    id: 1,
+    title: "Declaration of NTA Score [JEE Main - 2026]",
+    date: "February 16, 2026",
+    category: "Circular",
+    priority: "new",
+    description: " Declaration of Joint Entrance Examination [JEE (Main) - 2026] Session 1 NTA Scores for Paper 1 (B.E. / B. Tech.) ",
+    pdfUrl: "https://nta.ac.in/Download/Notice/Notice_20260216182125.pdf",
+  },
+  
     {
     id: 1,
     title: "Correction Notice for CUET (UG) 2026",
@@ -65,7 +75,7 @@ const notices: Notice[] = [
     date: "January 01, 2026",
     category: "Announcement",
     priority: "important",
-    description: "Class X & XII practical exams schedule.",
+    description: "Declaration of  Class X & XII practical exams schedule.",
     pdfUrl: "https://www.cbse.gov.in/cbsenew/documents/Reminder_Practical_01012026.pdf",
   },
 

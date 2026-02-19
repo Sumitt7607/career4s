@@ -84,6 +84,7 @@ const sampleDocuments = [
   },
 ];
 
+
 const categories = ["All", "Forms", "Affidavit", "Certificate", "Declaration", "Undertaking"];
 
 const SampleDocuments = () => {
