@@ -2,30 +2,30 @@
 
 Career4s is a MERN stack-based college admission and consultancy platform that helps students connect with expert counselors for admission guidance and career planning. It is designed for consultancy businesses to generate leads and assist students in choosing the right college and career path.
 
-🌐 **Live Website:** https://career4s.com/
+ **Live Website:** https://career4s.com/
 
 ---
 
-## 📌 About the Project
+##  About the Project
 
 Career4s provides professional consultancy services for students seeking admission to colleges. The platform allows students to submit inquiries, explore admission guidance, and connect with counselors. It helps consultancy businesses manage and generate leads efficiently.
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 🎓 College admission counselling
-* 📩 Lead generation system
-* 🧑‍🎓 Student enquiry forms
-* 🏫 College and admission information
-* ⚡ Fast and responsive UI
-* 📱 Mobile-friendly design
-* 🔗 Third-party integrations
-* 🔒 Secure backend
+* College admission counselling
+* Lead generation system
+* Student enquiry forms
+* College and admission information
+* Fast and responsive UI
+* Mobile-friendly design
+* Third-party integrations
+* Secure backend
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend**
 
@@ -49,7 +49,7 @@ Career4s provides professional consultancy services for students seeking admissi
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 career4s/
@@ -71,7 +71,7 @@ career4s/
 
 ---
 
-## ⚙️ Installation and Setup
+## Installation and Setup
 
 Follow these steps to run the project locally:
 
@@ -101,13 +101,13 @@ npm run dev
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 https://career4s.com/
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 * Help students with college admissions
 * Provide career counselling services
@@ -116,7 +116,7 @@ https://career4s.com/
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 * Admin dashboard
 * Lead management system
@@ -126,20 +126,20 @@ https://career4s.com/
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Sumit Kushwaha**
 MERN Stack Developer
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## ⭐ Support
+## Support
 
 If you like this project, please give it a ⭐ on GitHub.
 
