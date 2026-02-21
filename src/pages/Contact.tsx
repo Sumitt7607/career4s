@@ -46,17 +46,34 @@ const Contact = () => {
     phone: "",
     subject: "",
     message: "",
+    acceptTerms: false, 
+    
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  const target = e.target as HTMLInputElement;
+
+  setFormData((prev) => ({
+    ...prev,
+    [target.name]: target.type === "checkbox" ? target.checked : target.value,
+  }));
+};
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
+
+  // ✅ ADD THIS VALIDATION
+  if (!formData.acceptTerms) {
+    toast({
+      title: "Accept Terms & Conditions",
+      description: "Please accept terms before submitting.",
+      variant: "destructive",
+    });
+    return;
+  }
+
   setIsSubmitting(true);
 
   try {
@@ -92,6 +109,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       phone: "",
       subject: "",
       message: "",
+      acceptTerms: false,
     });
   } catch (error: any) {
     toast({
@@ -232,6 +250,24 @@ const handleSubmit = async (e: React.FormEvent) => {
                     />
                   </div>
 
+                  <div className="flex items-start gap-2">
+  <input
+    type="checkbox"
+    name="acceptTerms"
+    id="acceptTerms"
+    checked={formData.acceptTerms}
+    onChange={handleChange}
+    className="mt-1 cursor-pointer"
+  />
+
+  <Label htmlFor="acceptTerms" className="text-sm cursor-pointer">
+    I agree to the{" "}
+    <a href="/terms" className="text-primary underline">
+      Terms & Conditions
+    </a>
+  </Label>
+</div>
+
                   <Button
                     type="submit"
                     className="w-full gradient-primary text-lg py-6"
@@ -253,20 +289,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             {/* Map & Additional Info */}
             <AnimatedSection animation="slide-right" delay={200}>
               <div className="space-y-8">
-{/*            
-                <div
-  id="map"
-  className="aspect-video rounded-2xl overflow-hidden border border-border"
->
-  <iframe
-    title="Career4S Office Location"
-    className="w-full h-full"
-    loading="lazy"
-    allowFullScreen
-    referrerPolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps?q=Greater+Noida+Uttar+Pradesh+India&output=embed"
-  />
-</div> */}
+
 
                 {/* Quick Info */}
                 <Card>

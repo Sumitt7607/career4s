@@ -109,10 +109,10 @@ export const Footer = () => {
             © {new Date().getFullYear()} Career 4S Pvt Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-background/50 hover:text-primary transition-colors">
+            <a href="/privacy" className="text-background/50 hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-background/50 hover:text-primary transition-colors">
+            <a href="/term" className="text-background/50 hover:text-primary transition-colors">
               Terms of Service
             </a>
           </div>
