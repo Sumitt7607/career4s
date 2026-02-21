@@ -2,7 +2,7 @@
 
 Career4s is a MERN stack-based college admission and consultancy platform that helps students connect with expert counselors for admission guidance and career planning. It is designed for consultancy businesses to generate leads and assist students in choosing the right college and career path.
 
-🌐 **Live Website:** https://career4s.vercel.app/
+🌐 **Live Website:** https://career4s.com/
 
 ---
 
