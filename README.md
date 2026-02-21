@@ -103,7 +103,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-https://career4s.vercel.app/
+https://career4s.com/
 
 ---
 
