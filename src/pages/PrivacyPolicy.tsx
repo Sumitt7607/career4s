@@ -107,7 +107,7 @@ const sections = [
         text: "The right to object to the processing of your data for marketing purposes.",
       },
     ],
-    footer: "To exercise these rights, please contact us at support@career4s.com.",
+    footer: "To exercise these rights, please contact us",
   },
   {
     title: "8. Retention of Data",
