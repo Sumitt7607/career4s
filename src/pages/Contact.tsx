@@ -18,12 +18,7 @@ const contactInfo = [
     details: ["+91 9650831008"],
     action: "tel:+919650831008",
   },
-  // {
-  //   icon: Mail,
-  //   title: "Email",
-  //   details: ["info@career4s.com", "admissions@career4s.com"],
-  //   action: "mailto:info@career4s.com",
-  // },
+
   {
     icon: MapPin,
     title: "Office",
