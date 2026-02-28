@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import WhatsApp from "@/components/WhatsApp";
 import { link } from "fs";
 import NoticeBoard from "./NoticeBoard";
+import Packages from "./Packages";
 // const navigate = useNavigate();
 
 const services = [
@@ -211,6 +212,7 @@ const Index = () => {
 <NoticeBoard/>
 
       <Services />      
+     
       
 
 {/* <NoticeCard/> */}

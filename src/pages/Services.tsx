@@ -7,7 +7,7 @@ import { FloatingNav } from "@/components/FloatingNav";
 import { Footer } from "@/components/Footer";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { link } from "fs";
-
+import Packages from "./Packages";
 const services = [
 {
   icon: GraduationCap,
@@ -321,7 +321,7 @@ const Services = () => {
           </AnimatedSection>
         </div>
       </section>
-
+ <Packages/>
       <Footer />
     </div>
   );
