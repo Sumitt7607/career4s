@@ -321,7 +321,7 @@ const Services = () => {
           </AnimatedSection>
         </div>
       </section>
- <Packages/>
+ {/* <Packages/> */}
       <Footer />
     </div>
   );

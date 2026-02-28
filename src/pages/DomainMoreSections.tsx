@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 // const SECTION = "py-8 sm:py-12";
 import WhatsApp from "@/components/WhatsApp";
 
+
+import { Link } from "react-router-dom";
 /* ===================== PROPS ===================== */
 interface DomainMoreSectionsProps {
   field: string;
@@ -13,6 +15,8 @@ interface FAQItem {
   q: string;
   a: string;
 }
+
+
 
 /* ===================== MAIN ===================== */
 export default function DomainMoreSections({
@@ -27,15 +31,14 @@ export default function DomainMoreSections({
       {/* <WhatsAppCTA /> */}
        <WhatsApp />   
 
-      <div className="mt-24 space-y-16">
-        <Hero field={field} />
-        
-        <Workflow />
-        {/* <Offerings /> */}
-        <Achievements />
-        <WhyCareer4S field={field} />
-        <FAQ />
-      </div>
+<div className="mt-24 space-y-16">
+  <Hero field={field} />
+  <Workflow />
+  <Packages field={field} />   {/* 👈 ADD THIS LINE */}
+  <Achievements />
+  <WhyCareer4S field={field} />
+  <FAQ />
+</div>
 
       <GlobalStyles />
     </>
@@ -82,7 +85,115 @@ const Hero = ({ field }: { field: string }) => {
   );
 };
 
+/* ===================== COUNSELLING PACKAGES ===================== */
 
+interface PackageItem {
+  title: string;
+  price: string;
+  features: string[];
+  highlight?: boolean;
+}
+
+const COUNSELLING_PACKAGES: Record<string, PackageItem[]> = {
+  Engineering: [
+    {
+      title: "Basic Engineering Package",
+      price: "₹30,000",
+      features: [
+        "College shortlisting based on JEE score",
+        "2 One-to-One counselling sessions",
+        "Application guidance",
+        "Document checklist support",
+      ],
+    },
+    {
+      title: "Premium Engineering Package",
+      price: "₹50,000-₹5,00000",
+      highlight: true,
+      features: [
+        "Complete admission planning",
+        "5 One-to-One sessions",
+        "Form filling support",
+        "Scholarship guidance",
+        "Tracking till confirmation",
+      ],
+    },
+  ],
+
+  Medical: [
+    {
+      title: "Basic Medical Package",
+      price: "₹0,000",
+      features: [
+        "NEET college shortlisting",
+        "2 counselling sessions",
+        "MBBS/BDS guidance",
+        "State counselling support",
+      ],
+    },
+    {
+      title: "Premium Medical Package",
+      price: "₹0,000",
+      highlight: true,
+      features: [
+        "Complete NEET strategy support",
+        "5 counselling sessions",
+        "Private & Deemed college support",
+        "Seat allotment guidance",
+      ],
+    },
+  ],
+  Management: [
+  {
+    title: "Basic Management Counselling Package",
+    price: "₹0,000",
+    features: [
+      "Profile-based MBA / BBA college shortlisting",
+      "Entrance exam guidance (CAT / MAT / XAT / CMAT)",
+    
+      "Application form filling guidance",
+      "College comparison & fee structure analysis",
+
+    ],
+  },
+  {
+    title: "Premium Management Counselling Package",
+    price: "₹0,000",
+    highlight: true,
+    features: [
+      "Complete personalised MBA admission strategy",
+      "Detailed profile evaluation & college fit analysis",
+      "Unlimited One-to-One expert counselling sessions",
+
+    ],
+  },
+],
+  "Post Graduation": [
+  {
+    title: "Basic Management Counselling Package",
+    price: "₹0,000",
+    features: [
+      "Profile-based MBA / BBA college shortlisting",
+      "Entrance exam guidance (CAT / MAT / XAT / CMAT)",
+    
+      "Application form filling guidance",
+      "College comparison & fee structure analysis",
+
+    ],
+  },
+  {
+    title: "Premium Management Counselling Package",
+    price: "₹0,000",
+    highlight: true,
+    features: [
+      "Complete personalised MBA admission strategy",
+      "Detailed profile evaluation & college fit analysis",
+      "Unlimited One-to-One expert counselling sessions",
+
+    ],
+  },
+],
+};
 
 
 /* ===================== WORKFLOW ===================== */
@@ -195,7 +306,65 @@ shadow-lg shadow-orange-200/40
     `}</style>
   </section>
 );
+/* ===================== PACKAGES SECTION ===================== */
 
+const Packages = ({ field }: { field: string }) => {
+  const packages = COUNSELLING_PACKAGES[field];
+
+  if (!packages) return null; // If not Engineering/Medical, don't show
+
+  return (
+    <section id="packages" className="py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <span className="inline-block bg-orange-500 text-white px-6 py-2 rounded-md text-xl font-bold">
+            Counselling Packages
+          </span>
+
+          <h2 className="mt-6 text-4xl font-bold text-gray-900">
+            {field} Admission Packages
+          </h2>
+        </div>
+
+        {/* Package Cards */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {packages.map((pkg) => (
+            <div
+              key={pkg.title}
+              className={`rounded-3xl p-10 border shadow-lg transition hover:-translate-y-2 hover:shadow-2xl
+              ${pkg.highlight ? "border-orange-500 bg-orange-50" : "border-gray-200"}
+              `}
+            >
+              <h3 className="text-2xl font-bold mb-4">{pkg.title}</h3>
+
+              <p className="text-3xl font-extrabold text-orange-600 mb-6">
+                {pkg.price}
+              </p>
+
+              <ul className="space-y-3 text-gray-700">
+                {pkg.features.map((feature, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="w-2 h-2 mt-2 bg-orange-500 rounded-full" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+           <Link
+  to={`/${field.toLowerCase()}/${pkg.title.toLowerCase().includes("basic") ? "basic" : "premium"}`}
+  className="mt-8 block text-center w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold transition"
+>
+  Get Started
+</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 
 /* ===================== OFFERINGS ===================== */

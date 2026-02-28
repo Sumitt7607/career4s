@@ -44,6 +44,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import Packages from "./pages/Packages";
 import PackageDetail from "./pages/PackageDetail";
+import PackagePage from "./pages/PackagePage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -96,6 +97,7 @@ const App = () => (
           <Route path="/term" element={<TermsAndConditions/>} />  
               <Route path="/packages" element={<Packages />} />
           <Route path="/packages/:slug" element={<PackageDetail />} />
+          <Route path="/:field/:packageType" element={<PackagePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
