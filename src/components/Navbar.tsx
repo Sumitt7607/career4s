@@ -30,6 +30,8 @@ export const Navbar = () => {
             <NavItem to="/">Home</NavItem>
             <NavItem to="/about">About</NavItem>
             <NavItem to="/offering">Our Services</NavItem>
+            <NavItem to="/blog">Blog</NavItem>
+
             {/* <NavItem to="/testimonials">Testimonials</NavItem> */}
           </div>
 

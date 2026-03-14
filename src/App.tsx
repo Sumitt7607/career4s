@@ -45,6 +45,8 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import Packages from "./pages/Packages";
 import PackageDetail from "./pages/PackageDetail";
 import PackagePage from "./pages/PackagePage";
+
+import BlogDetail from "./pages/BlogDetail";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -60,6 +62,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admission-india" element={<AdmissionIndia />} />
           <Route path="/admission-abroad" element={<AdmissionAbroad />} />

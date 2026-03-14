@@ -5,9 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { FloatingNav } from "@/components/FloatingNav";
 import { Footer } from "@/components/Footer";
+import AdmissionChance from "./AdmissionChance";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import MythVsReality from "./MythVsReality";
 import { link } from "fs";
 import Packages from "./Packages";
+import FAQSection from "./FAQSection";
+import { ExamsSection } from "@/components/ExamsSection";
 const services = [
 {
   icon: GraduationCap,
@@ -322,6 +326,10 @@ const Services = () => {
         </div>
       </section>
  {/* <Packages/> */}
+      <ExamsSection />
+      <AdmissionChance />
+      <MythVsReality /> 
+      <FAQSection />
       <Footer />
     </div>
   );

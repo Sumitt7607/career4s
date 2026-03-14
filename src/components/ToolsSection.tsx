@@ -351,7 +351,7 @@ const calculateRank = () => {
       
       </div>
     </section>
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 }
