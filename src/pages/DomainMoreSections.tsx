@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from "react";
 /* ===================== SPACING PRESET ===================== */
 // const SECTION = "py-8 sm:py-12";
 import WhatsApp from "@/components/WhatsApp";
-
+import BlogSection from "@/components/BlogSection";
+import AboutSection from "@/components/AboutSection"; 
+import WebinarSection from "@/components/WebinarSection";
 
 import { Link } from "react-router-dom";
 /* ===================== PROPS ===================== */
@@ -34,6 +36,7 @@ export default function DomainMoreSections({
 <div className="mt-24 space-y-16">
   <Hero field={field} />
   <Workflow />
+    {field === "Engineering" && <WebinarSection />}
   <Packages field={field} />   {/* 👈 ADD THIS LINE */}
   <Achievements />
   <WhyCareer4S field={field} />
@@ -227,7 +230,7 @@ const Workflow = () => (
     {/* Heading */}
     <div className="text-center mb-20">
       <span className="inline-block bg-yellow-400 px-6 py-2 font-bold text-xl rounded-md">
-        Our Course Workflow
+        Our Counselling Workflow
       </span>
       <p className="mt-4 text-gray-600">
         Shaping • Sprint • Iterations • Release
@@ -304,6 +307,7 @@ shadow-lg shadow-orange-200/40
       .animate-float-delay-2 { animation-delay: .8s; }
       .animate-float-delay-3 { animation-delay: 1.2s; }
     `}</style>
+<AboutSection/>
   </section>
 );
 /* ===================== PACKAGES SECTION ===================== */
@@ -834,6 +838,8 @@ const FAQ = () => {
           ))}
         </div>
       </div>
+        <BlogSection/>
+
     </section>
   );
 };
@@ -848,6 +854,7 @@ const FAQAccordion = ({
   const [open, setOpen] = useState(false);
 
   return (
+    <>
     <div
       className="
         rounded-2xl bg-white border border-orange-100
@@ -897,7 +904,9 @@ const FAQAccordion = ({
           </p>
         </div>
       </div>
+  
     </div>
+    </>
   );
 };
 
@@ -1114,6 +1123,8 @@ const handleSubmit = async () => {
           🔒 Your information is safe & will not be shared
         </p>
       </div>
+      
+
     </div>
   );
 };

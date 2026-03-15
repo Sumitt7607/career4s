@@ -47,6 +47,7 @@ import PackageDetail from "./pages/PackageDetail";
 import PackagePage from "./pages/PackagePage";
 
 import BlogDetail from "./pages/BlogDetail";
+import BlogPost from "./pages/BlogPost";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -58,6 +59,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/success-stories" element={<SuccessStories />} />
