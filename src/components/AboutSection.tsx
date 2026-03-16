@@ -1,6 +1,7 @@
 import consultantImg from "@/assets/consultant.jpg";
 import { CheckCircle } from "lucide-react";
 
+
 const points = [
   "Professional guidance for college admissions",
   "Support for engineering, medical and management courses",

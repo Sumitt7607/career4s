@@ -48,6 +48,7 @@ import PackagePage from "./pages/PackagePage";
 
 import BlogDetail from "./pages/BlogDetail";
 import BlogPost from "./pages/BlogPost";
+import BlogDetailab from "./pages/BlogDetailab";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -75,6 +76,7 @@ const App = () => (
           <Route path="/admission-online" element={<AdmissionOnline />} />
           <Route path="/offering" element={<Offerings />} />
            <Route path='/doc' element={<DocumentsSection />} />
+              <Route path="/:blogab" element={<BlogDetailab />} />
             <Route path='/testimonials' element={<TestimonialsCarousel />} />
             <Route path='/admission' element={<AdmissionIn />} />
           <Route path="/documents" element={<Documents />} />

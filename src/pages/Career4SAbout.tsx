@@ -1,7 +1,12 @@
 import { CheckCircle, PenTool, Plane, Microscope, Building2 } from "lucide-react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-
+import ComparisonSection from "./ComparisonSection";
+import CTABanner from "./CTABanner";
+import FeeStructure from "./FeeStructure";
+import WhyMBBSAbroad from "./WhyMBBSAbroad";
+import AboutSectionmb from "./AboutSection";
+import BlogGrid from "@/components/BlogGrid";
 /* ===================== MAIN PAGE ===================== */
 export default function Career4SAbout() {
   const { domain } = useParams();
@@ -219,7 +224,37 @@ const handleSubmit = async (e: React.FormEvent) => {
       </section>
 
       {/* ===================== SERVICES ===================== */}
-      <ServicesSection domain={domain} />
+  {/* ===================== SERVICES ===================== */}
+<ServicesSection domain={domain} />
+
+{/* ===================== MBBS COLLEGE COMPARISON ===================== */}
+ {(domain === "medical" || !domain) && (
+      <AboutSectionmb />
+    )}
+
+ {(domain === "medical" || !domain) && (
+      <WhyMBBSAbroad />
+    )}
+
+{(domain === "medical" || !domain) && (
+  <ComparisonSection />
+)}
+
+
+  {(domain === "medical" || !domain) && (
+      <CTABanner />
+    )}
+
+      {(domain === "medical" || !domain) && (
+      <FeeStructure />
+    )}
+
+    {(domain === "medical" || !domain) && (
+  <BlogGrid />
+)}
+
+
+
     </div>
   );
 }
