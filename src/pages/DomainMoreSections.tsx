@@ -8,6 +8,8 @@ import AboutSection from "@/components/AboutSection";
 import WebinarSection from "@/components/WebinarSection";
 
 import { Link } from "react-router-dom";
+import { ClusterB } from "@/components/ClusterB";
+import { ClusterC } from "@/components/ClusterC";
 /* ===================== PROPS ===================== */
 interface DomainMoreSectionsProps {
   field: string;
@@ -39,6 +41,8 @@ export default function DomainMoreSections({
     {field === "Engineering" && <WebinarSection />}
   <Packages field={field} />   {/* 👈 ADD THIS LINE */}
   <Achievements />
+  {field === "Medical" && < ClusterB />}
+   {field === "Medical" && < ClusterC />}
   <WhyCareer4S field={field} />
   <FAQ />
 </div>
