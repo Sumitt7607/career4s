@@ -6,10 +6,14 @@ import WhatsApp from "@/components/WhatsApp";
 import BlogSection from "@/components/BlogSection";
 import AboutSection from "@/components/AboutSection"; 
 import WebinarSection from "@/components/WebinarSection";
-
+import CourseDetailsSection from "@/components/CourseDetailsSection";
 import { Link } from "react-router-dom";
 import { ClusterB } from "@/components/ClusterB";
 import { ClusterC } from "@/components/ClusterC";
+import ComparisonSectionin from "@/components/ComparisonSectionin";
+import DeadlinesSection from "@/components/DeadlinesSection";
+import CTASection from "@/components/CTASectioncoldis";
+import ProgramsSectionIn from "@/components/ProgramsSectionin";
 /* ===================== PROPS ===================== */
 interface DomainMoreSectionsProps {
   field: string;
@@ -44,6 +48,11 @@ export default function DomainMoreSections({
   {field === "Medical" && < ClusterB />}
    {field === "Medical" && < ClusterC />}
   <WhyCareer4S field={field} />
+  {field === "Management" && <CourseDetailsSection />}
+  {field?.toLowerCase().trim() === "management" && <ComparisonSectionin />}
+  {field?.toLowerCase().trim() === "management" && <DeadlinesSection />}
+    {field?.toLowerCase().trim() === "management" && <CTASection/>}
+  {field?.toLowerCase().trim() === "management" && <ProgramsSectionIn />}
   <FAQ />
 </div>
 
