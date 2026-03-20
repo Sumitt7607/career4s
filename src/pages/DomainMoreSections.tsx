@@ -13,7 +13,19 @@ import { ClusterC } from "@/components/ClusterC";
 import ComparisonSectionin from "@/components/ComparisonSectionin";
 import DeadlinesSection from "@/components/DeadlinesSection";
 import CTASection from "@/components/CTASectioncoldis";
-import ProgramsSectionIn from "@/components/ProgramsSectionin";
+import ProgramsSectionIn from "@/components/ProgramsSectionIn";
+
+import { Import } from "lucide-react";
+import EntranceExamsInfo from "@/components/EntranceExamsInfo";
+import EligibilityCriteria from "@/components/EligibilityCriteria";
+import FeesStructureOverview from "@/components/FeesStructureOverview";
+import OnlineVsOfflineCourses from "@/components/OnlineVsOfflineCourses";
+import StudyAbroadComparison from "./StudyAbroadComparison";
+import CareerScopeSection from "./CareerScopeSection";
+import CounselingProcessIndia from "./CounselingProcessIndia";
+
+
+
 /* ===================== PROPS ===================== */
 interface DomainMoreSectionsProps {
   field: string;
@@ -53,6 +65,14 @@ export default function DomainMoreSections({
   {field?.toLowerCase().trim() === "management" && <DeadlinesSection />}
     {field?.toLowerCase().trim() === "management" && <CTASection/>}
   {field?.toLowerCase().trim() === "management" && <ProgramsSectionIn />}
+    {field?.toLowerCase().trim() === "post graduation" && <EligibilityCriteria />}
+     {field?.toLowerCase().trim() === "post graduation" && <EntranceExamsInfo />}
+     {field?.toLowerCase().trim() === "post graduation" && <FeesStructureOverview />}
+     {field?.toLowerCase().trim() === "post graduation" && <OnlineVsOfflineCourses   />}
+     {field?.toLowerCase().trim() === "post graduation" && <StudyAbroadComparison />}
+     {field?.toLowerCase().trim() === "post graduation" && <CareerScopeSection />}
+     {field?.toLowerCase().trim() === "post graduation" && <CounselingProcessIndia />}
+  {/* {field === "Post Graduation" && <EligibilityCriteria />} */}
   <FAQ />
 </div>
 
