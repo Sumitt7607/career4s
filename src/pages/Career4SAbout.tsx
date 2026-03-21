@@ -7,6 +7,11 @@ import FeeStructure from "./FeeStructure";
 import WhyMBBSAbroad from "./WhyMBBSAbroad";
 import AboutSectionmb from "./AboutSection";
 import BlogGrid from "@/components/BlogGrid";
+import CostComparison from "./CostComparison";
+import LivingAbroad from "./LivingAbroad";
+import Eligibilityabroad from "./Eligibilityabroad";
+import AdmissionProcessabroad from "./AdmissionProcessabroad";
+import AboutUsabroadeng from "./AboutUsabroadeng";
 /* ===================== MAIN PAGE ===================== */
 export default function Career4SAbout() {
   const { domain } = useParams();
@@ -252,6 +257,37 @@ const handleSubmit = async (e: React.FormEvent) => {
     {(domain === "medical" || !domain) && (
   <BlogGrid />
 )}
+
+
+  {(domain === "engineering" || !domain) && (
+  <AboutUsabroadeng />
+)}
+
+
+    {(domain === "engineering" || !domain) && (
+  <CostComparison />
+)}
+
+  {(domain === "engineering" || !domain) && (
+  <LivingAbroad />
+)}
+
+  {(domain === "engineering" || !domain) && (
+  <Eligibilityabroad />
+)}
+  {(domain === "engineering" || !domain) && (
+  <AdmissionProcessabroad />
+)}
+
+
+
+  {(domain === "engineering" || !domain) && (
+  <BlogGrid />
+)}
+
+
+
+
 
 
 
