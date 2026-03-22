@@ -12,6 +12,11 @@ import LivingAbroad from "./LivingAbroad";
 import Eligibilityabroad from "./Eligibilityabroad";
 import AdmissionProcessabroad from "./AdmissionProcessabroad";
 import AboutUsabroadeng from "./AboutUsabroadeng";
+import ProgramsSectionabroaman from "./ProgramsSectionabroaman";
+import SpecializationsSection from "./SpecializationsSection";
+import CountryComparisonSection from "./CountryComparisonSection";
+import ComparisonSectionabman from "./ComparisonSectionabman";
+import EligibilitySectionabman from "./EligibilitySectionabman";
 /* ===================== MAIN PAGE ===================== */
 export default function Career4SAbout() {
   const { domain } = useParams();
@@ -284,6 +289,34 @@ const handleSubmit = async (e: React.FormEvent) => {
   {(domain === "engineering" || !domain) && (
   <BlogGrid />
 )}
+
+
+
+  {(domain === "management" || !domain) && (
+  <ProgramsSectionabroaman />
+)}
+
+ {(domain === "management" || !domain) && (
+  <SpecializationsSection />
+)}
+
+ {(domain === "management" || !domain) && (
+  <CountryComparisonSection />
+)}
+
+
+ {(domain === "management" || !domain) && (
+  <ComparisonSectionabman />
+)}
+ {(domain === "management" || !domain) && (
+  <EligibilitySectionabman/>
+)}
+
+
+ {(domain === "management" || !domain) && (
+  <BlogGrid />
+)}
+
 
 
 
