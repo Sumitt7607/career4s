@@ -17,6 +17,11 @@ import SpecializationsSection from "./SpecializationsSection";
 import CountryComparisonSection from "./CountryComparisonSection";
 import ComparisonSectionabman from "./ComparisonSectionabman";
 import EligibilitySectionabman from "./EligibilitySectionabman";
+import ProgramsSection from "./ProgramsSection";
+import ProcessSection from "./ProcessSection";
+import WhyChooseSection from "./WhyChooseSection";
+import AboutSectionps from "./AboutSectionps";
+import FAQSectionps from "./FAQSectionps";
 /* ===================== MAIN PAGE ===================== */
 export default function Career4SAbout() {
   const { domain } = useParams();
@@ -314,6 +319,32 @@ const handleSubmit = async (e: React.FormEvent) => {
 
 
  {(domain === "management" || !domain) && (
+  <BlogGrid />
+)}
+
+ {(domain === "post-graduation" || !domain) && (
+  <AboutSectionps />
+)}
+
+
+ {(domain === "post-graduation" || !domain) && (
+  <ProgramsSection />
+)}
+
+
+ {(domain === "post-graduation" || !domain) && (
+  <ProcessSection />
+)}
+
+ {(domain === "post-graduation" || !domain) && (
+  <WhyChooseSection />
+)}
+ {(domain === "post-graduation" || !domain) && (
+  <FAQSectionps />
+)}
+
+
+ {(domain === "post-graduation" || !domain) && (
   <BlogGrid />
 )}
 
