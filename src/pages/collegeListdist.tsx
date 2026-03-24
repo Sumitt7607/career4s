@@ -11,6 +11,14 @@ import { Link, NavLink } from "react-router-dom";
 import MobileNavbar from "@/components/MobileNavbar";
 import WhatsApp from "@/components/WhatsApp";
 import Career4SLogo from "@/components/Career4SLogo";
+import Chut from "./WhyCareer4Section";
+import WhyCareer4Section from "./WhyCareer4Section";
+import CoursesSectiondis from "./CoursesSectiondis";
+import EligibilitySectiondis from "./EligibilitySectiondis";
+import DocumentsRequiredSection from "./DocumentsRequiredSection";
+import BenefitsSection from "./BenefitsSection";
+import ComparisonSectiondis from "./ComparisonSectiondis";
+import WorkingProfessionalsSection from "./WorkingProfessionalsSection";
 /* ================= TYPES ================= */
 
 interface College {
@@ -403,7 +411,15 @@ const CollegeListDist = () => {
       </section>
 
       <FeaturesSection />
-        <AboutSection />
+         <AboutSection />
+      {domain === "engineering" && <WhyCareer4Section />}
+        {domain === "engineering" && <CoursesSectiondis />}
+       {domain === "engineering" && <EligibilitySectiondis />}
+        {domain === "engineering" && <DocumentsRequiredSection />}
+             {domain === "engineering" && <BenefitsSection />}
+               {domain === "engineering" && <ComparisonSectiondis />}
+                {domain === "engineering" && <WorkingProfessionalsSection />}
+     
         <CTASection />
       <Footer />
     </>
