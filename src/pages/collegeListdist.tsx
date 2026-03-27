@@ -19,6 +19,13 @@ import DocumentsRequiredSection from "./DocumentsRequiredSection";
 import BenefitsSection from "./BenefitsSection";
 import ComparisonSectiondis from "./ComparisonSectiondis";
 import WorkingProfessionalsSection from "./WorkingProfessionalsSection";
+import AboutSectionmedis from "./AboutSectionmedis";
+import MissionVisionSection from "./MissionVisionSection";
+import WhyChooseUsSectiondismed from "./WhyChooseUsSectiondismed";
+import AdmissionProcessSectiondismid from "./AdmissionProcessSectiondismid";
+import FeeStructureSectionmedis from "./FeeStructureSectionmedis";
+import DocumentsSectionmedis from "./DocumentsSectionmedis";
+
 /* ================= TYPES ================= */
 
 interface College {
@@ -419,7 +426,13 @@ const CollegeListDist = () => {
              {domain === "engineering" && <BenefitsSection />}
                {domain === "engineering" && <ComparisonSectiondis />}
                 {domain === "engineering" && <WorkingProfessionalsSection />}
-     
+                  {domain === "medical" && <AboutSectionmedis />}
+                     {domain === "medical" && <MissionVisionSection />}
+                      {domain === "medical" && <WhyChooseUsSectiondismed />}
+                       {domain === "medical" && <AdmissionProcessSectiondismid/>}
+                         {domain === "medical" && <DocumentsSectionmedis/>}  
+                          {domain === "medical" && <FeeStructureSectionmedis/>}
+                  
         <CTASection />
       <Footer />
     </>

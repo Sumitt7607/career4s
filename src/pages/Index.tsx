@@ -14,6 +14,7 @@ import WhatsApp from "@/components/WhatsApp";
 import { link } from "fs";
 import NoticeBoard from "./NoticeBoard";
 import Packages from "./Packages";
+import HomePageClg from "@/components/HomePageClg";
 // const navigate = useNavigate();
 
 const services = [
@@ -172,12 +173,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+  <HomePageClg/>
       {/* Stats Section */}
-     <section className="relative py-20 bg-muted/50 overflow-hidden">
+     {/* <section className="relative py-20 bg-muted/50 overflow-hidden">
   <div className="container mx-auto px-4">
 
-    {/* Background glow */}
+
     <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
     <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
 
@@ -190,24 +191,24 @@ const Index = () => {
         >
           <div className="group relative bg-background/70 backdrop-blur-xl border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
 
-            {/* Value */}
+         
             <p className="text-4xl lg:text-5xl font-display font-bold text-primary mb-2 transition-transform duration-500 group-hover:scale-110">
               {stat.value}
             </p>
 
-            {/* Label */}
+  
             <p className="text-muted-foreground font-medium tracking-wide">
               {stat.label}
             </p>
 
-            {/* Hover glow */}
+         
             <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary/5" />
           </div>
         </AnimatedSection>
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
 <NoticeBoard/>
 
