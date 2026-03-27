@@ -83,7 +83,7 @@ export const Footer = () => {
                 </span>
                   <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-background/70">
-                Faridabad Branch:  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)
+                Faridabad Branch: E-1/81,YMCA Road, Sector11, Faridabad-121006(HR)
                 
                 </span>
               </li>

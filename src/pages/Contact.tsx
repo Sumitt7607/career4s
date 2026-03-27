@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Office",
-    details: ["Delhi Branch: 119, first floor Dlf Tower - A Jasola Delhi", "   Faridabad Branch :  Block E/1 - 58 Sec-11, Near YMCA University, Faridabad-121006(HR)"],
+    details: ["Delhi Branch: 119, first floor Dlf Tower - A Jasola Delhi", "   Faridabad Branch : E-1/81,YMCA Road, Sector11, Faridabad-121006(HR)"],
     action: "#map",
   },
   {
