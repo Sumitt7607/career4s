@@ -11,7 +11,7 @@ interface CourseDomain {
 const courseDomains: CourseDomain[] = [
   {
     title: "Engineering",
-    image: "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
+    image: "https://static.vecteezy.com/system/resources/thumbnails/032/330/439/small_2x/ai-generated-computer-electronic-chip-with-processor-transistors-resistors-and-microchips-abstract-hi-tech-background-free-photo.jpg",
     description:
       "Industry-oriented engineering programs designed for future technologies and core technical expertise.",
     branches: [
@@ -26,7 +26,7 @@ const courseDomains: CourseDomain[] = [
   },
   {
     title: "Medical & Healthcare",
-    image: "https://images.unsplash.com/photo-1580281657527-47b9b43c76c9",
+    image: "https://tse1.mm.bing.net/th/id/OIP.bDA0TWCVKrvFgx_7UGTBvwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
     description:
       "Healthcare programs focused on hospital administration, diagnostics, and public health systems.",
     branches: [
@@ -39,7 +39,7 @@ const courseDomains: CourseDomain[] = [
   },
   {
     title: "Management",
-    image: "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
+    image: "https://potomac.edu/wp-content/uploads/2022/09/what-is-project-mangement-definition-scaled-e1664395663365.jpg",
     description:
       "Management programs that build leadership, strategic thinking, and business decision-making skills.",
     branches: [
@@ -53,7 +53,7 @@ const courseDomains: CourseDomain[] = [
   },
   {
     title: "Post Graduation",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    image: "https://cicnewsupdate.com/wp-content/uploads/2025/03/Post-Graduation-Work-Permit-PGWP-program.webp",
     description:
       "Advanced postgraduate programs to deepen specialization and accelerate career growth.",
     branches: ["M.Tech", "MBA", "MCA", "M.Com", "MA"],

@@ -25,6 +25,13 @@ import WhyChooseUsSectiondismed from "./WhyChooseUsSectiondismed";
 import AdmissionProcessSectiondismid from "./AdmissionProcessSectiondismid";
 import FeeStructureSectionmedis from "./FeeStructureSectionmedis";
 import DocumentsSectionmedis from "./DocumentsSectionmedis";
+import AboutUsdistman from "@/components/AboutUsdistman";
+import WhyChooseUsdistmang from "@/components/WhyChooseUsdistmang";
+import ServicesMisMan from "@/components/ServicesMisMan";
+import DistanceEducationOverview from "@/components/DistanceEducationOverview";
+import PopularCourses from "./PopularCourses";
+import MBAProgramSection from "./MBAProgramSection";
+import AdmissionProcessdisman from "./AdmissionProcessdisman";
 
 /* ================= TYPES ================= */
 
@@ -432,6 +439,13 @@ const CollegeListDist = () => {
                        {domain === "medical" && <AdmissionProcessSectiondismid/>}
                          {domain === "medical" && <DocumentsSectionmedis/>}  
                           {domain === "medical" && <FeeStructureSectionmedis/>}
+                          {domain === "management" && <AboutUsdistman/>}
+                              {domain === "management" && <WhyChooseUsdistmang/>}
+                                 {domain === "management" && <ServicesMisMan/>}
+                                  {domain === "management" && <DistanceEducationOverview/>} 
+                                      {domain === "management" && <PopularCourses/>}
+                          {domain === "management" && <MBAProgramSection/>}
+                          {domain === "management" && <AdmissionProcessdisman/>}
                   
         <CTASection />
       <Footer />
