@@ -32,6 +32,14 @@ import DistanceEducationOverview from "@/components/DistanceEducationOverview";
 import PopularCourses from "./PopularCourses";
 import MBAProgramSection from "./MBAProgramSection";
 import AdmissionProcessdisman from "./AdmissionProcessdisman";
+import WhyChooseUsposdis from "./WhyChooseUsposdis";
+import CoursesSectionposdis from "./CoursesSectionposdis";
+import AdmissionProcessposdis from "./AdmissionProcessposdis";
+import EligibilitySectionposdis from "./EligibilitySectionposdis";
+import DistanceEdBenefits from "./DistanceEdBenefits";
+import ComparisonTable from "./ComparisonTable";
+import ExamPattern from "./ExamPattern";
+import FAQSectionposdis from "./FAQSectionposdis";
 
 /* ================= TYPES ================= */
 
@@ -446,7 +454,15 @@ const CollegeListDist = () => {
                                       {domain === "management" && <PopularCourses/>}
                           {domain === "management" && <MBAProgramSection/>}
                           {domain === "management" && <AdmissionProcessdisman/>}
-                  
+                         {domain === "PostGraduation" && <WhyChooseUsposdis/>}
+                         {domain === "PostGraduation" && <CoursesSectionposdis/>}
+                         {domain === "PostGraduation" && <AdmissionProcessposdis/>}
+                         {domain === "PostGraduation" && <EligibilitySectionposdis/>}
+                         {domain === "PostGraduation" && <DistanceEdBenefits/>}
+                         {domain === "PostGraduation" && <ComparisonTable/>}
+                         {domain === "PostGraduation" && <ExamPattern/>}
+                         {domain === "PostGraduation" && <FAQSectionposdis/>}
+                   
         <CTASection />
       <Footer />
     </>
