@@ -9,6 +9,12 @@ import { Button } from "@/components/ui/button";
 
 import { AdmissionsSectionProcess } from "./AdmissionsSectionProcess";
 import WhatsApp from "@/components/WhatsApp";
+import WhyCareer4Section from "./WhyCareer4Section";
+import EligibilitySectionedumed from "./EligibilitySectionedumed";
+import ComparisonSectioneduon from "./ComparisonSectioneduon";
+import TimelineSection from "./TimelineSection";
+import EngineeringBranchesSection from "./EngineeringBranchesSection";
+import WhyChooseUsSectioneduon from "./WhyChooseUsSectioneduon";
 /* ================= COLLEGE DATA ================= */
 const COLLEGES: Record<
   string,
@@ -264,9 +270,20 @@ const DomainColleges = () => {
           )}
         </div>
       </div>
+      
+
+     
       <AboutSectiononline />
       <WhyChooseUsSection />
+       {domain === "engineering" && <TimelineSection />}
       <AdmissionsSectionProcess />
+       {domain === "engineering" && <EligibilitySectionedumed />}
+        {domain === "engineering" && <ComparisonSectioneduon />}
+       
+              {domain === "engineering" && <EngineeringBranchesSection />}
+
+        {domain === "engineering" && <WhyChooseUsSectioneduon />}
+              
       <Footer />
     </>
   );
