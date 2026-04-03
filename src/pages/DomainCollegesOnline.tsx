@@ -15,6 +15,14 @@ import ComparisonSectioneduon from "./ComparisonSectioneduon";
 import TimelineSection from "./TimelineSection";
 import EngineeringBranchesSection from "./EngineeringBranchesSection";
 import WhyChooseUsSectioneduon from "./WhyChooseUsSectioneduon";
+import AboutSectiononmed from "./AboutSectiononmed";
+import HeroSectionmedon from "./HeroSectionmedon";
+import ServicesSection from "./ServicesSection";
+import WhyChooseUsSectionmedon from "./WhyChooseUsSectionmedon";
+import NEETSection from "./NEETSection";
+import EligibilitySectionmedon from "./EligibilitySectionmedon";
+import QuotaSection from "./QuotaSection";
+
 /* ================= COLLEGE DATA ================= */
 const COLLEGES: Record<
   string,
@@ -277,12 +285,23 @@ const DomainColleges = () => {
       <WhyChooseUsSection />
        {domain === "engineering" && <TimelineSection />}
       <AdmissionsSectionProcess />
+         {domain==='medical' && <HeroSectionmedon/>}
        {domain === "engineering" && <EligibilitySectionedumed />}
         {domain === "engineering" && <ComparisonSectioneduon />}
        
               {domain === "engineering" && <EngineeringBranchesSection />}
 
         {domain === "engineering" && <WhyChooseUsSectioneduon />}
+        {domain === "medical" && <AboutSectiononmed />}
+        {domain === "medical" && <ServicesSection />}
+     
+        {domain==='medical' && <WhyChooseUsSectionmedon/>}
+        {domain==='medical' && <NEETSection/>}
+          
+     
+
+        {domain==='medical' && <EligibilitySectionmedon/>} 
+         {domain==='medical' && <QuotaSection/>}
               
       <Footer />
     </>
