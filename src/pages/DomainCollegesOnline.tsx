@@ -22,6 +22,14 @@ import WhyChooseUsSectionmedon from "./WhyChooseUsSectionmedon";
 import NEETSection from "./NEETSection";
 import EligibilitySectionmedon from "./EligibilitySectionmedon";
 import QuotaSection from "./QuotaSection";
+import ServicesSectiononlinma from "./ServicesSectiononlinma";
+import WhyChooseUsSectiononlinemed from "./WhyChooseUsSectiononlinemed";
+import FreeCounselingCTA from "./FreeCounselingCTA";
+import PopularCoursesSection from "./PopularCoursesSection";
+import AdmissionProcessSectionmanon from "./AdmissionProcessSectionmanon";
+import AdmissionTimelineSectiononman from "./AdmissionTimelineSectiononman";
+import OnlineBenefitsSection from "./OnlineBenefitsSection";
+import ComparisonSectiononman from "./ComparisonSectiononman";
 
 /* ================= COLLEGE DATA ================= */
 const COLLEGES: Record<
@@ -302,6 +310,14 @@ const DomainColleges = () => {
 
         {domain==='medical' && <EligibilitySectionmedon/>} 
          {domain==='medical' && <QuotaSection/>}
+              {domain === "management" && <ServicesSectiononlinma />}
+              {domain === "management" && <WhyChooseUsSectiononlinemed  />}
+               {domain === "management" && <FreeCounselingCTA  />}
+               {domain==='management' && <PopularCoursesSection  />}
+               {domain === 'management' && <AdmissionProcessSectionmanon />}
+               {domain === 'management' && <AdmissionTimelineSectiononman />}
+               {domain === 'management' && <OnlineBenefitsSection />}
+               {domain === 'management' && <ComparisonSectiononman />}
               
       <Footer />
     </>
