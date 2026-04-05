@@ -30,6 +30,13 @@ import AdmissionProcessSectionmanon from "./AdmissionProcessSectionmanon";
 import AdmissionTimelineSectiononman from "./AdmissionTimelineSectiononman";
 import OnlineBenefitsSection from "./OnlineBenefitsSection";
 import ComparisonSectiononman from "./ComparisonSectiononman";
+import Servicesposon from "./Servicesposon";
+import WhyChooseUsposon from "./WhyChooseUsposon";
+import AdmissionProcessposon from "./HowItWorks";
+import CourseCategoriesposon from "./CourseCategoriesposon";
+import Accreditations from "./Accreditationsposon";
+import Eligibilityposon from "./Eligibilityposon";
+import OnlineLearningBenefits from "./OnlineLearningBenefits";
 
 /* ================= COLLEGE DATA ================= */
 const COLLEGES: Record<
@@ -318,6 +325,14 @@ const DomainColleges = () => {
                {domain === 'management' && <AdmissionTimelineSectiononman />}
                {domain === 'management' && <OnlineBenefitsSection />}
                {domain === 'management' && <ComparisonSectiononman />}
+               {domain === 'postgraduation' && <Servicesposon   />}
+               {domain === 'postgraduation' && <WhyChooseUsposon />}
+               {domain === 'postgraduation' && <AdmissionProcessposon />}
+               {domain === 'postgraduation' && <CourseCategoriesposon />}
+               {domain === 'postgraduation' && <Accreditations />}
+               {domain === 'postgraduation' && <Eligibilityposon/>}
+               {domain === 'postgraduation' && <OnlineLearningBenefits />}
+
               
       <Footer />
     </>
