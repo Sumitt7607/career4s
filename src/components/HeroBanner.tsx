@@ -3,7 +3,7 @@ import { ScrollReveal } from './ScrollReveal';
 import { InquiryForm } from './InquiryForm';
 import { GraduationCap, Building, CheckCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
+import ManagementQuotaAdmission from './ManagementQuotaAdmission';
 import graduationImg from '@/assets/graduation.jpg';
 import { Footer } from './Footer';
 export const HeroBanner = () => {
@@ -129,6 +129,7 @@ export const HeroBanner = () => {
       {/* Decorative image overlay */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
+    <ManagementQuotaAdmission />
     <Footer />
        </>
   );

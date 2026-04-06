@@ -18,7 +18,8 @@ import AdmissionOnline from "./pages/AdmissionOnline";
 import DomainColleges from "./pages/DomainCollegesOnline";
 import Offerings from "./pages/Offerings";
 import { TestimonialsCarousel } from "./components/TestimonialsCarousel";
-import { AdmissionProcess as AdmissionIn } from "./components/AdmissionProcess";
+// import AdmissionProcess from "./components/AdmissionProcess";
+import AdmissionProcessal from "./components/AdmissionProcessal";
 import { ExamsSection } from "./components/ExamsSection";
 import ExamsSectionabroad from "./pages/ExamsSectionabroad";
 import VisaProcess from "./pages/VisaProcess";
@@ -78,7 +79,8 @@ const App = () => (
            <Route path='/doc' element={<DocumentsSection />} />
               {/* <Route path="/:blogab" element={<BlogDetailab />} /> */}
             <Route path='/testimonials' element={<TestimonialsCarousel />} />
-            <Route path='/admission' element={<AdmissionIn />} />
+                <Route path='/admission' element={<AdmissionProcessal />} />
+            {/* <Route path='/admission' element={<AdmissionIn />} /> */}
           <Route path="/documents" element={<Documents />} />
           <Route path='/exams' element={<ExamsSection />} />
           <Route path='/counseling' element={<CounselingSection />} />

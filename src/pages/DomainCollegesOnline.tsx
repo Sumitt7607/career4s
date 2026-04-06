@@ -37,6 +37,7 @@ import CourseCategoriesposon from "./CourseCategoriesposon";
 import Accreditations from "./Accreditationsposon";
 import Eligibilityposon from "./Eligibilityposon";
 import OnlineLearningBenefits from "./OnlineLearningBenefits";
+import ComparisonTable from "./ComparisonTableposon";
 
 /* ================= COLLEGE DATA ================= */
 const COLLEGES: Record<
@@ -332,7 +333,7 @@ const DomainColleges = () => {
                {domain === 'postgraduation' && <Accreditations />}
                {domain === 'postgraduation' && <Eligibilityposon/>}
                {domain === 'postgraduation' && <OnlineLearningBenefits />}
-
+                {domain === "postgraduation" && <ComparisonTable />}
               
       <Footer />
     </>
