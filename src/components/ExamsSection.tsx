@@ -594,21 +594,21 @@ const [marks, setMarks] = useState("");
 
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3 mt-8 pt-6 border-t border-border">
+              {/* <div className="flex flex-wrap gap-3 mt-8 pt-6 border-t border-border">
                 <Button className="gradient-saffron text-primary-foreground">
                   Start Preparation <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
                 <Button variant="outline">Download Previous Papers</Button>
                 <Button variant="outline">Join Study Group</Button>
                 <Button variant="outline">Get Notifications</Button>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         )}
       </div>
     </section>
 
-    <ToolsSection />
+    {/* <ToolsSection /> */}
     
      </>
   );

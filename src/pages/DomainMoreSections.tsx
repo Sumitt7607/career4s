@@ -55,7 +55,7 @@ export default function DomainMoreSections({
   <Hero field={field} />
   <Workflow />
     {field === "Engineering" && <WebinarSection />}
-  <Packages field={field} />   {/* 👈 ADD THIS LINE */}
+  {/* <Packages field={field} />    */}
   <Achievements />
   {field === "Medical" && < ClusterB />}
    {field === "Medical" && < ClusterC />}
@@ -345,63 +345,63 @@ shadow-lg shadow-orange-200/40
 );
 /* ===================== PACKAGES SECTION ===================== */
 
-const Packages = ({ field }: { field: string }) => {
-  const packages = COUNSELLING_PACKAGES[field];
+// const Packages = ({ field }: { field: string }) => {
+//   const packages = COUNSELLING_PACKAGES[field];
 
-  if (!packages) return null; // If not Engineering/Medical, don't show
+//   if (!packages) return null;
 
-  return (
-    <section id="packages" className="py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+//   return (
+//     <section id="packages" className="py-28 bg-white">
+//       <div className="max-w-6xl mx-auto px-6">
         
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <span className="inline-block bg-orange-500 text-white px-6 py-2 rounded-md text-xl font-bold">
-            Counselling Packages
-          </span>
 
-          <h2 className="mt-6 text-4xl font-bold text-gray-900">
-            {field} Admission Packages
-          </h2>
-        </div>
+//         <div className="text-center mb-16">
+//           <span className="inline-block bg-orange-500 text-white px-6 py-2 rounded-md text-xl font-bold">
+//             Counselling Packages
+//           </span>
 
-        {/* Package Cards */}
-        <div className="grid md:grid-cols-2 gap-10">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.title}
-              className={`rounded-3xl p-10 border shadow-lg transition hover:-translate-y-2 hover:shadow-2xl
-              ${pkg.highlight ? "border-orange-500 bg-orange-50" : "border-gray-200"}
-              `}
-            >
-              <h3 className="text-2xl font-bold mb-4">{pkg.title}</h3>
+//           <h2 className="mt-6 text-4xl font-bold text-gray-900">
+//             {field} Admission Packages
+//           </h2>
+//         </div>
 
-              <p className="text-3xl font-extrabold text-orange-600 mb-6">
-                {pkg.price}
-              </p>
+     
+//         <div className="grid md:grid-cols-2 gap-10">
+//           {packages.map((pkg) => (
+//             <div
+//               key={pkg.title}
+//               className={`rounded-3xl p-10 border shadow-lg transition hover:-translate-y-2 hover:shadow-2xl
+//               ${pkg.highlight ? "border-orange-500 bg-orange-50" : "border-gray-200"}
+//               `}
+//             >
+//               <h3 className="text-2xl font-bold mb-4">{pkg.title}</h3>
 
-              <ul className="space-y-3 text-gray-700">
-                {pkg.features.map((feature, i) => (
-                  <li key={i} className="flex gap-3 items-start">
-                    <span className="w-2 h-2 mt-2 bg-orange-500 rounded-full" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+//               <p className="text-3xl font-extrabold text-orange-600 mb-6">
+//                 {pkg.price}
+//               </p>
 
-           <Link
-  to={`/${field.toLowerCase()}/${pkg.title.toLowerCase().includes("basic") ? "basic" : "premium"}`}
-  className="mt-8 block text-center w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold transition"
->
-  Get Started
-</Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+//               <ul className="space-y-3 text-gray-700">
+//                 {pkg.features.map((feature, i) => (
+//                   <li key={i} className="flex gap-3 items-start">
+//                     <span className="w-2 h-2 mt-2 bg-orange-500 rounded-full" />
+//                     {feature}
+//                   </li>
+//                 ))}
+//               </ul>
+
+//            <Link
+//   to={`/${field.toLowerCase()}/${pkg.title.toLowerCase().includes("basic") ? "basic" : "premium"}`}
+//   className="mt-8 block text-center w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold transition"
+// >
+//   Get Started
+// </Link>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 
 /* ===================== OFFERINGS ===================== */

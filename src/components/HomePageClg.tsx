@@ -120,7 +120,7 @@ const HomePageClg = () => {
         💬
       </a> */}
 
-      <InfoNeetCoun/>
+      {/* <InfoNeetCoun/> */}
     </>
   );
 };

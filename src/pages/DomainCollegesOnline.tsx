@@ -301,11 +301,11 @@ const DomainColleges = () => {
       <WhyChooseUsSection />
        {domain === "engineering" && <TimelineSection />}
       <AdmissionsSectionProcess />
-         {domain==='medical' && <HeroSectionmedon/>}
+        {domain==='medical' && <HeroSectionmedon/>}
        {domain === "engineering" && <EligibilitySectionedumed />}
-        {domain === "engineering" && <ComparisonSectioneduon />}
+      {domain === "engineering" && <ComparisonSectioneduon />}
        
-              {domain === "engineering" && <EngineeringBranchesSection />}
+       {domain === "engineering" && <EngineeringBranchesSection />}
 
         {domain === "engineering" && <WhyChooseUsSectioneduon />}
         {domain === "medical" && <AboutSectiononmed />}
