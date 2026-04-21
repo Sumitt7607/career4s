@@ -72,30 +72,15 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   try {
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        access_key: "62630d11-6b8f-4743-8d0f-9c3a3158b735",
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-      }),
-    });
+    const message = `New Contact Inquiry from Career4S:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919910992965?text=${encodedMessage}`;
 
-    const data = await res.json();
-
-    if (!data.success) {
-      throw new Error(data.message);
-    }
+    window.open(whatsappUrl, "_blank");
 
     toast({
-      title: "Message Sent Successfully!",
-      description: "Our team will contact you within 24 hours.",
+      title: "Message Prepared for WhatsApp!",
+      description: "Redirecting you to WhatsApp to send your message.",
     });
 
     setFormData({

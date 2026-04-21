@@ -53,41 +53,24 @@ export const InquiryForm = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "62630d11-6b8f-4743-8d0f-9c3a3158b735", // 🔴 PUT KEY HERE
-          subject: "New Free Counseling Inquiry",
-          from_name: "Counseling Website",
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          course: formData.course,
-          state: formData.state,
-        }),
+      const message = `New Inquiry from Career4S:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nCourse: ${formData.course}\nState: ${formData.state}`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/919910992965?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, "_blank");
+
+      toast({
+        title: "🎉 WhatsApp Redirected!",
+        description: "Please send the message on WhatsApp to complete your inquiry.",
       });
 
-      const data = await res.json();
-
-      if (data.success) {
-        toast({
-          title: "🎉 Inquiry Submitted Successfully!",
-          description: "Our counselor will contact you within 24 hours.",
-        });
-
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          course: "",
-          state: "",
-        });
-      } else {
-        throw new Error(data.message);
-      }
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        course: "",
+        state: "",
+      });
     } catch (error: any) {
       toast({
         variant: "destructive",

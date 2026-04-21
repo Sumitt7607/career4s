@@ -986,20 +986,46 @@ const Title = ({ text, light }: { text: string; light?: boolean }) => (
 );
 
 /* ===================== STICKY FORM ===================== */
-const StickyEnquiryForm = () => (
-  <div className="hidden lg:block fixed top-32 right-6 z-50 w-80 bg-white rounded-2xl shadow-2xl animate-slide-in">
-    <div className="bg-orange-500 text-white p-4 rounded-t-2xl font-semibold">
-      Free Consultation
+const StickyEnquiryForm = () => {
+  const [data, setData] = useState({ name: "", phone: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!data.name || !data.phone) {
+      alert("Please fill your name and phone number");
+      return;
+    }
+    const message = `Free Consultation Request from Career4S:\n\nName: ${data.name}\nPhone: ${data.phone}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919910992965?text=${encodedMessage}`, "_blank");
+    setData({ name: "", phone: "" });
+  };
+
+  return (
+    <div className="hidden lg:block fixed top-32 right-6 z-50 w-80 bg-white rounded-2xl shadow-2xl animate-slide-in">
+      <div className="bg-orange-500 text-white p-4 rounded-t-2xl font-semibold">
+        Free Consultation
+      </div>
+      <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <input
+          className="input"
+          placeholder="Your Name"
+          value={data.name}
+          onChange={(e) => setData({ ...data, name: e.target.value })}
+        />
+        <input
+          className="input"
+          placeholder="Phone Number"
+          value={data.phone}
+          onChange={(e) => setData({ ...data, phone: e.target.value })}
+        />
+        <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded-lg">
+          Request Callback
+        </button>
+      </form>
     </div>
-    <form className="p-6 space-y-4">
-      <input className="input" placeholder="Your Name" />
-      <input className="input" placeholder="Phone Number" />
-      <button className="w-full bg-orange-500 text-white py-3 rounded-lg">
-        Request Callback
-      </button>
-    </form>
-  </div>
-);
+  );
+};
 
 /* ===================== POPUP ===================== */
 /* ===================== LEAD POPUP ===================== */
@@ -1034,36 +1060,13 @@ const handleSubmit = async () => {
   }
 
   try {
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        access_key:"62630d11-6b8f-4743-8d0f-9c3a3158b735",
+    const message = `New Popup Lead from Career4S:\n\nName: ${form.name}\nPhone: ${form.phone}\nCourse: ${form.course}\nInterest: ${form.interest}\nPage: ${window.location.pathname}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919910992965?text=${encodedMessage}`;
 
-        // Lead data
-        name: form.name,
-        phone: form.phone,
-        course: form.course,
-        interest: form.interest,
+    window.open(whatsappUrl, "_blank");
 
-        // Metadata (VERY useful for CRM)
-        source: "Popup Lead Form",
-        page: window.location.pathname,
-
-        // Optional webhook for CRM
-        // webhook: "https://hooks.zapier.com/hooks/catch/xxxxx/yyyyy",
-      }),
-    });
-
-    const data = await res.json();
-
-    if (!data.success) {
-      throw new Error(data.message);
-    }
-
-    alert("Thank you! Our expert will contact you shortly.");
+    alert("Redirecting to WhatsApp for expert guidance...");
     setShow(false);
 
     // Reset form
